@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e8f5e9 0%, #d0f8ce 100%);
+  color: #22543d;
+}
+
+.app-header {
+  width: 100%;
+  background: #dafbe1;
+  padding: 18px 0;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(34, 197, 94, 0.09);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(45deg, #4caf50, #43a047, #388e3c, #2e7d32, #1b5e20);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  letter-spacing: 2px;
+}
+
+.Ti {
+  font-size: 35px;
+  position: relative;
+  top: 4px;
+  right: 5px;
+  color: #43a047;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 28px 10px 20px 10px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.plus-button {
+  font-size: 2rem;
+  padding: 5px 15px;
+  background-color: #388e3c;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #c8e6c9;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+}
+
+.plus-button:hover {
+  background-color: #256029;
+  box-shadow: 0 5px 16px #a5d6a7;
+}
+
+.search-user-button,
+.search-button,
+.camera-button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-user-button {
+  background: #dcedc8;
+  color: #2e7d32;
+}
+
+.search-user-button:hover {
+  background: #b9f6ca;
+}
+
+.search-button {
+  background: #66bb6a;
+  color: #fff;
+}
+
+.search-button:hover {
+  background: #388e3c;
+}
+
+.camera-button {
+  background-color: #aed581;
+  color: #fff;
+}
+
+.camera-button:hover {
+  background-color: #7cb342;
+}
+
+.create-post-container {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(46, 125, 50, 0.13);
+  border: 2px solid #a5d6a7;
+}
+
+.create-post-container h2 {
+  font-size: 25px;
+  margin-bottom: 18px;
+  text-align: center;
+  color: #388e3c;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-input,
+.text-input,
+.caption-input {
+  width: 100%;
+  max-width: 330px;
+  padding: 12px;
+  margin-bottom: 17px;
+  border: 1.5px solid #b5e7a0;
+  border-radius: 9px;
+  font-size: 1rem;
+  background: #f1f8e9;
+}
+
+.caption-input {
+  resize: vertical;
+  height: 76px;
+}
+
+.upload-button {
+  padding: 11px 24px;
+  background: #2e7d32;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 2px;
+}
+
+.upload-button:hover {
+  background: #388e3c;
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  color: #2e7d32;
+}
+
+.show-posts-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 24px;
+  text-align: center;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 14px;
+}
+
+.post-card {
+  background: linear-gradient(135deg, #e8f5e9 55%, #ffffff 100%);
+  border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(46,125,50,0.07);
+  overflow: hidden;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: inline-block;
+  width: 100%;
+  max-width: 310px;
+  border: 1.5px solid #b5e7a0;
+}
+
+.post-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(69,160,73,0.17);
+}
+
+.post-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d0f8ce;
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 10px 8px 10px;
+  margin-top: 8px;
+}
+
+.post-caption {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #22543d;
+}
+
+.delete-button {
+  background: #57bb8a;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  font-size: 0.96rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.delete-button:hover {
+  background: #388e3c;
+}
+
+.search-user-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.search-input {
+  padding: 9px 18px;
+  font-size: 1rem;
+  width: 210px;
+  margin-right: 12px;
+  border-radius: 6px;
+  border: 1.5px solid #81c784;
+  background: #e8f5e9;
+}
+
+.search-btn {
+  padding: 9px 18px;
+  font-size: 1rem;
+  background: #43a047;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #388e3c;
+}
+
+.search-results {
+  margin-top: 23px;
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 1.18rem;
+}
+
+.post-time {
+  font-size: 10px;
+  padding: 3px;
+  color: #689f38;
+  position: relative;
+  right: 3px;
+}
+.beginner-container {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  background: linear-gradient(145deg, #0b1a13, #1e3d28);
+  border-radius: 20px;
+  box-shadow: 0 0 20px #133d2f;
+}
+
+.beginner-title {
+  font-size: 2rem;
+  color: #9effc9;
+}
+
+.beginner-buttons button {
+  margin: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.green-btn {
+  background-color: #31c27c;
+  color: #fff;
+}
+
+.gray-btn {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+.back-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: #444;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.preview-img {
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.kit-card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.beginner-feature {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.feature-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.preview-img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.post-username {
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
