@@ -1,0 +1,105 @@
+.care-reminders {
+  max-width: 900px;
+  margin: 18px auto;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg,#ffffff,#f7fff7);
+  box-shadow: 0 12px 30px rgba(10,20,10,0.06);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.care-reminders h3 { margin: 0 0 6px; font-size: 20px; }
+.care-reminders .sub { margin: 0 0 14px; color: #536358; font-size: 13px; }
+
+/* Cards row: keep all cards in one line, allow horizontal scroll on small screens */
+.cards-row {
+  display: flex;
+  gap: 20px; /* gap between cards */
+  margin-bottom: 18px;
+  flex-wrap: nowrap; /* prevent wrapping so all cards stay in one row */
+  align-items: flex-start;
+  overflow-x: auto; /* enable horizontal scroll if viewport is too small */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px; /* space for scrollbar */
+}
+
+/* subtle custom scrollbar */
+.cards-row::-webkit-scrollbar { height: 8px; }
+.cards-row::-webkit-scrollbar-thumb { background: rgba(60,120,60,0.18); border-radius: 8px; }
+.cards-row::-webkit-scrollbar-track { background: transparent; }
+
+/* Card */
+.reminder-card {
+  background: linear-gradient(180deg,#fbfffb,#ffffff);
+  border-radius: 12px;
+  border: 1px solid rgba(90,140,90,0.08);
+  padding: 16px;
+  flex: 0 0 300px; /* fixed base width so three cards fit and don't wrap */
+  min-width: 280px;
+  box-shadow: 0 8px 20px rgba(8,16,8,0.03);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.reminder-card:not(:last-child) { margin-bottom: 6px; }
+
+/* Prominent heading above each card */
+.reminder-card .card-head {
+  font-weight: 900;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #214f27;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+  display: block;
+}
+
+/* Card body */
+.reminder-card .card-body { display:flex; flex-direction:column; gap:8px; }
+.reminder-card label { font-size:12px; color:#466a46; font-weight:600; }
+.reminder-card input[type="date"],
+.reminder-card input[type="number"],
+.reminder-card select {
+  padding:8px 10px; border-radius:8px; border:1px solid rgba(70,100,70,0.08); background:#fff;
+}
+.set-btn { margin-top:6px; background:linear-gradient(90deg,#34b25f,#55d183); border:none; color:#fff; padding:8px 10px; border-radius:8px; font-weight:700; cursor:pointer; box-shadow:0 8px 20px rgba(50,150,80,0.12); }
+.set-btn.alt { background:linear-gradient(90deg,#6aa2ff,#53d0ff); box-shadow:0 8px 20px rgba(40,120,220,0.08); }
+
+.suggestion { font-size:13px; color:#5a6b5a; background:linear-gradient(180deg,#f6fff6,#ffffff); padding:8px; border-radius:8px; border:1px dashed rgba(90,140,90,0.06); }
+
+/* Active card lift */
+.reminder-card.active { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(8,16,8,0.06); border-color: rgba(60,120,60,0.16); }
+
+/* Upcoming list */
+.upcoming { margin-top: 12px; }
+.upcoming h4 { margin-bottom:8px; }
+.upcoming .empty { color:#6b756b; padding:10px 0; }
+
+.upcoming ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.up-item {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:10px; border-radius:10px; background:#fff; border:1px solid rgba(60,80,60,0.04);
+  box-shadow:0 8px 18px rgba(10,20,10,0.03);
+}
+.up-item.due { border-left:6px solid #ff6b6b; box-shadow:0 12px 30px rgba(255,100,100,0.04);}
+.up-item .left { display:flex; flex-direction:column; gap:4px; }
+.up-item .type { font-weight:700; color:#2f7a34; }
+.up-item .meta { font-size:13px; color:#5f6b5f; }
+.up-item .notes { font-size:13px; color:#6b6f6b; }
+
+.actions { display:flex; gap:8px; }
+.action { padding:8px 10px; border-radius:8px; border:none; cursor:pointer; font-size:13px; }
+.action.done { background:linear-gradient(90deg,#2f9e44,#55c27f); color:white; box-shadow:0 8px 18px rgba(40,150,70,0.12); }
+.action.snooze { background:#fff3cc; border:1px solid rgba(150,120,40,0.08); }
+.action.remove { background:#ffecec; border:1px solid rgba(200,80,80,0.08); }
+
+/* Responsive adjustments: keep single row, allow scroll on small screens */
+@media (max-width: 920px) {
+  .reminder-card { flex: 0 0 320px; min-width: 280px; }
+}
+@media (max-width: 640px) {
+  .cards-row { gap:16px; } /* still horizontal with scroll */
+  .reminder-card { flex: 0 0 320px; min-width: 280px; }
+}
