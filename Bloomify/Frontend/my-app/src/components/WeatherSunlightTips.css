@@ -1,0 +1,121 @@
+/* Weather & Sunlight Tips card - cleaned & corrected */
+.weather-card {
+  max-width: 720px;
+  margin: 18px auto;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg,#ffffff,#f8fff5);
+  box-shadow: 0 14px 40px rgba(12,18,12,0.06);
+  transition: transform .16s ease, box-shadow .16s ease;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(8,14,8,0.08);
+}
+
+/* header */
+.wc-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.wc-head h3 { margin:0; font-size:18px; color:#214f27; font-weight:800; }
+.wc-head .sub { margin:0; color:#58705a; font-size:13px; }
+
+/* refresh button */
+.wc-actions .refresh {
+  background: linear-gradient(90deg,#6aa2ff,#53d0ff);
+  border: none;
+  padding:8px 12px;
+  color:#fff;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(50,120,220,0.08);
+}
+.wc-actions .refresh:disabled { opacity:0.7; cursor:default; transform:none; }
+
+/* main area */
+.wc-main {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(180deg,#f6fff6,#ffffff);
+  border:1px solid rgba(80,140,80,0.06);
+  margin-bottom:12px;
+}
+
+/* large emoji */
+.wc-emoji {
+  font-size:44px;
+  width:84px;
+  height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background: radial-gradient(circle at 30% 30%, #fff9d6, #fff);
+  box-shadow: 0 8px 24px rgba(250,200,60,0.08);
+  transform: rotate(-6deg);
+}
+.wc-emoji.loading { opacity:0.6; transform:none; animation:none; }
+
+/* temperature and condition */
+.wc-temp { flex:1; }
+.temp-value { font-size:28px; font-weight:900; color:#214f27; }
+.cond { color:#516a56; font-size:14px; margin-top:4px; }
+
+/* stats */
+.wc-stats { display:flex; gap:8px; align-items:center; }
+.stat { text-align:center; min-width:76px; }
+.stat-value { font-weight:800; color:#214f27; font-size:14px; }
+.stat-label { font-size:12px; color:#6b7b6b; margin-top:6px; }
+
+/* UV badge variants */
+.uv {
+  padding:6px 8px;
+  border-radius:8px;
+  font-weight:800;
+  color:#fff;
+  display:inline-block;
+}
+.uv.low { background: linear-gradient(90deg,#86efac,#34d399); color:#06321a; }
+.uv.moderate { background: linear-gradient(90deg,#ffd36b,#f59e0b); color:#462b05; }
+.uv.high { background: linear-gradient(90deg,#ff7b7b,#ff4d4d); color:#3a0707; }
+
+/* today tip */
+.wc-tip { color:#2f4f33; font-size:14px; margin-bottom:12px; }
+.plant-tip { margin-top:6px; color:#556a56; font-style:italic; }
+
+/* suggestions pills */
+.wc-suggestions h4 { margin:0 0 8px 0; font-size:15px; color:#214f27; }
+.suggest-list { display:flex; gap:8px; flex-wrap:wrap; }
+.pill {
+  background: linear-gradient(90deg,#f0fff2,#ffffff);
+  border:1px solid rgba(80,140,80,0.06);
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  color:#2f7a34;
+  box-shadow: 0 8px 18px rgba(40,150,70,0.04);
+}
+
+/* accessibility: focus styles for keyboard users */
+.wc-actions .refresh:focus,
+.pill:focus {
+  outline: 3px solid rgba(80,170,100,0.18);
+  outline-offset: 3px;
+}
+
+/* responsive */
+@media (max-width: 640px) {
+  .wc-main { flex-direction:column; align-items:flex-start; gap:12px; }
+  .wc-stats { width:100%; justify-content:space-between; }
+  .wc-emoji { width:64px; height:64px; font-size:34px; }
+  .temp-value { font-size:22px; }
+}
