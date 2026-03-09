@@ -1,0 +1,298 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
+
+export default function Home() {
+  const navigate = useNavigate();
+
+  const textList = [
+    "Grow Your Digital Presence",
+    "Smart Solutions for Nature",
+    "Build Your Green Brand",
+  ];
+
+  const [textIndex, setTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(120);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Typing Effect FIXED
+  useEffect(() => {
+    const currentText = textList[textIndex];
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(currentText.substring(0, displayText.length + 1));
+        setSpeed(120);
+
+        if (displayText === currentText) {
+          setTimeout(() => setIsDeleting(true), 1200);
+        }
+      } else {
+        setDisplayText(currentText.substring(0, displayText.length - 1));
+        setSpeed(70);
+
+        if (displayText === "") {
+          setIsDeleting(false);
+          setTextIndex((prev) => (prev + 1) % textList.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, textIndex, textList, speed]);
+
+  return (
+    <div className={darkMode ? "dark-theme" : "light-theme"}>
+
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <h2 className="logo">🌿 Bloomify</h2>
+
+        <ul className="nav-links">
+          <li onClick={() => navigate('/')}>Home</li>
+          <li onClick={() => navigate('/space-analysis')}>Space Analysis</li>
+          <li onClick={() => navigate('/plant-catalog')}>Plant Catalog</li>
+          <li onClick={() => navigate('/my-plants')}>My Plants</li>
+          <li onClick={() => navigate('/care-guide')}>Care Guide</li>
+        </ul>
+
+        <div className="nav-actions">
+          <button className="btn-outline" onClick={() => navigate('/login')}>
+            Login
+          </button>
+
+          <button className="theme-btn" onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? "☀ Light" : "🌙 Dark"}
+          </button>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="hero-section">
+        <div className="hero-left fade-in">
+          <p className="hero-tag">🌿 Bloomify — Green Innovation</p>
+
+          <h1 className="hero-title">
+            {displayText}
+            <span className="cursor">|</span>
+          </h1>
+
+          <p className="hero-desc">
+            We help brands grow sustainably with eco-friendly technology,
+            AI automation, and modern digital solutions inspired by nature.
+          </p>
+
+          <div className="hero-buttons">
+            <button className="btn-primary" onClick={() => navigate('/space-analysis')}>Get Started</button>
+            <button className="btn-outline" onClick={() => navigate('/care-guide')}>Learn More</button>
+          </div>
+        </div>
+
+        <div className="hero-right">
+          <svg viewBox="0 0 500 650" preserveAspectRatio="none" className="wave-mask">
+            <defs>
+              <clipPath id="waveClip">
+                <path d="
+                  M 80 0
+                  C 40 80, 160 160, 80 240
+                  C 0 320, 140 400, 80 480
+                  C 20 560, 140 640, 80 650
+                  L 500 650
+                  L 500 0
+                  Z
+                "/>
+              </clipPath>
+            </defs>
+
+            <image
+              href="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=100"
+              width="100%"
+              height="100%"
+              clipPath="url(#waveClip)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="about-section">
+        <h2 className="about-title">About Bloomify</h2>
+        <div className="about-timeline">
+          <div className="about-line"></div>
+
+          <div className="about-row left">
+            <div className="about-card">
+              <h3>🌱 Smart Plant Guidance</h3>
+              <p>
+                Bloomify helps urban gardeners grow healthier plants using AI guidance,
+                eco-friendly practices, and smart automation.
+              </p>
+            </div>
+            <img className="about-img" src="https://png.pngtree.com/png-vector/20240207/ourmid/pngtree-indoor-plant-flowerpot-png-image_11669796.png" />
+          </div>
+
+          <div className="about-row right">
+            <img className="about-img" src="https://static.vecteezy.com/system/resources/previews/057/090/457/non_2x/bougainvillea-plant-in-pot-on-transparent-background-free-png.png" />
+            <div className="about-card">
+              <h3>🌿 Sustainable Innovation</h3>
+              <p>
+                Our mission is to simplify plant care through climate tracking,
+                smart reminders, and eco-friendly growth systems.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-row left">
+            <div className="about-card">
+              <h3>🌳 Grow Smarter</h3>
+              <p>
+                With plant diagnosis, weather analysis, and intelligent care tools,
+                Bloomify empowers greener living.
+              </p>
+            </div>
+            <img className="about-img" src="https://png.pngtree.com/png-clipart/20240830/original/pngtree-a-small-tomato-plant-with-red-tomatoes-on-transparent-background-png-image_15881730.png" />
+          </div>
+        </div>
+      </section>
+
+      {/* LEVEL SECTION */}
+      <section className="level-section">
+        <h2 className="level-title">Choose Your Growing Level</h2>
+        <p className="level-subtitle">
+          Start your plant journey and grow at your own pace.
+        </p>
+
+        <div className="level-grid">
+          <div className="level-card">
+            <div className="level-icon">🌱</div>
+            <h3>Beginner</h3>
+            <ul className="level-list">
+              <li>Upload plant photos</li>
+              <li>Watering reminders</li>
+              <li>Starter kits</li>
+            </ul>
+            <button className="level-btn primary" onClick={() => navigate('/space-analysis')}>Start</button>
+          </div>
+
+          <div className="level-card">
+            <div className="level-icon">🌿</div>
+            <h3>Intermediate</h3>
+            <ul className="level-list">
+              <li>Plant catalog & details</li>
+              <li>My Plants dashboard</li>
+              <li>Care reminders</li>
+            </ul>
+            <button className="level-btn primary" onClick={() => navigate('/plant-catalog')}>Explore</button>
+          </div>
+
+          <div className="level-card">
+            <div className="level-icon">🌳</div>
+            <h3>Advanced</h3>
+            <ul className="level-list">
+              <li>Seasonal care guide</li>
+              <li>AI diagnosis</li>
+              <li>Growth tracking</li>
+            </ul>
+            <button className="level-btn primary" onClick={() => navigate('/care-guide')}>Launch</button>
+          </div>
+        </div>
+      </section>
+
+      {/* DEMO */}
+      <section className="demo-section">
+        <div className="demo-header">
+          <span className="demo-pill">⚡ Interactive Demo</span>
+          <h2>See Bloomify in Action</h2>
+        </div>
+
+        <div className="demo-card">
+          <div className="demo-image">
+            <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6" />
+            <div className="play-btn">▶</div>
+          </div>
+
+          <div className="demo-content">
+            <h3>Smart Space Analysis</h3>
+            <p>Upload photos to get AI-powered plant recommendations.</p>
+            <button className="btn-primary" onClick={() => navigate('/space-analysis')}>Try Demo</button>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="testimonials-section">
+        <h2 className="testimonials-header-title">Loved by Gardeners</h2>
+
+        <div className="testimonials-grid">
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="testimonial-text">
+              Bloomify transformed my balcony into a mini garden!
+            </p>
+            <div className="testimonial-user">
+              <img src="https://i.pravatar.cc/100?img=12" />
+              <div>
+                <h4>Sarah Mitchell</h4>
+                <span>New York</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="testimonial-text">
+              I can finally keep plants alive thanks to Bloomify!
+            </p>
+            <div className="testimonial-user">
+              <img src="https://i.pravatar.cc/100?img=5" />
+              <div>
+                <h4>Marcus Lee</h4>
+                <span>San Francisco</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p className="testimonial-text">
+              Perfect seasonal guidance and reminders.
+            </p>
+            <div className="testimonial-user">
+              <img src="https://i.pravatar.cc/100?img=32" />
+              <div>
+                <h4>Priya Sharma</h4>
+                <span>Mumbai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FREE TRIAL */}
+      <section className="trial-section">
+        <div className="trial-card">
+          <h2>Start Free Trial</h2>
+          <p>Access full Bloomify features free</p>
+
+          <div className="trial-input">
+            <input type="email" placeholder="Enter your email" />
+            <button className="email-btn">✉</button>
+          </div>
+
+          <button className="trial-btn">Start Trial →</button>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <div className="footer-bottom">
+          © 2026 Bloomify — All Rights Reserved
+        </div>
+      </footer>
+
+    </div>
+  );
+}

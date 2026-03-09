@@ -1,0 +1,568 @@
+plant_name,sunlight,watering,difficulty,light_hours,indoor_outdoor,humidity,temperature_min_c,temperature_max_c,description
+Acacia,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Acalypha,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular Watering. Fertilizer: Organic.
+Acanthus,medium,Weekly,Easy,4,Both,High,10,32,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+Achillea (yarrow),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Let soil dry between watering. Fertilizer: Balanced.
+Acorn Squash,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: loamy. Watering: Regular watering. Fertilizer: Balanced.
+Adonidia,high,2x/week,Medium,6,Indoor,High,15,30,"(Veitchia merrillii) Family: Arecaceae. Origin: Philippines. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug."
+African Evergreen,low,2x/week,Medium,3,Indoor,High,12,28,"(Syngonium podophyllum) Family: Araceae. Origin: Cultivar. Climate: Tropical humid. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug."
+African Fern Pine,low,2x/week,Medium,3,Indoor,High,10,30,"(Podocarpus gracilior) Family: Podocarpaceae. Origin: Central Africa. Climate: Subtropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Mealy bug, Scale."
+African Violet,high,Weekly,Easy,6,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Ageratum,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Regular Watering. Fertilizer: Organic.
+Algerian Ivy,medium,2x/week,Medium,4,Both,High,5,30,"(Hedera canariensis) Family: Araliaceae. Origin: Canaries. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Aloe,medium,Every 2 weeks,Easy,4,Both,Medium,10,32,"Aloe harlana, also known as the yellow-flowering barbed aloe, is a plant species that is simply remarkable. It has a remarkable longevity and ability to thrive in arid regions, making it a great choice for those looking for a minimal maintenance h..."
+Aloe Vera,high,Weekly,Medium,6,Indoor,Low,15,28,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Alstroemeria,medium,Every 2 weeks,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: loamy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Alyssum,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Amaltas (golden Shower),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Amaranth,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+Amaryllis,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Keep soil moist. Fertilizer: Low-nitrogen.
+Amazon Lily,low,Weekly,Hard,3,Indoor,Medium,15,28,"The Amazon lily (Eucharis amazonica) is an amazing plant species native to the Amazon region. It produces beautiful white, cup-shaped flowers with yellow throats that contrast against its glossy foliage. Its easy-to-care-for nature, adaptability t..."
+Amazonian Elephant's Ear,low,2x/week,Hard,3,Indoor,High,15,28,"The Amazonian elephant’s ear (Alocasia amazonica 'Polly') is a unique and stunning plant that demands attention! Its lush, velvety leaves are an eye-catching bright green, with prominent ivory undersides. The deep purple veins running through the ..."
+Anemone,medium,2x/week,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil evenly moist. Fertilizer: Organic.
+Angel Wings,low,Weekly,Medium,3,Indoor,Medium,15,28,"Angel Wings (Caladium bicolor) provides a vibrant splash of color to gardens and outdoor spaces. It's beautiful gray-green veined leaves come in a variety of hues including pink, white, red and burgundy. The heart-shaped foliage is also perfect as..."
+Angelonia,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: well-drained. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Angelwing Begonia,low,2x/week,Medium,3,Indoor,High,15,28,"Angelwing begonias (Begonia 'Sinbad') are a luscious and eye-catching plant species. They’re easy to care for, yet beautiful enough to draw attention. These begonias are both drought and heat-resistant, making them suitable for any garden setting...."
+Anigozanthos (kangaroo Paw),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Balanced.
+Anthurium,low,Weekly,Medium,3,Indoor,Medium,15,28,"Anthurium andraeanum is an amazing plant species for many reasons. It has a brightly coloured spathe, which can be orange, white and yellow, as well as long-lasting flowering. It is a long-lived species, and its blooms can remain intact for severa..."
+Apple Tree,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Aquilegia (columbine),medium,Every 2 weeks,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: loamy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Areca Palm,high,2x/week,Medium,6,Indoor,High,10,28,"(Dypsis lutescens) Family: Arecaceae. Origin: Madagascar. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug, Scale."
+Armeria (thrift),high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Arum Lily,medium,Weekly,Easy,4,Both,High,10,32,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Balanced."
+Asparagus Fern,low,Weekly,Medium,3,Indoor,Medium,15,28,"The asparagus fern, formally known as Asparagus densiflorus 'Myersii', is an amazing plant species. It grows quickly and produces delicate, feathery foliage that resembles ferns, making it a great choice for creating a lush, tropical look in the h..."
+Aster,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Astilbe,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Azalea,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: acidic. Watering: Keep soil moist. Fertilizer: Acidic.
+Aztec Lily,medium,Every 2 weeks,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Baby Rubber Plant,medium,2x/week,Medium,4,Both,High,10,32,(Peperomia obtusifolia) Family: Piperaceae. Origin: Venezuela. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Bachelorâs Button,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Balanced.
+Balfour Aralia,high,2x/week,Medium,6,Indoor,High,12,30,"(Polyscias pinnatta) Family: Araliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Balloon Flower,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Balsam,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: moist. Watering: Regular watering. Fertilizer: Organic.
+Bamboo,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: acidic. Watering: Keep soil moist. Fertilizer: Acidic.
+Bamboo Orchid,high,Weekly,Easy,6,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Bamboo Palm,low,Weekly,Medium,3,Both,High,10,30,"The Bamboo Palm (Chamaedorea seifrizii) is an amazing plant that can add life and color to any room in your home. Its growth habits are easy to maintain and can be included in low light situations. Its bamboo-like stalks, fronds, and deep green le..."
+Banana Plant,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: moist. Watering: Water weekly. Fertilizer: Balanced.
+Banyan Tree (bargad),high,Weekly,Medium,6,Outdoor,Medium,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Low-nitrogen."
+Barberry,high,Weekly,Easy,6,Outdoor,Low,5,35,"Growth rate: moderate. Soil: sandy. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Basil,high,2x/week,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: well-drained. Watering: Keep soil evenly moist. Fertilizer: Organic.
+Bay Laurel,medium,Weekly,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Bearded Iris,medium,2x/week,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: sandy. Watering: Keep soil evenly moist. Fertilizer: Balanced.
+Bee Balm,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Beetroot,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Beggonia (outdoor),high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Begonia,high,2x/week,Easy,6,Indoor,High,15,28,Begonia 'Art Hodes' is an amazing flowering plant species with large and beautiful flowers with orange and yellow streaked petals. It's an ideal choice for any garden due to its resilience and ease of care. Its glossy green foliage is perfect for ...
+Begonia (indoor),high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Begonia (outdoor),high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Bella Palm,low,2x/week,Medium,3,Indoor,High,5,28,"(Chamaedorea elegans) Family: Arecaceae. Origin: Mexico. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Bellflower,medium,Weekly,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: sandy. Watering: Keep soil moist. Fertilizer: Organic.
+Ber Tree (indian Jujube),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil feels dry. Fertilizer: Organic.
+Bergamot,medium,Weekly,Easy,4,Both,High,10,32,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Balanced."
+Bigleaf Hydrangea,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: acidic. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Bird Nest Anthurium,low,Every 2 weeks,Medium,3,Indoor,High,18,28,"(Anthurium hookeri) Family: Araceae. Origin: Guyana. Climate: Tropical humid. Watering: Water when soil is half dry. Can be dry between watering.. Watch for: Mealy bug, Snail, Aphid."
+Bird of Paradise,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly.
+Bird's Nest Fern,low,Weekly,Easy,3,Indoor,High,15,28,"The Bird's Nest Fern (Asplenium nidus 'Antiquum') is a rare and unique species of fern that is a must-have addition to anytropical garden. Its stunning, wide-spreading fronds make it an attractive focal point, while its resistance to pests and dis..."
+Birdnest Fern,low,2x/week,Medium,3,Indoor,High,15,28,(Asplenium nidus) Family: Aspleniaceae. Origin: Asia. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering.
+Birdnest Sansevieria,low,Every 2 weeks,Medium,3,Indoor,High,10,35,(Sansevieria trifasciata Hahnii) Family: Liliaceae. Origin: Cultivar. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering..
+Black Currant,medium,Every 2 weeks,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: loamy. Watering: Water when soil feels dry. Fertilizer: Organic.
+Black Eyed Susan,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Blackcurrant,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: acidic. Watering: Keep soil moist. Fertilizer: Organic.
+Blanket Flower,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Blazing Star,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: loamy. Watering: Water when soil is dry. Fertilizer: Organic.
+Bleeding Heart,high,Weekly,Medium,6,Indoor,Medium,15,28,"The bleeding heart (Clerodendrum thomsoniae) is an amazing flower species that produces clusters of soft, deep pink heart-shaped blooms from late spring onwards. Its foliage is made up of deep green, glossy ovate leaves that compliment its flowers..."
+Bloodroot,medium,Weekly,Medium,4,Both,High,10,32,Growth rate: slow. Soil: moist. Watering: Keep soil slightly moist. Fertilizer: Organic.
+Blue Agave,high,Every 2 weeks,Medium,6,Indoor,High,12,35,"(Agave verschaffeltii) Family: Amaryllidaceae. Origin: Mexico. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering. Watch for: Scale, Mealy bug."
+Bluebell,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil slightly moist. Fertilizer: Organic.
+Bok Choy,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: loamy. Watering: Regular watering. Fertilizer: Organic.
+Borage,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Boston Fern,low,2x/week,Medium,3,Indoor,High,10,28,"(Nephrolepis exaltata var) Family: Nephrolepidaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Mealy bug, Scale."
+Bougainvillea,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Bougainvillia,high,2x/week,Medium,6,Indoor,High,10,32,"(Bougainvillea) Family: Nyctaginaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Aphid, Mealy bug."
+Bower Plant,high,2x/week,Medium,6,Indoor,High,8,28,(Pandorea jasminoides) Family: Bignoniaceae. Origin: Australia. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry..
+Boxwood,high,Weekly,Medium,6,Indoor,Medium,15,28,"Boxwood (Buxus microphylla 'Peergold' GOLDEN DREAM) is an amazing choice of evergreen shrub for any garden. Its golden foliage creates stunning contrast when planted in blocks, and its small size makes it a perfect fit for any landscape. Not only ..."
+Brachychiton (bottle Tree),high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Brassica,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: moist. Watering: Regular watering. Fertilizer: Low-nitrogen.
+Bromeliad,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Bronze Anthurium,low,Every 2 weeks,Medium,3,Indoor,High,18,28,"(Anthurium superbum) Family: Araceae. Origin: Ecuador. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering.. Watch for: Spider mite, Mealy bug."
+Buckwheat,high,Weekly,Easy,6,Outdoor,Low,5,35,"Growth rate: fast. Soil: sandy. Watering: Regular, moist soil. Fertilizer: Low-nitrogen."
+Burro Tail,high,Every 2 weeks,Medium,6,Indoor,High,8,35,(Sedum morganianum) Family: Crasssulaceae. Origin: Mexico. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering.
+Butterfly Ginger,high,2x/week,Medium,6,Indoor,High,10,30,(Hedychium coronarium) Family: Zingiberaceae. Origin: China. Climate: Subtropical. Watering: Keep moist between watering. Must not be dry between watering.
+Butternut Squash,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Cabbage,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Cabbage Palm,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when topsoil is dry. Fertilizer: Organic.
+Cactus,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Low-nitrogen.
+Calathea,low,Weekly,Easy,3,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist.
+Calendula,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+California Poppy,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Calla Lily,medium,Weekly,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: sandy. Watering: Keep soil moist. Fertilizer: Organic.
+Camelina,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil."
+Camellia,medium,Weekly,Medium,4,Both,Medium,10,32,Growth rate: slow. Soil: acidic. Watering: Water weekly. Fertilizer: Acidic.
+Campanula,medium,Weekly,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: sandy. Watering: Keep soil moist. Fertilizer: Balanced.
+Cananga (ylang Ylang),high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: loamy. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Candytuft,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Canna Lily,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Cape Mahogany,medium,2x/week,Medium,4,Indoor,High,12,28,(Trichilia dregei) Family: Miliaceae. Origin: Zimbabwe. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering.
+Carnation,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Carob Tree,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Balanced.
+Carrot,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Carrot Plant,high,Weekly,Easy,6,Outdoor,Low,5,35,"Growth rate: moderate. Soil: sandy. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Cast Iron Plant,low,Weekly,Easy,2,Both,Medium,8,28,"The cast-iron plant (Aspidistra elatior) is an amazing plant species due to its resilience and endurance. This plant is almost impossible to kill, since it can withstand extreme temperatures, low light levels, drought, and poor soil. It also requi..."
+Catmint,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Catnip,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Cestrum,medium,Weekly,Easy,4,Both,High,10,32,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+Chamaedorea,low,2x/week,Medium,3,Both,High,10,32,"Chamaedorea microspadix is an incredible plant species! With its slender, deep green leaves and delicate white stripes near the midrib of each leaf, it adds a unique touch to any space. It is a very low-maintenance plant, requiring little more tha..."
+Chamomile,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Chayote,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Regular watering. Fertilizer: Balanced.
+Cherry Blossom,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Chestnut,high,Weekly,Medium,6,Outdoor,Medium,5,35,Growth rate: slow. Soil: well-drained. Watering: Regular watering. Fertilizer: Organic.
+Chicken Gizard Aralia,high,2x/week,Medium,6,Indoor,High,12,30,"(Polyscias crispata) Family: Araliaceae. Origin: Malaysia. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Chili Pepper,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+China Doll,high,2x/week,Medium,6,Indoor,High,8,28,(Radermachera sinica) Family: Bignoniaceae. Origin: China. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry..
+Chinese Evegreen,low,Weekly,Easy,2,Both,Medium,10,32,"Chinese evergreen (Aglaonema 'Cutlass') is an amazing plant that is sure to bring joy and beauty to any home. It’s low-maintenance and requires minimal care, making it perfect for novice gardeners. It’s easy to propagate and comes in vibrant color..."
+Chinese Evergreen,low,Weekly,Medium,3,Both,High,18,28,"The Chinese evergreen (Aglaonema 'Red Gold') is one of the most amazing plants you can own. This stunning evergreen has a unique look, with its dark green leaves accented with intricate, eye catching red and gold stripes. Not only is it beautiful ..."
+Chinese Hibiscus,high,2x/week,Medium,6,Indoor,High,10,28,"(Hibiscus rosa sinensis) Family: Malvaceae. Origin: Asia. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Aphid, White fly."
+Chinese Lantern Plant,medium,Every 2 weeks,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: loamy. Watering: Water when soil feels dry. Fertilizer: Balanced.
+Chives,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Balanced.
+Christ Thorn,high,Every 2 weeks,Medium,6,Indoor,High,12,35,"(Euphorbia milii) Family: Euphorbiaceae. Origin: Madagascar. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering. Watch for: Mealy bug, White fly."
+Christplant,high,Weekly,Medium,6,Both,High,10,32,"The christplant (Euphorbia milii) is an amazing species of plant that is sure to add beauty to any garden or home. Its delicate leaves and flowers are a sight to behold with its small, colorful, and perfectly symmetrical petals. This plant is not ..."
+Chrysanthemum,high,Weekly,Medium,6,Both,Medium,10,32,"Chrysanthemum 'Fireworks Igloo' is an amazing plant, known for its bright and vibrant colors. It features sublime yellow blooms with exquisite deep orange centers. Its textured petals are beautiful and its fiery colors are truly eye-catching. Its ..."
+Chrysanthemum (outdoor),high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Balanced."
+Cilantro,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Balanced.
+Cineraria,high,Weekly,Easy,6,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Clematis,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Regular Watering. Fertilizer: Organic.
+Clementine,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: loamy. Watering: Regular watering. Fertilizer: Organic.
+Climbing Fig,medium,2x/week,Medium,4,Both,High,10,32,"The climbing fig (Ficus pumila) is an evergreen, deciduous climbing plant that can quickly cover walls, trees and even shrubs. Its heart-shaped leaves and delicate aerial roots are amazing features. It thrives best in those slightly moist and humi..."
+Clivia,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Clove,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Clover,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: loamy. Watering: Water when topsoil is dry.
+Cockscomb (celosia),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water when topsoil is dry. Fertilizer: Organic.
+Cocoa Tree,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: moist. Watering: Regular watering. Fertilizer: Low-nitrogen.
+Coleus,high,Weekly,Easy,6,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Regular Watering. Fertilizer: Low-nitrogen.
+Coltsfoot,medium,Every 2 weeks,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: moist. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Columbine,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Columnea,high,Weekly,Easy,6,Both,Medium,10,32,"Columnea (Columnea microcalyx) is an amazing plant species due to its attractive and unique foliage. The leaves are dark green and thick, with wavy edges and a velvety texture. The bright red flowers with yellow and orange accents only further add..."
+Coneflower,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Coral Bells,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Coral Berry,low,Weekly,Medium,3,Indoor,High,12,30,(Aechmea ramosa) Family: Bromeliaceae. Origin: Brazil. Climate: Subtropical. Watering: Water when soil is half dry. Change water in the vase regularly..
+Coreopsis,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Corn,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: loamy. Watering: Regular watering. Fertilizer: Balanced.
+Cornflower,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Cornstalk Plant,medium,2x/week,Medium,4,Indoor,High,10,30,"(Dracaena fragrans Massangeana) Family: Liliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Mealy bug, Scale."
+Cosmos,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil feels dry. Fertilizer: Organic.
+Creeping Fig,high,2x/week,Medium,6,Both,High,10,30,"(Ficus pumila) Family: Moraceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug, Scale."
+Cress,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: moist. Watering: Regular, moist soil. Fertilizer: Balanced."
+Cretan Brake,medium,2x/week,Medium,4,Indoor,High,12,28,(Pteris cretica Parkeri) Family: Pteridaceae. Origin: Cultivar. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering.
+Crocus,high,Weekly,Medium,6,Outdoor,Medium,5,35,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Croton,high,Weekly,Medium,6,Both,High,10,28,"Croton, or Codiaeum variegatum, is an amazing evergreen shrub with beautiful, large, leathery leaves in a range of colors like yellow, red, pink, and green. Its colors are so vivid and bright that it can be used as a focal point in any garden. Thi..."
+Cryptanthus,medium,Weekly,Medium,4,Indoor,Medium,15,28,"Cryptanthus (group) is an amazing plant species that is known for its wide variety of leaf shapes, textures and colors. Each plant forms a perfect rosette that can range from light green, to bright, and even hues of pink. The foliage is always wav..."
+Cucumber,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Cucumbers,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Cuphea,high,2x/week,Medium,6,Both,High,10,32,"Cuphea Vermillionaire is an amazing plant species for any garden! Its bright red blooms and hardy nature make it a standout choice. Growing in vertical, column-like shapes, Cuphea Vermillionaire has long, opulent leaves that form lush foliage. Add..."
+Currant,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: acidic. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Cyclamen,medium,Weekly,Medium,4,Indoor,Medium,15,28,"The Cyclamen persicum is an amazing plant species due to its striking beauty. The flowers come in a wide range of colors including pink, purple, white, and more and are accented with beautiful heart-shaped leaves. The plant is also known for its d..."
+Cymbalaria,medium,Weekly,Medium,4,Indoor,Medium,15,28,"Cymbalaria aequitriloba, more commonly known as Kenilworth Ivy, is an amazing plant species that features beautiful greens, purples, and whites. Its dainty blossoms and trailing foliage mesmerize, cascading over rocks and down garden walls for a t..."
+Daffodil,high,Weekly,Medium,6,Outdoor,Medium,5,35,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Daffodils,high,Weekly,Medium,6,Outdoor,High,5,35,Growth rate: slow. Soil: loamy. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Dahlia,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Daisy,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Daisy Fleabane,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: loamy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Dandelion,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Date Palm,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Date Palm (khajoor),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Daylily,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Regular Watering. Fertilizer: Low-nitrogen.
+Delta Maidenhair Fern,low,Weekly,Medium,3,Both,Medium,10,32,"The Delta Maidenhair Fern is an amazing species of fern with a unique look. Its fronds create a delicate-looking cloud of bright-green foliage, adding a tropical feel to any environment. Its small, triangular leaves grow in whorls of three on the ..."
+Desert Rose,high,Every 2 weeks,Easy,6,Both,High,10,32,"The desert rose is an amazing plant species that adds vibrant, flowering color to any space. This drought-tolerant succulent requires minimal water and a sunny, dry environment, making it ideal for most desert and dry climate gardens. Its showy bl..."
+Devils Ivy,high,Weekly,Easy,6,Indoor,High,15,28,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Dianella,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Dianthus,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Dieffenbachia,low,Weekly,Medium,3,Indoor,Medium,15,28,Growth rate: slow. Soil: well-drained. Watering: Water weekly.
+Dill,high,2x/week,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Keep soil evenly moist. Fertilizer: Organic.
+Dogwood Tree,medium,Weekly,Medium,4,Both,High,10,32,Growth rate: slow. Soil: loamy. Watering: Keep soil consistently moist. Fertilizer: Low-nitrogen.
+Dracaena,low,Weekly,Medium,3,Both,High,10,32,"The Dracaena sanderiana, also known as the Lucky Bamboo, is a beautiful and amazing plant. It is durable and incredibly low-maintenance, requiring only occasional watering and infrequent fertilizing. It can survive in a wide range of light conditi..."
+Dragon Fruit,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Regular watering. Fertilizer: Balanced.
+Dragon Tree Agave,high,Every 2 weeks,Medium,6,Indoor,High,5,35,"(Agave attenuata) Family: Amaryllidaceae. Origin: Mexico. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering. Watch for: Scale, Mealy bug."
+Dragonfruit Cactus,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Let soil dry between watering.
+Dragontree,high,Weekly,Medium,6,Both,Medium,10,32,"The dragontree (Dracaena marginata) is an amazing species of plant that adds a vibrant and striking look to any space. It has long, thin leaves that are deep green with a thin red stripe along the edges. Dragon trees can be surprisingly resilient,..."
+Dumb Cane,medium,Weekly,Medium,4,Indoor,High,15,28,"The Dumb Cane (Dieffenbachia seguine) is an amazing and beautiful plant to add to any home or office space. It has large, unique white-yellow and green leaves that stay vibrant throughout the seasons, adding a wonderful splash of colour to any roo..."
+Dumcane,medium,2x/week,Medium,4,Indoor,High,12,28,"(Dieffenbachia) Family: Araceae. Origin: Hybrid. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Spider mite, Mealy bug."
+Dusty Miller,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Dwarf Bouquet,medium,2x/week,Medium,4,Indoor,High,10,30,"(Dracaena deremensis) Family: Liliaceae. Origin: Africa. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Mealy bug, Scale."
+Echeveria,high,Every 2 weeks,Medium,6,Both,Low,10,32,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Echinacea,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Eggplant,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: loamy. Watering: Regular watering. Fertilizer: Organic.
+Elderberry,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: moist. Watering: Regular watering. Fertilizer: Organic.
+Elderflower,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil."
+Elephant Ear,high,2x/week,Medium,6,Indoor,High,15,28,"(Alocasia nebula Imperialis) Family: Araceae. Origin: Cultivar. Climate: Tropical humid. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug."
+Elephant Foot,high,Every 2 weeks,Medium,6,Indoor,High,12,32,"(Nolina recurvata) Family: Agavaceae. Origin: Mexico. Climate: Arid Tropical. Watering: Water when soil is half dry. Can be dry between watering.. Watch for: Scale, Mealy bug."
+Elephant's Ear,medium,Weekly,Medium,4,Both,High,10,32,"The elephant's ear (Alocasia amazonica) is an amazing plant species. Its striking foliage features parabolic shaped leaves with bright green and silver/blue-green veins on the surface. Its white veins make the plant appear more vibrant, especially..."
+Emerald Gem,medium,2x/week,Medium,4,Indoor,High,10,28,(Homalomena) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Emerald Prince,medium,2x/week,Medium,4,Indoor,High,18,28,(Philodendron) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Engelmann Spruce,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: well-drained. Watering: Water when soil feels dry. Fertilizer: Balanced.
+English Ivy,low,2x/week,Medium,3,Both,High,5,30,"(Hedera helix) Family: Araliaceae. Origin: Cultivar. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug."
+Epazote,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: moist. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Eucalyptus,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil feels dry. Fertilizer: Low-nitrogen.
+Euphorbia,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Fabian Aralia,high,2x/week,Medium,6,Indoor,High,12,30,"(Polyscias scutellaria) Family: Araliaceae. Origin: Asia. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Fairy Lantern,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: loamy. Watering: Keep soil slightly moist. Fertilizer: Balanced.
+False Aralia,high,2x/week,Medium,6,Indoor,High,12,28,"(Schefflera elegantissima) Family: Araliaceae. Origin: New Calidonia. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Spider mite, Mealy bug, Scale."
+Fennel,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Fern (boston Fern),low,Weekly,Easy,3,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist.
+Fern (boston),high,Every 2 weeks,Easy,6,Indoor,Low,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water when topsoil is dry. Fertilizer: Organic.
+Fern (maidenhair),high,Weekly,Medium,6,Indoor,Medium,15,28,"Growth rate: slow. Soil: moist. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Fernleaf Philodendron,low,2x/week,Medium,3,Indoor,High,18,28,(Philodendron pinnatifidum) Family: Araceae. Origin: Venezuela. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Feverfew,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Ficus Benjamina,high,Every 2 weeks,Easy,6,Indoor,Low,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Balanced.
+Ficus Microcarpa,medium,Weekly,Easy,4,Both,Medium,10,32,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Ficus Tree,high,Weekly,Medium,6,Indoor,Medium,15,28,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Fiddle Leaf Fig,medium,Weekly,Medium,4,Indoor,High,15,28,"The Fiddle-leaf Fig is a unique and stunning species of indoor plant. Its broad, glossy leaves have an attractive violin-like shape, and its thick trunk has an interesting look, making it a great choice for any home or office. Not only is it easy ..."
+Fidleleaf Fig,high,2x/week,Medium,6,Indoor,High,10,30,"(Ficus lyrata) Family: Moraceae. Origin: Ouest Africa. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Fig,high,Weekly,Medium,6,Both,Medium,10,32,"Fig (Ficus carica 'Brown Turkey') is an amazing plant species with its beautiful sweet flavored fruits. It has magnificent deep green, lobed and shiny leaves on its branches that can grow up to 15 m high. It is an evergreen plant that like full to..."
+Fig Tree,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular watering. Fertilizer: Balanced.
+Firecracker Flower,medium,Weekly,Easy,4,Indoor,Medium,15,28,"The Firecracker Flower (Crossandra infundibuliformis) is a tropical flower that will add a burst of color to any garden. Its bright orange and yellow petals are distinctively curled at the edges, making it look like a miniature fireworks display. ..."
+Fish Tail Palm,medium,2x/week,Medium,4,Indoor,High,10,25,"(Caryota mitis) Family: Palmae. Origin: India. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug."
+Flame Violet,medium,Weekly,Medium,4,Both,High,10,32,"Flame Violet (Episcia cupreata) is a stunning, small-leafed houseplant that offers an amazing array of bright colors. Its foliage can range from pink to yellow, orange and green, and its flowers can be rich red, chocolate, or yellow. This trendy h..."
+Flowering Maple,high,2x/week,Medium,6,Both,High,10,32,"The Flowering Maple (Abutilon hybridum) is an amazing plant species for its hardiness, its unique flowers, and its ability to brighten up any landscape. It's a very low maintenance plant that flourishes in full sun and well drained soils. Its flow..."
+Foxglove,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Fragrant Dracaena,low,Weekly,Easy,3,Both,High,10,32,"Fragrant Dracaena (Dracaena fragrans) is an evergreen shrub native to Africa. It's amazing because it brings beauty and fragrance to gardens both indoors and outdoors. It's an all-season plant with glossy leaves and pointed edges, ranging from dee..."
+Fritillaria,medium,Every 2 weeks,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: well-drained. Watering: Water when soil is dry.
+Fuchsia,high,Weekly,Medium,6,Indoor,Medium,15,28,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Galangal,medium,Weekly,Easy,4,Both,High,10,32,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Galax,medium,2x/week,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: moist. Watering: Keep soil evenly moist.
+Gardenia,high,Weekly,Medium,6,Both,Medium,10,32,Growth rate: slow. Soil: acidic. Watering: Water weekly. Fertilizer: Acidic.
+Gazania,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Geranium,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Balanced.
+Gerbera Daisy,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Giant Candelabra Tree,high,Every 2 weeks,Medium,6,Indoor,High,12,35,(Euphorbia ingens) Family: Euphorbiaceae. Origin: South Africa. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering.
+Giant Elephant's Ear,medium,Weekly,Easy,4,Both,High,10,32,"The giant elephant's ear (Alocasia macrorrhizos) is an amazing plant species because of its large and broad leaves. Its leaves can grow to be over 6 feet long and 3 feet wide. It is a tropical plant, preferring humid environments and is great for ..."
+Ginkgo,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: loamy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Globe Thistle,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Golden Barrel,high,Every 2 weeks,Medium,6,Indoor,High,5,40,"(Echinocactus grusonii) Family: Cactaceae. Origin: Central Mexico. Climate: Arid Tropical. Watering: Water only when dry. Must be dry between watering. Watch for: Mealy bug, Scale, Spider mite."
+Golden Pothos,low,Weekly,Easy,3,Indoor,High,12,30,"Golden Pothos, also known as Epipremnum aureum, is an amazing, easy-care houseplant that is both aesthetically pleasing and resilient. The attractive variegated leaves of the plant grow rapidly and are easy to care for, making it a popular choice ..."
+Golden Trumpet,high,2x/week,Medium,6,Indoor,High,10,30,"(Allamanda nerifolia) Family: Apocynaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Mealy bug, Scale, Spider mite."
+Goldenrods,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: loamy. Watering: Keep soil moist. Fertilizer: Organic.
+Goldenseal,medium,Weekly,Medium,4,Both,High,10,32,Growth rate: slow. Soil: moist. Watering: Keep soil moist. Fertilizer: Balanced.
+Grape Hyacinth,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: loamy. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Grape Ivy,low,2x/week,Medium,3,Both,High,10,28,(Cissus rhombifolia) Family: Vitaceae. Origin: Cultivar. Climate: Subtropical. Watering: Keep moist between watering. Can dry between watering.
+Grape Vine,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: acidic. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Grass Tree,high,Every 2 weeks,Medium,6,Indoor,High,12,35,(Xanthorrhoea arborea) Family: Liliaceae. Origin: Australia. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering.
+Green Bean,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Regular watering. Fertilizer: Balanced.
+Green Prayer Plant,low,2x/week,Medium,3,Indoor,High,12,28,(Maranta leuconeura kerchoveana) Family: Marantaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Guar,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry.
+Guava,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Gul Mohar (flame Tree),high,Weekly,Easy,6,Outdoor,Low,5,35,"Growth rate: moderate. Soil: sandy. Watering: Regular, moist soil. Fertilizer: Organic."
+Gumwood Tree,medium,Every 2 weeks,Easy,4,Both,Low,10,32,Growth rate: moderate. Soil: loamy. Watering: Water when soil is dry. Fertilizer: Organic.
+Guzmania,medium,Weekly,Medium,4,Indoor,High,10,30,(Guzmania) Family: Bromeliaceae. Origin: Cultivar. Climate: Tropical. Watering: Water when soil is half dry. Change water in the vase regularly..
+Hawaiian Elf,high,2x/week,Medium,6,Indoor,High,12,30,"(Schefflera arboricola) Family: Araliaceae. Origin: Taiwan. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Haworthia,low,Every 2 weeks,Medium,3,Indoor,Low,15,28,Growth rate: slow. Soil: sandy. Watering: Water when topsoil is dry. Fertilizer: Low-nitrogen.
+Helenium,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Heliopsis,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: loamy. Watering: Keep soil moist.
+Heliotrope,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Regular Watering. Fertilizer: Organic.
+Henbane,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: loamy. Watering: Water when soil feels dry. Fertilizer: Organic.
+Heracleum (cow Parsnip),medium,Weekly,Easy,4,Both,High,10,32,Growth rate: fast. Soil: loamy. Watering: Keep soil moist. Fertilizer: Balanced.
+Herringbone,medium,2x/week,Medium,4,Indoor,High,12,28,(Maranta leuconeura erythroneura) Family: Marantaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Hibiscus,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Holly,medium,Weekly,Medium,4,Both,Medium,10,32,Growth rate: slow. Soil: acidic. Watering: Water weekly. Fertilizer: Acidic.
+Holly Fern,low,2x/week,Medium,3,Both,High,5,30,"(Cyrtomium falcatum) Family: Dryopteridaceae. Origin: Asia. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Scale, Mealy bug."
+Hollyhock,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Hops,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Hops Vine,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Low-nitrogen.
+Hosta,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Hot Water Plant,medium,Weekly,Medium,4,Indoor,Medium,15,28,"The Hot Water Plant is an awesome choice of species for any avid gardener. It is a perennial plant, with unique and exotic blooms in a variety of shapes and colors, that can be grown indoors or outdoors. These plants are incredibly adaptive, thriv..."
+Hoya (wax Plant),high,Every 2 weeks,Medium,6,Indoor,Low,15,28,Growth rate: slow. Soil: sandy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Hummingbird Sage,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Hyacinth,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: loamy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Hybrid Tuberous Begonia,low,Weekly,Medium,3,Indoor,Medium,15,28,The hybrid tuberous begonia (Begonia FUNKY PINK) is an amazing species of flower because of its eye-catching bloom that stands out with its bright pink and funky colored petals. It is incredibly easy to take care of and thrives in both warm and co...
+Ice Plant,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Impatiens,high,Weekly,Easy,6,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+India Rubber Plant,medium,Weekly,Medium,4,Both,High,10,32,"The India rubber plant (Ficus elastica 'Burgundy') is a beautiful and unique addition to any home or office. This plant features shiny, reddish-maroon, leathery leaves that will light up any room. It is tolerant of low light levels and doesn't req..."
+Indian Cress,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Low-nitrogen."
+Indian Grass,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: loamy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Indian Kale,medium,2x/week,Medium,4,Indoor,High,12,28,"(Xanthosoma lindenii) Family: Araceae. Origin: Colombia. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug."
+Indian Rubberplant,high,Weekly,Medium,6,Both,Medium,10,32,"The Indian Rubberplant, or Ficus elastica, is an amazing species for houseplant lovers looking for a dramatic statement piece. It has glossy, broad leaves with a deep green hue, and its dramatic size and shape make it an eye-catching addition to a..."
+Iris,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Iron Cross Begonia,low,Weekly,Medium,3,Indoor,Medium,15,28,"Iron Cross Begonia (Begonia masoniana) is a unique and beautiful plant with large, showy foliage. Its green leaves are marked with a deep purple, cross-shaped pattern with white veins radiating outward, giving the leaves their signature 'iron cros..."
+Ironwood,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: loamy. Watering: Water when soil is dry. Fertilizer: Organic.
+Islander (agave),high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: well-drained. Watering: Let soil dry between watering.
+Ivy,high,Weekly,Easy,6,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil slightly moist. Fertilizer: Balanced.
+Ixia,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Low-nitrogen."
+Jacaranda,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Jackfruit,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Regular watering. Fertilizer: Organic.
+Jacob's Coat,high,2x/week,Medium,6,Indoor,High,15,28,"Jacob's Coat (Acalypha wilkesiana) is an amazing foliage plant with colorful leaves that will make a bold statement in your garden. Its leaves emerge in the spring with attractive shades of green and red, and turn pink, purple, yellow, and even si..."
+Jade Plant,high,Every 2 weeks,Medium,6,Indoor,Medium,12,35,"The Jade Plant is an amazing species native to South Africa. This small, slow-growing succulent grows sprouts of thick, energy-storing, glossy green leaves that form into a single-stemmed, rounded plant. It's also known as a money tree due to its ..."
+Jade Pothos,low,Weekly,Easy,3,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Janet Craig,medium,2x/week,Medium,4,Indoor,High,10,30,"(Dracaena deremensis) Family: Liliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Mealy bug, Scale."
+Japanese Anemone,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Japanese Aralia,high,2x/week,Medium,6,Indoor,High,8,28,"(Fatsia japonica) Family: Araliaceae. Origin: Japan. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Japanese Holly Fern,low,2x/week,Medium,3,Both,High,10,32,"The Japanese holly fern (Cyrtomium falcatum) is truly amazing. Featuring intoxicating, glossy green fronds, this captivating species is an ideal addition to any home or garden. It's also incredibly hardy, with a wide range of growing requirements,..."
+Japanese Maple,medium,Weekly,Medium,4,Both,High,10,32,Growth rate: slow. Soil: acidic. Watering: Keep soil consistently moist. Fertilizer: Balanced.
+Japanese Painted Fern,low,Weekly,Medium,2,Indoor,Medium,15,28,The Japanese Painted Fern is an amazing species of fern that stands out with its yellow fronds that are beautifully accented with green and silver markings. This plant can bring life to any garden with its elegant and delicate look and its ability...
+Japanese Tassel Fern,low,2x/week,Medium,3,Indoor,High,-5,28,(Polystichum polyblepharum) Family: Dryopteridaceae. Origin: Japan. Climate: Subtropical. Watering: Keep moist between watering. Must not be dry between watering.
+Jasmine,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: loamy. Watering: Water weekly. Fertilizer: Organic.
+Jasmine (indoor),high,Weekly,Easy,6,Indoor,High,15,28,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Low-nitrogen.
+Jasmine (outdoor),high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Regular Watering. Fertilizer: Balanced.
+Jatropha,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Jerusalem Artichoke,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: loamy. Watering: Water when soil is dry. Fertilizer: Balanced.
+Jewel Plant,medium,2x/week,Medium,4,Indoor,High,15,28,"The Jewel Plant (Bertolonia maculata) is an astounding tropical plant that provides an array of colors and gratification to its beholders! Producing white and purple speckled, bell-shaped flowers in the center, and textured, intricate foliage that..."
+Joseph's Coat,high,2x/week,Medium,6,Indoor,High,15,28,"Joseph's coat (Alternanthera ficoidea) is an amazing plant that stands out from other species because of its vibrant, multi-colored foliage. Its leaves display shades of red, yellow, white, and purple, making it a dynamic addition to any landscape..."
+Kalanchoe,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Balanced.
+Kentia Palm,low,2x/week,Medium,3,Indoor,High,12,28,(Howea forsteriana) Family: Arecaceae. Origin: South Pacific. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering.
+Kikar Tree (acacia),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Kiwi,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: loamy. Watering: Keep soil moist. Fertilizer: Organic.
+Kiwi Vine,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Knautia,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil."
+Korean Rock Fern,low,2x/week,Medium,3,Indoor,High,-5,28,(Polystichum tsus simense) Family: Dryopteridaceae. Origin: Korea. Climate: Subtropical. Watering: Keep moist between watering. Must not be dry between watering.
+Lacandonian,medium,Weekly,Easy,4,Both,High,10,32,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil."
+Lacy Tree Philodendron,low,2x/week,Medium,3,Indoor,High,18,28,(Philodendron selloum) Family: Araceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Lady Palm,low,2x/week,Medium,3,Indoor,High,8,30,(Rhapis excelsa) Family: Arecaceae. Origin: China. Climate: Subtropical. Watering: Keep moist between watering. Must not be dry between watering.
+Lady's Mantle,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: loamy. Watering: Keep soil moist. Fertilizer: Organic.
+Laelia Orchid,high,Weekly,Medium,6,Indoor,High,15,28,Growth rate: slow. Soil: well-drained. Watering: Keep soil consistently moist.
+Lamb's Ear,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Lantana,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Larkspur,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Lavender,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering.
+Lavender (english),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Balanced.
+Lavender (french),high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Balanced.
+Lemon Balm,medium,Weekly,Easy,4,Both,Medium,10,32,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Lemon Grass,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Lemon Tree,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Lemongrass,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Liatris,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Low-nitrogen."
+Ligustrum,medium,Every 2 weeks,Easy,4,Both,Low,10,32,Growth rate: fast. Soil: loamy. Watering: Water when topsoil is dry. Fertilizer: Low-nitrogen.
+Lilac,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Lilac Bush,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Lilac Tree,medium,Weekly,Medium,4,Both,Medium,10,32,Growth rate: slow. Soil: loamy. Watering: Water weekly. Fertilizer: Balanced.
+Lilliput Agave,high,Every 2 weeks,Medium,6,Indoor,High,12,35,"(Agave striata) Family: Amaryllidaceae. Origin: Mexico. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering. Watch for: Scale, Mealy bug."
+Lily of the Valley,medium,Weekly,Medium,4,Both,High,10,32,"Growth rate: slow. Soil: acidic. Watering: Regular, moist soil. Fertilizer: Low-nitrogen."
+Lime Philodendron,low,2x/week,Medium,3,Indoor,High,18,28,(Philodendron) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Lipstick,high,2x/week,Medium,6,Indoor,High,14,32,"(Aeschynanthus lobianus) Family: Gesneriaceae. Origin: Java. Climate: Tropical. Watering: Keep moist between watering. Can be a bit dry between watering. Watch for: Mealy bug, Aphid, Thrips."
+Lipstick Plant,high,Weekly,Easy,6,Both,High,10,32,"The lipstick plant (Aeschynanthus radicans) is an amazing species that stands out with its unique color, texture and shape. Its waxy leaves have attractive colors, making it pleasing to look at, while its clusters of bright red and orange flowers ..."
+Lisa Dracaena,low,2x/week,Medium,3,Indoor,High,10,30,"(Dracaena deremensis) Family: Liliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Mealy bug, Scale."
+Litchi,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Regular watering. Fertilizer: Organic.
+Lobelia,high,Weekly,Easy,6,Both,Medium,10,32,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Lotus,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: loamy. Watering: Keep soil consistently moist. Fertilizer: Balanced.
+Lotus Bamboo,high,Weekly,Medium,6,Indoor,Medium,15,28,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Luffa,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Lupine,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Lychee,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Regular watering. Fertilizer: Organic.
+Madagascar Dragon Tree,medium,2x/week,Medium,4,Indoor,High,10,28,"(Dracaena marginata) Family: Liliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Mealy bug, Scale, Spider mite."
+Madagascar Palm,high,Every 2 weeks,Medium,6,Indoor,High,8,35,(Pachypodium geayi) Family: Apocynaceae. Origin: Madagascar. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering.
+Magnolia,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: acidic. Watering: Water when soil is dry. Fertilizer: Acidic.
+Maidenhair Fern,low,Weekly,Medium,3,Indoor,Medium,15,28,"The maidenhair fern (Adiantum capillus-veneris) is a beautiful and unique species of fern with feathery, wispy fronds that give an air of delicacy and grace to any space. Its elegant fronds are complemented by lovely fan-like foliage made up of nu..."
+Maindenhair,medium,2x/week,Medium,4,Both,High,12,30,"(Adiantum raddianum) Family: Polypodiaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Mealy bug, Aphid, Snail."
+Majesty Palm,high,2x/week,Medium,6,Indoor,High,8,30,"(Ravenea rivularis) Family: Arecaceae. Origin: Madagascar. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug."
+Malaysian Dracaena,low,2x/week,Medium,3,Indoor,High,12,30,(Dracaena reflexa) Family: Liliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Mallow,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: loamy. Watering: Regular watering. Fertilizer: Organic.
+Malva (mallow),high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Mandevilla,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Mango,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Maranta (prayer Plant),low,Weekly,Easy,3,Both,High,10,32,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Balanced."
+Marigold,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Balanced.
+Marigold (african),high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+Marjoram,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry.
+Mayapple,medium,Weekly,Medium,4,Both,High,10,32,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Low-nitrogen."
+Medallion Calathea,low,2x/week,Medium,3,Both,High,10,25,"(Calathea veitchiana) Family: Marantaceae. Origin: Hybrid. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Meyer Lemon,high,Every 2 weeks,Medium,6,Both,Medium,10,32,"The Meyer lemon (Citrus meyeri) is an amazing plant species known for its flavor and ease of growing. It is a hybrid between a mandarin orange and a lemon, lending itself to a sweet flavor and slightly tarter taste than either of its parent fruits..."
+Mimosa,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil."
+Ming Aralia,high,2x/week,Medium,6,Indoor,High,12,30,"(Polyscias fruticosa Elegans) Family: Araliaceae. Origin: Malaysia. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Miniature Fishtail,medium,2x/week,Medium,4,Indoor,High,10,30,(Chamaedorea metallica) Family: Arecaceae. Origin: Mexico. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Miniature Tree Fern,low,2x/week,Medium,3,Indoor,High,10,30,"(Blechnum gibbum) Family: Polypodiaceae. Origin: New Calidonia. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Mealy bug, Scale."
+Mint,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: fast. Soil: well-drained. Watering: Keep soil consistently moist. Fertilizer: Balanced.
+Money Plant,high,Every 2 weeks,Easy,6,Indoor,Low,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Monster Cactus,high,Every 2 weeks,Medium,6,Indoor,High,5,35,"(Cereus peruvianus Monstrosus) Family: Cactaceae. Origin: Brazil. Climate: Arid Tropical. Watering: Water only when dry or when soil is half dry.. Watch for: Scale, Mealy bug."
+Monstera,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly.
+Moringa,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Regular watering. Fertilizer: Organic.
+Morning Glory,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Mulberry,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: moderate. Soil: well-drained. Watering: Regular watering. Fertilizer: Organic.
+Mustard,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: loamy. Watering: Regular watering. Fertilizer: Balanced.
+Nandina (heavenly Bamboo),medium,Weekly,Easy,4,Both,Medium,10,32,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Nasturtium,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Natal Lily,high,Weekly,Medium,6,Both,Medium,10,32,"The Natal lily (Clivia miniata) is a beautiful and unique plant native to South Africa. It produces vibrant orange and yellow trumpet-shaped blooms which appear in spring or summer. It is adapted to surviving in habitats with extreme temperatures,..."
+Nectarine,high,Weekly,Medium,6,Outdoor,Medium,5,35,Growth rate: slow. Soil: loamy. Watering: Regular watering. Fertilizer: Organic.
+Neem Tree,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Neoregalia (bromeliad),high,Weekly,Easy,6,Indoor,High,15,28,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Balanced."
+Nerve Plant,low,Weekly,Medium,3,Indoor,Medium,15,28,"The Nerve Plant is an amazing addition to any home or garden. With leaves ranging from lime green to deep burgundy, it's sure to create a bold and beautiful display. Its captivating foliage is rounded off with white veins running throughout, givin..."
+Nettle,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Nutmeg,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+Oleander,high,2x/week,Medium,6,Indoor,High,5,30,"(Nerium oleander) Family: Apocynaceae. Origin: Mediterranean. Climate: Subtropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Scale, Aphid, Mealy bug."
+Olive Tree,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Balanced.
+Onion,high,Weekly,Medium,6,Indoor,Medium,15,28,"Onion (Allium cepa) is an amazing and versatile vegetable that has been used in cooking for centuries. Its taste is powerful yet complex, and it adds flavor and texture to many dishes. Onions are incredibly nutritious and are packed with essential..."
+Orchid,medium,2x/week,Medium,4,Indoor,High,15,28,"The orchid Calanthe 'Kozu Spice' is an amazing flower for any gardener. Its petals are deep, rich purple and its evergreen foliage radiates in shades of deep green. This orchid is extremely resilient, and it can grow in almost any environment, fro..."
+Orchid (vanilla),high,Weekly,Medium,6,Indoor,Medium,15,28,"Growth rate: slow. Soil: well-drained. Watering: Regular, well-drained soil."
+Orchid Cactus,high,2x/week,Medium,6,Indoor,High,5,32,(Epiphyllum) Family: Cactaceae. Origin: Hybrid. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Orchids,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Oregano,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when topsoil is dry. Fertilizer: Organic.
+Ornamental Pepper,high,Weekly,Medium,6,Indoor,Medium,15,28,"Ornamental pepper (Capsicum annuum 'Black Pearl') is an amazing plant species due to its unique features and dramatic colour display. These peppers produce small conical fruits that change colour from black to bright yellow when ripe, creating a s..."
+Pansy,medium,2x/week,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil evenly moist. Fertilizer: Organic.
+Parlor Ivy,low,2x/week,Medium,3,Indoor,High,18,28,(Philodendron scandens oxycardium) Family: Araceae. Origin: Central America. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Parlor Palm,low,Weekly,Medium,3,Both,High,10,32,"The Parlor Palm (Chamaedorea elegans) is an amazing house plant with several incredible attributes. It is a very slow growing species, requiring minimal maintenance. It is also quite small, so it fits perfectly in spaces such as desks, tabletops o..."
+Parrot Palm,high,2x/week,Medium,6,Indoor,High,12,30,(Syagrus schizophylla) Family: Arecaceae. Origin: Brazil. Climate: Tropical humid. Watering: Keep moist between watering. Water when soil is half dry..
+Parsley,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil consistently moist. Fertilizer: Organic.
+Passionflower,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Peace Lily,low,2x/week,Medium,3,Indoor,High,15,28,"(Spathiphyllum Lynise) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Mealy bug, Thrips."
+Peacock Plant,medium,Weekly,Easy,4,Indoor,High,15,28,"The Peacock Plant (Calathea makoyana) is an amazing plant with unique foliage. Its striking leaves boast a bright green color on the surface and deep purple color on the underside. These attractive leaves grow in an interesting fan shape, possessi..."
+Peepal Tree,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Peepal Tree (bodhi Tree),medium,Weekly,Easy,4,Both,Medium,10,32,"Growth rate: moderate. Soil: loamy. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Peony,high,Weekly,Medium,6,Outdoor,Medium,5,35,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Peperomia,low,Weekly,Medium,3,Indoor,Medium,15,28,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Pepper Plant,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Periwinkle,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Persian Violet,medium,Weekly,Easy,4,Both,Medium,10,32,"Persian Violet (Cyclamen hederifolium) is an incredibly beautiful shade loving plant. Bursting with small, delicate, heart-shaped flowers in vibrant shades of white, pink, or lavender, it's the perfect garden addition to any creative landscape. It..."
+Petunia,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Petunia (trailing),high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Regular Watering. Fertilizer: Organic.
+Philippine Evergreen,low,Weekly,Medium,2,Both,High,10,32,"Philippine evergreen (Aglaonema commutatum) is truly an amazing plant for many reasons. It has a beautiful, glossy foliage that is decorated with silver brush strokes, giving it an eye-catching appearance. It is also considered one of the most ver..."
+Philodendron,low,Weekly,Easy,3,Indoor,Medium,15,28,Growth rate: moderate. Soil: well-drained. Watering: Water weekly.
+Phlox,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Balanced.
+Phrynium,medium,2x/week,Medium,4,Indoor,High,12,25,"(Ctenanthe lubbersiana) Family: Marantaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug."
+Picta Philodendron,low,Every 2 weeks,Medium,3,Indoor,High,12,30,(Scindapsus pictus argyraeus) Family: Araceae. Origin: Indonisia. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering..
+Pignee Date Palm,high,2x/week,Medium,6,Indoor,High,8,28,"(Phoenix roebellinii) Family: Palmae. Origin: Vietnam. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Scale."
+Pilea,high,Every 2 weeks,Easy,6,Indoor,Low,15,28,Growth rate: moderate. Soil: loamy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Pine,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil feels dry. Fertilizer: Balanced.
+Pineapple,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Pineapple Sage,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Balanced."
+Pink Quill,medium,Weekly,Medium,4,Indoor,High,15,30,(Tillandsia cyanea) Family: Bromeliaceae. Origin: Ecuador. Climate: Tropical humid. Watering: Change water regularly in the vase. Water when soil is half dry..
+Plumeria,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: loamy. Watering: Regular, well-drained soil. Fertilizer: Low-nitrogen."
+Poinsettia,medium,Weekly,Easy,4,Indoor,Medium,15,28,Poinsettias (Euphorbia pulcherrima) are the perfect houseplant for the holiday season. Stunning red flower bracts contrast against dark green foliage that rarely needs pruning and the red blooms can last up to six months with proper care. In addit...
+Pomegranate,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Ponytail Palm,medium,Weekly,Medium,4,Both,Medium,10,32,"The ponytail palm (Beaucarnea recurvata) is one of the most interesting houseplants out there. Unique and eye-catching, it has a swollen base and a thin, cascading crown of green foliage, resembling a head of hair. It’s a slow growing and long liv..."
+Poppy,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Portulaca,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Balanced.
+Potato Vine,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Pothos,low,Weekly,Medium,3,Indoor,High,15,28,"Pothos (Epipremnum aureum 'Neon') is one of the most amazing plants on the market. It is a low-maintenance perennial that loves indirect light and is very easy to care for. Its vibrant lime green and yellow leaves can brighten up any room, making ..."
+Pothos (golden Pathos),low,Every 2 weeks,Easy,3,Indoor,Low,15,28,Growth rate: fast. Soil: loamy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Protea,high,Weekly,Medium,6,Outdoor,Medium,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Purslane,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Quaking Aspen,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Quince,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Quinoa,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, well-drained soil."
+Rabbit's Foot Fern,low,Weekly,Medium,3,Indoor,High,15,28,The rabbit's foot fern (Davallia fejeensis) is an amazing species of fern which boasts beautiful furry fronds and furry rhizomes that are quite unique in the world of ferns. Its dark green fronds create an exotic and eye-catching display when grow...
+Rabbits Foot,medium,Every 2 weeks,Medium,4,Indoor,High,10,25,"(Davallia trichomannoides) Family: Davalliaceae. Origin: Canaries. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering.. Watch for: Mealy bug, Scale."
+Radish,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Raspberry,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: acidic. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Rattlesnake Plant,low,Weekly,Medium,3,Indoor,High,15,28,"Calathea lancifolia, commonly known as rattlesnake plant, is an amazing houseplant that has extra-ordinary foliage. The leaves are long, narrow and wavy, like snakeskin, and have alternating white and dark green stripes. When its leaves move, the ..."
+Red Hot Poker (kniphofia),high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Red Leafed Maple,medium,Weekly,Medium,4,Both,Medium,10,32,"Growth rate: slow. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Red Maple,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Red Philodendron,low,2x/week,Medium,3,Indoor,High,18,28,(Philodendron) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Redwood,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: moist. Watering: Regular, moist soil. Fertilizer: Low-nitrogen."
+Rex Begonia,low,Weekly,Medium,3,Indoor,Medium,15,28,"The Rex Begonia, or Begonia Rex-Cultorum, is truly an amazing type of plant. With its stunning and vibrant colors, intricate and intricate leaf structure, and overall lush appearance, the Rex Begonia is sure to transform any dull looking space. It..."
+Rhododendron,medium,Weekly,Medium,4,Both,Medium,10,32,"Growth rate: slow. Soil: acidic. Watering: Regular, well-drained soil. Fertilizer: Organic."
+River Birch,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Rose Grape,high,2x/week,Medium,6,Indoor,High,15,30,(Medinilla magnifica) Family: Melastomataceae. Origin: Philippines. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering.
+Rose of Sharon,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Balanced."
+Rosemary,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Let soil dry between watering.
+Rosemary Mint,medium,Weekly,Easy,4,Both,Medium,10,32,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil."
+Rosy Maidenhair,medium,2x/week,Medium,4,Both,High,12,30,"(Adiantum hispidulum) Family: Polypodiaceae. Origin: Australia & New Guinea. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Mealy bug, Aphid, Snail."
+Rubber Plant,high,2x/week,Medium,6,Indoor,High,10,30,"(Ficus elastica) Family: Moraceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Can dry between watering. Watch for: Mealy bug, Scale."
+Rudbeckia,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Russian Sage,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Sage,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: well-drained. Watering: Let soil dry between watering. Fertilizer: Organic.
+Sago Palm,high,Weekly,Medium,6,Both,Medium,8,30,"The Sago palm (Cycas revoluta) is an amazing plant species that is known for its unique fan-shaped leaves and intricate patterns. It requires minimal maintenance and is extremely resilient to harsh weather conditions, enabling it to thrive in both..."
+Salvia,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Balanced.
+Scabiosa (pincushion Flower),high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: loamy. Watering: Regular, moist soil. Fertilizer: Organic."
+Scilla,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Low-nitrogen."
+Sea Holly,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Balanced.
+Sedge,medium,Weekly,Medium,4,Both,Medium,10,32,"Growth rate: slow. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Sedum,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Shasta Daisy,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Sheesham Tree,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: loamy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Silene (catchfly),high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: loamy. Watering: Regular, well-drained soil."
+Silver Calathea,low,2x/week,Medium,3,Both,High,10,25,"(Calathea pictura Argentea) Family: Marantaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Silver Lace Fern,low,2x/week,Medium,3,Indoor,High,12,28,(Pteris ensiformis Evergemiensis) Family: Pteridaceae. Origin: Asia. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering.
+Silver Ribbon Fern,low,2x/week,Medium,3,Indoor,High,12,28,(Pteris cretica Albo lineata) Family: Pteridaceae. Origin: Cultivar. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering.
+Silver Vase,medium,Weekly,Medium,4,Indoor,High,12,30,(Aechmea fatsiata) Family: Bromeliaceae. Origin: Brazil. Climate: Tropical humid. Watering: Water when soil is half dry. Change water in the vase regularly..
+Silverbell Tree,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: moist. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Snake Plant,low,Every 2 weeks,Medium,3,Indoor,High,10,35,(Sansevieria trifasciata Laurentii) Family: Liliaceae. Origin: South Africa. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering..
+Snakes Beard,high,2x/week,Medium,6,Both,High,5,28,"(Ophiopogon japonicus) Family: Liliaceae. Origin: Japan. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Scale."
+Snapdragon,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Snowdrop,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Song of India,high,Every 2 weeks,Medium,6,Both,High,10,32,"Song of India is an amazing plant species to keep in your home because of its beautiful variegated leaves. The leaves have creamy yellow and green hues along with a unique striped or spotted pattern. It's a low-maintenance plant, thriving in brigh..."
+Soursop,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil."
+Speedwell,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Spider Flower,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Spider Plant,low,Weekly,Easy,3,Indoor,Medium,5,28,Spider Plant (Chlorophytum 'Bonnie') is an amazingly versatile and low-maintenance houseplant. It tolerate low to bright indirect light and almost any type of soil. Its unusual growth pattern resembles a spider or a rosette of strap-like foliage t...
+Spindle Palm,high,2x/week,Medium,6,Indoor,High,10,35,"(Hyophorbe verschaffeltii) Family: Arecaceae. Origin: Rodrigue Island. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Mealy bug, Scale."
+Spineless Yucca,high,2x/week,Medium,6,Indoor,High,12,30,(Yucca elephantipes) Family: Liliaceae. Origin: Mexico. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry..
+Spiny Licuala Palm,high,2x/week,Medium,6,Indoor,High,15,30,"(Licuala spinosa) Family: Arecaceae. Origin: Malaysia. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Mealy bug, Scale."
+Splitleaf Philodendron,low,Every 2 weeks,Medium,3,Indoor,High,12,32,(Monstera deliciosa) Family: Araceae. Origin: Central America. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering..
+Spotted Laurel,low,2x/week,Medium,2,Both,High,10,32,"Spotted laurel (Aucuba japonica 'Mr. Goldstrike') is an amazing plant species because of its striking appearance. Its glossy, evergreen leaves consist of yellow spots on a dark green background, making for a beautiful landscape feature all year ro..."
+Sprenger's Asparagus Fern,low,Weekly,Medium,3,Both,Medium,10,32,"Sprenger's asparagus fern (Asparagus densiflorus) is an amazing evergreen perennial that is perfect for sunny areas as it often blooms in late spring to summer. It is easy to care for, with arching stems of small, airy green foliage, and tiny whit..."
+St. Bernard's Lily,medium,Every 2 weeks,Easy,4,Both,Medium,10,32,"St. Bernard’s Lily (Chlorophytum amaniense) is an amazing plant species that's native to East Africa. It's a perennial, and it grows in dense tufts of long, green, strappy leaves with showy, pure white flowers. Its striking color combination and u..."
+Staghorn Fern,low,2x/week,Medium,3,Indoor,High,5,30,(Platycerium bifurcatum) Family: Polypodiaceae. Origin: Australia. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Stalked Aeonium,high,Weekly,Medium,6,Both,Medium,10,32,"Stalked Aeonium, or Aeonium undulatum, is an amazing succulent species with its showy yellow blooms and striking foliage. Its bright purple-green foliage has stout stems that produce a neat rosette pattern, while the yellow flowers appear in winte..."
+Star Jasmine,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Stevia,medium,Weekly,Medium,4,Both,Medium,10,32,Growth rate: slow. Soil: well-drained. Watering: Water weekly. Fertilizer: Organic.
+Stiped Calathea,low,2x/week,Medium,3,Both,High,10,25,"(Calathea ornata Rosea lineata) Family: Marantaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Strawberry,high,Weekly,Easy,6,Outdoor,Low,5,35,"Growth rate: moderate. Soil: sandy. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Strawberry Plant,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+String of Pearls,high,Every 2 weeks,Medium,6,Indoor,Low,15,28,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Striped Dracaena,low,Weekly,Medium,3,Both,Medium,10,30,Striped Dracaena (Dracaena fragrans (Deremensis Group) 'Lemon Lime') is a fantastic plant for adding eye-catching texture to the home or office. Its impressive evergreen foliage forms an attractive arching pattern featuring cream and lime green st...
+Stromante,medium,2x/week,Medium,4,Both,High,10,25,"(Calathea stromata) Family: Marantaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Succulent,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Succulents (general),high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Sugarcane,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Sunflower,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Swedish Ivy,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Sweet Alyssum,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Sweet Basil,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Sweet Pea,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: loamy. Watering: Water weekly. Fertilizer: Balanced.
+Sweet Potato Vine,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Sweet William,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: fast. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Organic.
+Tailflower,medium,Every 2 weeks,Medium,4,Indoor,High,18,22,"(Anthurium X) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering.. Watch for: Spider mite, Mealy bug, Aphid."
+Tansy,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: loamy. Watering: Regular, moist soil."
+Taro,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Organic."
+Tarragon,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Teak,high,Weekly,Medium,6,Outdoor,Medium,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Low-nitrogen."
+Themeda (kangaroo Grass),high,Weekly,Easy,6,Outdoor,Low,5,35,"Growth rate: fast. Soil: sandy. Watering: Regular, moist soil. Fertilizer: Organic."
+Thread Agave,high,Every 2 weeks,Medium,6,Indoor,High,5,35,"(Agave filifera) Family: Amaryllidaceae. Origin: Mexico. Climate: Arid Tropical. Watering: Water only when the soil is dry. Must be dry between watering. Watch for: Scale, Mealy bug."
+Thyme,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Let soil dry between watering. Fertilizer: Organic.
+Tiger Lily,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, well-drained soil. Fertilizer: Organic."
+Toad Lily,medium,Weekly,Medium,4,Both,High,10,32,Growth rate: slow. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Tobacco Plant,high,Weekly,Easy,6,Outdoor,Medium,5,35,"Growth rate: fast. Soil: loamy. Watering: Regular, well-drained soil. Fertilizer: Balanced."
+Tomato,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Regular Watering. Fertilizer: Organic.
+Trailing Snapdragon,high,Weekly,Easy,6,Both,Medium,10,32,"Trailing snapdragon is a truly amazing species! With gorgeous blooms of lavender or white, it will add beauty to any garden. It is also resilient and easy to care for as it doesn't need a lot of water, but can tolerate drought conditions. The bran..."
+Tree Cereus,high,Every 2 weeks,Medium,6,Indoor,High,5,35,"(Cereus peruvianus) Family: Cactaceae. Origin: Brazil. Climate: Arid Tropical. Watering: Water only when dry or when soil is half dry.. Watch for: Scale, Mealy bug."
+Tree Maindenhair Fern,high,2x/week,Medium,6,Indoor,High,5,30,"(Didymochlaena truncatula) Family: Dryopteridaceae. Origin: South America. Climate: Tropical humid. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Mealy bug, Scale."
+Tricolor Peperomia,low,2x/week,Medium,3,Both,High,10,32,(Peperomia clusiifolia) Family: Piperaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Tuberose,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Regular Watering. Fertilizer: Organic.
+Tuberose (polianthes),high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: moderate. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Organic."
+Tulip,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Low-nitrogen.
+Tulsi (holy Basil),high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Balanced.
+Umbella Plant,high,2x/week,Medium,6,Indoor,High,12,28,"(Schefflera actinophylla Amate) Family: Araliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Umbrella Plant,medium,Weekly,Easy,4,Both,Medium,10,32,"The umbrella plant (Cyperus alternifolius 'Variegatus') is a truly amazing species. Not only is it incredibly beautiful, with its tufts of bright green leaves with thin white ribs, but its unusual umbrella-like shape gives it a truly unique look. ..."
+Urn Plant,medium,Weekly,Medium,4,Both,High,10,32,The urn plant (Aechmea fasciata) is an amazing species because of its striking foliage and interesting growth habit. It is one of the few bromeliads that produces structural leaves in a rosette pattern and colorful flower spikes. Its evergreen lea...
+Variegated Balfour Aralia,high,2x/week,Medium,6,Indoor,High,12,30,"(Polyscias pinnata Marginata) Family: Araliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Variegated Carabbean Agave,high,Every 2 weeks,Medium,6,Indoor,High,5,35,"(Agave angustilolia Marginata) Family: Amaryllidaceae. Origin: India. Climate: Tropical. Watering: Water only when the soil is dry. Must be dry between watering. Watch for: Scale, Mealy bug."
+Variegated Euphorbia,high,Every 2 weeks,Medium,6,Indoor,High,12,35,"(Euphorbia ammack) Family: Euphorbiaceae. Origin: Africa. Climate: Arid Tropical. Watering: Must be dry between watering. Water only when dry.. Watch for: Mealy bug, White fly."
+Variegated Lily Turf,high,2x/week,Medium,6,Both,High,8,30,"(Liriope muscari Variegata) Family: Liliaceae. Origin: Japan. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Scale."
+Velvet Calathea,low,2x/week,Medium,3,Both,High,10,25,"(Calathea rufibarba) Family: Marantaceae. Origin: Brazil. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug, Scale."
+Velvet Leaf Vine,medium,2x/week,Medium,4,Indoor,High,18,28,(Philodendron micans) Family: Araceae. Origin: Dominica. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Venus Fly Trap,high,Weekly,Easy,6,Both,Medium,10,32,The Venus fly trap is an amazing plant species with a unique mechanism for catching prey. This carnivorous plant’s leaves snap shut with startling speed when an unfortunate insect wanders inside. The inside of the Venus fly trap is lined with hair...
+Verbena,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Veronica,high,Weekly,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water weekly. Fertilizer: Low-nitrogen.
+Viola,high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: moderate. Soil: well-drained. Watering: Keep soil moist. Fertilizer: Organic.
+Violet,high,Weekly,Easy,6,Indoor,High,15,28,"Growth rate: moderate. Soil: moist. Watering: Regular, moist soil. Fertilizer: Organic."
+Wandering Jew,high,Weekly,Easy,6,Indoor,Medium,15,28,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Water Lily,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: loamy. Watering: Regular, moist soil."
+Wattle,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil feels dry.
+Wax Begonia,low,Weekly,Medium,3,Indoor,Medium,15,28,"The wax begonia (Begonia semperflorens-cultorum 'Harmony Scarlet') is an amazing plant species with remarkable benefits. It's glossy, dark green leaves with red accents are stunning and make for vibrant plant displays. This evergreen variety is to..."
+Wax Plant,medium,Every 2 weeks,Medium,4,Indoor,High,12,28,"(Hoya carnosa Exotica) Family: Asclepiadaceae. Origin: Cultivar. Climate: Tropical. Watering: Water when soil is half dry. Can be dry between watering.. Watch for: Mealy bug, Thrips."
+Weeping Fig,medium,Weekly,Easy,4,Indoor,High,10,30,"The Weeping Fig (Ficus benjamina) is an amazing plant species that truly lives up to its name. With its signature weeping branches, lush, dark green foliage and long life span, it will add beauty and life to any space indoors or outdoors. Not only..."
+White Bird of Paradise,high,2x/week,Medium,6,Indoor,High,12,30,"(Strelitzia nicolai) Family: Strelitziaceae. Origin: South Africa. Climate: Subtropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Mealy bug."
+White Pothos,low,2x/week,Medium,3,Indoor,High,12,30,(Epipremnum aureum) Family: Araceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Willow Ficus,high,2x/week,Medium,6,Indoor,High,10,30,"(Ficus maclellandii Alii) Family: Moraceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug, Scale."
+Willow Fig Tree,high,2x/week,Medium,6,Indoor,High,10,30,"(Ficus maclellandii) Family: Moraceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Must not be dry between watering. Watch for: Spider mite, Mealy bug, Scale."
+Wisteria,high,Weekly,Medium,6,Outdoor,High,5,35,"Growth rate: slow. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Yarrow,high,Every 2 weeks,Easy,6,Outdoor,Low,5,35,Growth rate: moderate. Soil: sandy. Watering: Water when soil is dry. Fertilizer: Balanced.
+Yellow Hawaiian Elf,high,2x/week,Medium,6,Indoor,High,12,30,"(Schefflera arboricola Trinette) Family: Araliaceae. Origin: Cultivar. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry.. Watch for: Spider mite, Aphid, Mealy bug."
+Yellow Malaysian Dracaena,low,2x/week,Medium,3,Indoor,High,12,30,(Dracaena reflexa) Family: Liliaceae. Origin: India. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..
+Yew,medium,Every 2 weeks,Medium,4,Both,Low,10,32,Growth rate: slow. Soil: loamy. Watering: Water when topsoil is dry. Fertilizer: Balanced.
+Yucca,high,Every 2 weeks,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water when topsoil is dry. Fertilizer: Organic.
+Zea Mays (corn),high,Weekly,Easy,6,Outdoor,High,5,35,Growth rate: fast. Soil: loamy. Watering: Keep soil consistently moist. Fertilizer: Low-nitrogen.
+Zebra Grass,medium,Weekly,Easy,4,Both,High,10,32,Growth rate: moderate. Soil: well-drained. Watering: Keep soil consistently moist. Fertilizer: Low-nitrogen.
+Zebra Plant,low,Weekly,Medium,2,Both,Medium,10,32,"The zebra plant (Aphelandra squarrosa) is an amazing species for many reasons. It is an evergreen perennial shrub native to tropical regions of America, with a unique and beautiful foliage that is composed of mid-green leaves with bold, yellow-cen..."
+Zephyranthes (rain Lily),high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: acidic. Watering: Regular, moist soil. Fertilizer: Balanced."
+Zinnia,high,Weekly,Easy,6,Outdoor,Medium,5,35,Growth rate: fast. Soil: well-drained. Watering: Water weekly. Fertilizer: Balanced.
+Zoysia Grass,high,Weekly,Medium,6,Outdoor,Low,5,35,Growth rate: slow. Soil: sandy. Watering: Water weekly. Fertilizer: Organic.
+Zucchini,high,Weekly,Easy,6,Outdoor,High,5,35,"Growth rate: fast. Soil: well-drained. Watering: Regular, moist soil. Fertilizer: Balanced."
+Zz Plant,low,2x/week,Medium,3,Indoor,High,12,30,(Zamioculcas zamifolia) Family: Araceae. Origin: South Africa. Climate: Tropical. Watering: Keep moist between watering. Water when soil is half dry..

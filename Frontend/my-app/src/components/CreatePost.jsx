@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Styles.css";
+import { motion } from "framer-motion";
+import { User, Type, Upload, ImagePlus } from "lucide-react";
+import AnimatedButton from "./ui/AnimatedButton";
 
 function CreatePost(props){
   const [file, setFile] = useState(null);
@@ -42,36 +44,59 @@ function CreatePost(props){
   };
 
   return (
-    <div className="create-post-container">
-      <h2>Create a New Post</h2>
-      <form onSubmit={handleSubmit} className="upload-form">
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="text-input"
-        />
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="bg-(--card) border border-(--border) rounded-2xl p-6"
+    >
+      <h2 className="text-xl font-bold text-(--text) mb-5 flex items-center gap-2">
+        <ImagePlus className="w-5 h-5 text-(--primary)" /> Create a New Post
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="relative">
+          <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-(--text-muted)" />
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full pl-10 pr-4 py-3 rounded-xl bg-(--bg-alt) border border-(--border) text-(--text) text-sm placeholder:text-(--text-muted) focus:outline-none focus:border-(--primary) focus:ring-2 focus:ring-(--primary)/20 transition-all"
+          />
+        </div>
 
-        <textarea
-          placeholder="Write a caption..."
-          value={caption}
-          onChange={(e) => setCaption(e.target.value)}
-          className="caption-input"
-        />
+        <div className="relative">
+          <Type className="absolute left-3.5 top-3.5 w-4 h-4 text-(--text-muted)" />
+          <textarea
+            placeholder="Write a caption..."
+            value={caption}
+            onChange={(e) => setCaption(e.target.value)}
+            rows={3}
+            className="w-full pl-10 pr-4 py-3 rounded-xl bg-(--bg-alt) border border-(--border) text-(--text) text-sm placeholder:text-(--text-muted) focus:outline-none focus:border-(--primary) focus:ring-2 focus:ring-(--primary)/20 transition-all resize-none"
+          />
+        </div>
 
-        <input
-          type="file"
-          onChange={handleFileChange}
-          className="file-input"
-        />
+        <label className="flex items-center gap-3 p-4 rounded-xl border-2 border-dashed border-(--border) hover:border-(--primary)/50 cursor-pointer transition-colors">
+          <Upload className="w-5 h-5 text-(--text-muted)" />
+          <span className="text-sm text-(--text-muted)">
+            {file ? file.name : "Choose a file..."}
+          </span>
+          <input type="file" onChange={handleFileChange} className="hidden" />
+        </label>
 
-        <button type="submit" className="upload-button">
-          Upload
-        </button>
+        <AnimatedButton type="submit" size="md" className="w-full">
+          <Upload className="w-4 h-4" /> Upload
+        </AnimatedButton>
       </form>
-      {message && <p className="message">{message}</p>}
-    </div>
+      {message && (
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className={`mt-3 text-sm font-medium text-center ${message.includes("Error") ? "text-red-500" : "text-emerald-500"}`}
+        >
+          {message}
+        </motion.p>
+      )}
+    </motion.div>
   );
 };
 

@@ -1,0 +1,230 @@
+/* ═══════════════════════════════════════════════════════
+   BLOOMIFY DESIGN SYSTEM — Theme Variables & Globals
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Light Theme (default) ── */
+  --primary: #4CAF50;
+  --primary-hover: #43A047;
+  --secondary: #2E7D32;
+  --accent: #81C784;
+  --accent-light: #C8E6C9;
+  --bg: #F6FBF4;
+  --bg-alt: #EDF7EA;
+  --card: #FFFFFF;
+  --card-hover: #F0F9EE;
+  --text: #1A2E1A;
+  --text-secondary: #4A6A4A;
+  --text-muted: #7A9A7A;
+  --border: #D4E8D4;
+  --border-light: #E8F5E8;
+  --shadow: rgba(46, 125, 50, 0.08);
+  --shadow-lg: rgba(46, 125, 50, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --overlay: rgba(0, 0, 0, 0.4);
+  --gradient-hero: linear-gradient(135deg, #F6FBF4 0%, #E8F5E9 50%, #C8E6C9 100%);
+  --gradient-primary: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f0f9ee 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.15) 0%, transparent 70%);
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --error: #EF5350;
+  --info: #42A5F5;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --nav-height: 72px;
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Dark Theme ── */
+[data-theme="dark"] {
+  --primary: #66BB6A;
+  --primary-hover: #81C784;
+  --secondary: #388E3C;
+  --accent: #A5D6A7;
+  --accent-light: #1B3A1B;
+  --bg: #0F1A14;
+  --bg-alt: #152019;
+  --card: #1A2A22;
+  --card-hover: #213429;
+  --text: #E8F5E9;
+  --text-secondary: #A5D6A7;
+  --text-muted: #6B9B6B;
+  --border: #2A4A30;
+  --border-light: #1E3624;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(26, 42, 34, 0.8);
+  --glass-border: rgba(102, 187, 106, 0.15);
+  --overlay: rgba(0, 0, 0, 0.6);
+  --gradient-hero: linear-gradient(135deg, #0F1A14 0%, #152019 50%, #1A2A22 100%);
+  --gradient-primary: linear-gradient(135deg, #66BB6A 0%, #388E3C 100%);
+  --gradient-card: linear-gradient(145deg, #1A2A22 0%, #213429 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(102, 187, 106, 0.1) 0%, transparent 70%);
+}
+
+/* ── Theme Transition ── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+/* ── Global Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ── Utility Classes ── */
+.page-wrapper {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-top: var(--nav-height);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Floating Leaf Particles ── */
+@keyframes floatLeaf {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-20px) rotate(15deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

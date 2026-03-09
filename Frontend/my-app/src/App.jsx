@@ -1,84 +1,62 @@
-import React, { useState } from "react";
-import CreatePost from "./components/CreatePost";
-import ShowPost from "./components/ShowPost";
-import SearchUser from "./components/SearchUser";
-import Click from "./components/Click";
+import React from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "./context/ThemeContext";
+
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import ForgotPassword from "./components/ForgotPassword";
+import ChangePassword from "./components/ChangePassword";
 import Home from "./components/Home";
-import BeginnerMode from "./components/BeginnerMode";
-import "./components/Styles.css";
-import { TiSocialInstagramCircular } from "react-icons/ti";
-import { BsCameraFill } from "react-icons/bs";
+import SpacePhotoAnalysis from "./components/SpacePhotoAnalysis";
+import PlantDetails from "./components/PlantDetails";
+import MyPlants from "./components/MyPlants";
+import CareGuide from "./components/CareGuide";
+import StarterPlantKits from "./components/StarterPlantKits";
 
-const App = () => {
-  const [showCreate, setShowCreate] = useState(false);
-  const [showSearchUser, setShowSearchUser] = useState(false);
-  const [showClick, setShowClick] = useState(false);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
-  const [showHome, setShowHome] = useState(true);
-  const [showBeginner, setShowBeginner] = useState(false);
-  const [selectedFeature, setSelectedFeature] = useState(null);
-
-  const toggleCreatePost = () => setShowCreate((prev) => !prev);
-  const refreshPosts = () => setRefreshTrigger((prev) => prev + 1);
-  const toggleSearchUser = () => setShowSearchUser((prev) => !prev);
-  const toggleClick = () => setShowClick((prev) => !prev);
-
-  const handleBeginnerFeature = (feature) => {
-    setSelectedFeature(feature);
-    setShowBeginner(true);
-  };
-
+function AppRoutes() {
+  const location = useLocation();
   return (
-    <div className="app-container">
-      {showBeginner ? (
-        <BeginnerMode
-          selectedFeature={selectedFeature}
-          onBack={() => {
-            setShowBeginner(false);
-            setSelectedFeature(null);
-          }}
-        />
-      ) : showHome ? (
-        <Home
-          onEnter={() => setShowHome(false)}
-          onBeginnerFeature={handleBeginnerFeature} // ✅ matches Home.jsx
-        />
-      ) : (
-        <>
-          <header className="app-header">
-            <h1>
-              <span className="Ti">
-                <TiSocialInstagramCircular />
-              </span>
-              <span className="logo">Our Community!!</span>
-            </h1>
-          </header>
+    <AnimatePresence mode="wait">
+    <Routes location={location} key={location.pathname}>
+      {/* Default Route */}
+      <Route path="/" element={<Home />} />
 
-          <main>
-            <div className="action-buttons">
-              <button className="plus-button" onClick={toggleCreatePost}>
-                +
-              </button>
-              <button className="search-user-button" onClick={toggleSearchUser}>
-                🔍
-              </button>
-              <button className="camera-button" onClick={toggleClick}>
-                <BsCameraFill />
-              </button>
-            </div>
+      {/* Auth Routes */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/change-password" element={<ChangePassword />} />
 
-            {showCreate && <CreatePost setRefreshTrigger={setRefreshTrigger} />}
-            {showSearchUser && <SearchUser />}
-            {showClick && (
-              <Click onClose={toggleClick} onUpload={refreshPosts} />
-            )}
+      {/* Home Page */}
+      <Route path="/home" element={<Home />} />
 
-            <ShowPost refreshTrigger={refreshTrigger} />
-          </main>
-        </>
-      )}
-    </div>
+      {/* Space Analysis */}
+      <Route path="/space-analysis" element={<SpacePhotoAnalysis />} />
+
+      {/* Plant Catalog */}
+      <Route path="/plant-catalog" element={<PlantDetails />} />
+
+      {/* My Plants Dashboard */}
+      <Route path="/my-plants" element={<MyPlants />} />
+
+      {/* Care Guide */}
+      <Route path="/care-guide" element={<CareGuide />} />
+
+      {/* Starter Plant Kits */}
+      <Route path="/starter-kits" element={<StarterPlantKits />} />
+
+      {/* Redirect Unknown Routes */}
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+    </AnimatePresence>
   );
-};
+}
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppRoutes />
+    </ThemeProvider>
+  );
+}
