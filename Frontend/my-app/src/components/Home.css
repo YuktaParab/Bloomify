@@ -2,6 +2,19 @@
    BLOOMIFY HOME — Supplementary Styles
    ═══════════════════════════════════════════ */
 
+/* Smooth scroll on the page */
+.home-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Full-viewport section panels */
+.section-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Hero background glow */
 .hero-glow {
   position: absolute;

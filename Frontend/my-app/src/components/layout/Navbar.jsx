@@ -41,7 +41,7 @@ export default function Navbar() {
       }`}
       style={{ height: "var(--nav-height)" }}
     >
-      <div className="max-w-[1100px] mx-auto px-6 sm:px-10 lg:px-12 h-full flex items-center justify-between">
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         {/* Logo */}
         <motion.div
           className="flex items-center gap-2 cursor-pointer"
@@ -58,7 +58,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-8 lg:gap-12">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path || (item.path === "/" && location.pathname === "/home");
             return (
@@ -86,8 +86,8 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3">
+        {/* Actions — extreme right */}
+        <div className="flex items-center gap-3 ml-auto flex-shrink-0">
           <motion.button
             onClick={toggleTheme}
             whileHover={{ scale: 1.1, rotate: 15 }}
@@ -126,8 +126,6 @@ export default function Navbar() {
           </motion.button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

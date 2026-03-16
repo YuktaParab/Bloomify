@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 export default function PageContainer({ children, showFooter = true }) {
   return (
-    <div className="min-h-screen bg-(--bg)">
+    <div className="min-h-screen bg-(--bg) scroll-smooth">
       <Navbar />
       <motion.main
         initial={{ opacity: 0, y: 20 }}

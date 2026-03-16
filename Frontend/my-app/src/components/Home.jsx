@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Leaf, BookOpen, Sprout, Star,
-  ArrowRight, Sparkles, TreePine, Sun, Droplets
+  ArrowRight, Sparkles, TreePine, Sun, Droplets, Play
 } from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import GlassCard from "./ui/GlassCard";
@@ -64,39 +64,51 @@ export default function Home() {
   const features = [
     {
       icon: <Sprout className="w-6 h-6 text-white" />,
+      illustration: "🌱",
       title: "Smart Plant Guidance",
       desc: "AI-powered recommendations to help you grow healthier plants with eco-friendly practices.",
       gradient: "from-emerald-500 to-green-600",
+      glow: "rgba(16, 185, 129, 0.15)",
     },
     {
       icon: <Sun className="w-6 h-6 text-white" />,
+      illustration: "📷",
       title: "Space Analysis",
       desc: "Upload photos of your space and get personalized plant suggestions based on light and climate.",
       gradient: "from-green-500 to-teal-500",
+      glow: "rgba(34, 197, 94, 0.15)",
     },
     {
       icon: <Droplets className="w-6 h-6 text-white" />,
+      illustration: "💧",
       title: "Care Reminders",
       desc: "Never forget to water your plants with intelligent care schedules and seasonal guidance.",
       gradient: "from-teal-500 to-cyan-500",
+      glow: "rgba(20, 184, 166, 0.15)",
     },
     {
       icon: <TreePine className="w-6 h-6 text-white" />,
+      illustration: "📚",
       title: "Plant Encyclopedia",
       desc: "Browse 100+ plants with detailed care instructions, growth tips, and companion planting info.",
       gradient: "from-cyan-500 to-emerald-500",
+      glow: "rgba(6, 182, 212, 0.15)",
     },
     {
       icon: <Leaf className="w-6 h-6 text-white" />,
+      illustration: "🪴",
       title: "My Plants Dashboard",
       desc: "Track your plant collection, monitor growth progress, and manage your personal garden.",
       gradient: "from-emerald-400 to-green-500",
+      glow: "rgba(52, 211, 153, 0.15)",
     },
     {
       icon: <Sparkles className="w-6 h-6 text-white" />,
+      illustration: "🧰",
       title: "Starter Kits",
       desc: "Curated beginner-friendly plant kits to kickstart your gardening journey with confidence.",
       gradient: "from-green-400 to-teal-500",
+      glow: "rgba(74, 222, 128, 0.15)",
     },
   ];
 
@@ -125,14 +137,14 @@ export default function Home() {
     <PageContainer>
 
       {/* ══════ HERO SECTION ══════ */}
-      <section className="hero-section relative flex items-center overflow-hidden" style={{ minHeight: 'calc(100vh - var(--nav-height))' }}>
+      <section className="section-panel hero-section relative overflow-hidden" style={{ minHeight: 'calc(100vh - var(--nav-height))' }}>
         {/* Background glow */}
         <div className="hero-glow" />
 
-        <div className="relative z-10 w-full max-w-[1100px] mx-auto px-6 sm:px-10 lg:px-12 py-20 lg:py-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-20 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* Left — Text */}
-            <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-[520px]">
+            <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-[520px]" style={{ marginLeft: '100px' }}>
               <motion.div
                 variants={fadeUp}
                 custom={0}
@@ -145,7 +157,7 @@ export default function Home() {
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold text-(--text) leading-[1.08] mb-7 tracking-tight"
+                className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold text-(--text) leading-[1.08] mb-8 tracking-tight whitespace-nowrap"
               >
                 {displayText}
                 <span className="inline-block w-[3px] h-[0.85em] bg-(--primary) ml-1.5 rounded-full animate-pulse align-middle" />
@@ -154,14 +166,14 @@ export default function Home() {
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="text-base sm:text-[1.1rem] text-(--text-secondary) max-w-[460px] mb-12 leading-[1.75]"
+                className="text-base sm:text-[1.1rem] text-(--text-secondary) max-w-[460px] mb-14 leading-[1.75]"
               >
                 Bloomify helps you grow healthier plants with AI-powered
                 recommendations, smart care reminders, and a beautiful plant
                 encyclopedia — all in one place.
               </motion.p>
 
-              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-5 mb-16">
+              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-6 mb-16">
                 <AnimatedButton size="lg" onClick={() => navigate("/space-analysis")}>
                   Get Started <ArrowRight className="w-5 h-5" />
                 </AnimatedButton>
@@ -174,7 +186,7 @@ export default function Home() {
                 {[
                   { value: "100+", label: "Plants" },
                   { value: "AI", label: "Powered" },
-                  { value: "Free", label: "To Use" },
+                  { value: "Free", label: "Trial Available" },
                 ].map((stat, idx) => (
                   <div key={stat.label} className={`flex-1 ${idx !== 0 ? "border-l border-(--border) pl-8" : ""} ${idx !== 2 ? "pr-8" : ""}`}>
                     <div className="text-2xl font-extrabold text-(--primary)">{stat.value}</div>
@@ -189,8 +201,8 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-              className="hidden lg:flex items-center justify-center"
-              style={{ height: '500px' }}
+              className="hidden lg:flex items-center justify-end"
+              style={{ height: '500px', marginRight: '-5rem' }}
             >
               <Suspense
                 fallback={
@@ -207,38 +219,38 @@ export default function Home() {
       </section>
 
       {/* ══════ FEATURES SECTION ══════ */}
-      <section className="py-28 sm:py-32 bg-(--bg-alt)">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-10 lg:px-12">
+      <section className="section-panel bg-(--bg-alt) py-20 sm:py-24">
+        <div className="max-w-[1200px] w-full mx-auto px-6 sm:px-10 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-14"
           >
             <motion.span
               variants={fadeUp}
               custom={0}
-              className="inline-block text-sm font-semibold text-(--primary) uppercase tracking-widest mb-4"
+              className="inline-block text-sm font-semibold text-(--primary) uppercase tracking-widest mb-5"
             >
               Features
             </motion.span>
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="text-3xl sm:text-4xl font-extrabold text-(--text) mb-5"
+              className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-(--text) mb-5"
             >
               Everything You Need to Grow
             </motion.h2>
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="text-(--text-muted) max-w-lg mx-auto text-base leading-relaxed"
+              className="text-(--text-muted) max-w-xl mx-auto text-base sm:text-[1.05rem] leading-relaxed"
             >
               Powerful tools and smart features to make plant care simple, fun, and effective.
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             {features.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -246,20 +258,53 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.07 }}
+                whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
+                className="group"
               >
-                <GlassCard className="p-9 h-full">
+                <div
+                  className="relative h-full min-h-[220px] rounded-2xl border border-(--border) bg-(--card) backdrop-blur-sm overflow-hidden transition-all duration-300 group-hover:border-(--primary)/30 group-hover:shadow-2xl"
+                  style={{
+                    padding: "32px",
+                    boxShadow: "0 4px 24px var(--shadow)",
+                  }}
+                >
+                  {/* Gradient glow on hover */}
                   <div
-                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${item.gradient} flex items-center justify-center mb-6 shadow-md`}
+                    className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[60px] pointer-events-none"
+                    style={{ background: item.glow }}
+                  />
+
+                  {/* 3D Illustration */}
+                  <motion.div
+                    className="absolute top-5 right-5 text-[2.5rem] leading-none opacity-20 group-hover:opacity-40 transition-opacity duration-300 select-none pointer-events-none"
+                    whileHover={{ rotate: 12, scale: 1.15 }}
+                    style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.15))" }}
+                  >
+                    {item.illustration}
+                  </motion.div>
+
+                  {/* Icon */}
+                  <div
+                    className={`relative z-10 w-14 h-14 rounded-xl bg-linear-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300`}
                   >
                     {item.icon}
                   </div>
-                  <h3 className="text-[1.05rem] font-bold text-(--text) mb-3">
+
+                  {/* Title */}
+                  <h3 className="relative z-10 text-lg font-bold text-(--text) mb-3 group-hover:text-(--primary) transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-(--text-muted) text-sm leading-[1.7]">
+
+                  {/* Description */}
+                  <p className="relative z-10 text-(--text-muted) text-[0.9rem] leading-[1.75] pr-6">
                     {item.desc}
                   </p>
-                </GlassCard>
+
+                  {/* Bottom gradient line */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-[3px] bg-linear-to-r ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -267,13 +312,13 @@ export default function Home() {
       </section>
 
       {/* ══════ TESTIMONIALS SECTION ══════ */}
-      <section className="py-28 sm:py-32">
-        <div className="max-w-[1100px] mx-auto px-6 sm:px-10 lg:px-12">
+      <section className="section-panel py-20 sm:py-28">
+        <div className="max-w-[1200px] w-full mx-auto px-6 sm:px-10 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-12"
           >
             <motion.span
               variants={fadeUp}
@@ -285,7 +330,7 @@ export default function Home() {
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="text-3xl sm:text-4xl font-extrabold text-(--text) mb-5"
+              className="text-3xl sm:text-4xl font-extrabold text-(--text) mb-4"
             >
               Loved by Gardeners
             </motion.h2>
@@ -298,34 +343,34 @@ export default function Home() {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 lg:gap-8">
             {testimonials.map((t, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.1 }}
               >
-                <GlassCard className="p-9 h-full flex flex-col">
-                  <div className="flex gap-1 mb-5">
+                <GlassCard className="px-8 py-9 sm:px-10 sm:py-10 h-full flex flex-col items-center text-center min-h-[260px]">
+                  <div className="flex gap-1.5 mt-4 mb-5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-(--text-secondary) text-[0.95rem] leading-[1.75] mb-8 italic flex-1">
+                  <p className="text-(--text-secondary) text-[1.05rem] leading-[1.8] mb-8 italic flex-1">
                     &ldquo;{t.text}&rdquo;
                   </p>
-                  <div className="flex items-center gap-4 pt-5 border-t border-(--border-light)">
+                  <div className="flex items-center gap-4 pt-6 border-t border-(--border-light)">
                     <img
                       src={t.avatar}
                       alt={t.name}
-                      className="w-11 h-11 rounded-full object-cover ring-2 ring-(--border-light)"
+                      className="w-16 h-16 rounded-full object-cover ring-2 ring-(--border-light) shadow-md"
                       loading="lazy"
                     />
                     <div>
-                      <div className="text-sm font-semibold text-(--text)">{t.name}</div>
-                      <div className="text-xs text-(--text-muted) mt-0.5">{t.location}</div>
+                      <div className="text-[15px] font-bold text-(--text)">{t.name}</div>
+                      <div className="text-xs text-(--text-muted) mt-1">{t.location}</div>
                     </div>
                   </div>
                 </GlassCard>
@@ -336,39 +381,92 @@ export default function Home() {
       </section>
 
       {/* ══════ CALL TO ACTION ══════ */}
-      <section className="py-28 sm:py-32 bg-(--bg-alt)">
-        <div className="max-w-[720px] mx-auto px-6 sm:px-10 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+      <section className="min-h-screen bg-(--bg-alt) grid grid-cols-1 lg:grid-cols-2">
+
+        {/* Left — Full-height Video Thumbnail */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative group cursor-pointer min-h-[50vh] lg:min-h-screen overflow-hidden"
+          style={{ background: "var(--gradient-card)" }}
+        >
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-linear-to-br from-(--primary)/20 via-(--secondary)/10 to-(--accent)/20" />
+
+          {/* Decorative plant elements */}
+          <div className="absolute top-10 left-10 text-5xl opacity-25 select-none">🌿</div>
+          <div className="absolute bottom-10 right-10 text-4xl opacity-20 select-none">🌱</div>
+          <div className="absolute top-16 right-16 text-3xl opacity-15 select-none">🌸</div>
+          <div className="absolute bottom-20 left-16 text-3xl opacity-15 select-none">🍃</div>
+
+          {/* "Bloomify Demo" label */}
+          <div className="absolute top-8 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full bg-(--card)/80 backdrop-blur-sm border border-(--border) text-xs font-semibold text-(--text-secondary) tracking-wide uppercase z-10">
+            Bloomify Demo
+          </div>
+
+          {/* Centered Play button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              whileHover={{ scale: 1.12 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-24 h-24 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_60px_var(--primary)]"
+              style={{ background: "var(--gradient-primary)" }}
+            >
+              <Play className="w-10 h-10 text-white ml-1" fill="white" />
+            </motion.div>
+          </div>
+
+          {/* Bottom progress bar */}
+          <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-(--border)">
+            <div className="h-full w-1/3 rounded-r-full" style={{ background: "var(--gradient-primary)" }} />
+          </div>
+
+          {/* Inner rounded edge (right on desktop, bottom on mobile) */}
+          <div className="hidden lg:block absolute top-4 bottom-4 right-0 w-6 bg-(--bg-alt) rounded-l-3xl" />
+        </motion.div>
+
+        {/* Right — Content & CTA */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          className="flex flex-col items-center justify-center text-center px-8 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-0 min-h-[50vh] lg:min-h-screen"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-(--primary)/10 flex items-center justify-center mb-6">
+            <Leaf className="w-7 h-7 text-(--primary)" />
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-(--text) mb-5 tracking-tight">
+            Start Your Plant Journey
+          </h2>
+
+          <p className="text-(--text-muted) mb-10 max-w-md text-base sm:text-[1.08rem] leading-[1.8]">
+            Join Bloomify and access AI-powered plant care, smart
+            reminders, and a growing community of plant lovers.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-5">
+            <AnimatedButton size="lg" onClick={() => navigate("/signup")}>
+              Get Started Free <ArrowRight className="w-5 h-5" />
+            </AnimatedButton>
+            <AnimatedButton variant="secondary" size="lg" onClick={() => navigate("/plant-catalog")}>
+              <BookOpen className="w-5 h-5" /> Browse Plants
+            </AnimatedButton>
+          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => navigate("/space-analysis")}
+            className="text-sm font-medium text-(--primary) hover:text-(--primary-hover) transition-colors flex items-center gap-1.5 mt-2"
           >
-            <GlassCard className="px-10 py-16 sm:px-16 sm:py-20 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-linear-to-br from-(--primary)/5 to-(--accent)/5" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-(--primary)/10 flex items-center justify-center mx-auto mb-7">
-                  <Leaf className="w-8 h-8 text-(--primary)" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-(--text) mb-4">
-                  Start Your Plant Journey
-                </h2>
-                <p className="text-(--text-muted) mb-10 max-w-sm mx-auto text-[0.95rem] leading-[1.7]">
-                  Join Bloomify and access AI-powered plant care, smart
-                  reminders, and a growing community of plant lovers.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <AnimatedButton size="lg" onClick={() => navigate("/signup")}>
-                    Get Started Free <ArrowRight className="w-5 h-5" />
-                  </AnimatedButton>
-                  <AnimatedButton variant="secondary" size="lg" onClick={() => navigate("/plant-catalog")}>
-                    <BookOpen className="w-5 h-5" /> Browse Plants
-                  </AnimatedButton>
-                </div>
-              </div>
-            </GlassCard>
-          </motion.div>
-        </div>
+            <Play className="w-4 h-4" /> Try Demo
+          </motion.button>
+        </motion.div>
+
       </section>
 
     </PageContainer>
