@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Tomato",
+    "description": "A popular vegetable plant that grows easily at home and produces fresh, juicy tomatoes. Perfect for beginners and great for sunny balconies or gardens.",
+    "sunlight": "Full sunlight (6–8 hours)",
+    "watering": "Daily light watering",
+    "soil": "Nutrient-rich well-drained soil",
+    "temperature": "20-30°C",
+    "difficulty": "Easy",
+    "category": "Outdoor",
+    "growthTime": "5–10 days germination, 2–3 months to harvest",
+    "growthSteps": [
+      "Select healthy tomato seeds from a trusted source",
+      "Soak seeds in water for 6–8 hours to improve germination",
+      "Prepare seed tray with moist potting soil",
+      "Plant seeds 1 cm deep and cover lightly with soil",
+      "Water gently and keep in warm, sunny location",
+      "Wait for seedlings to grow 5–10 cm tall",
+      "Transfer seedlings to larger pots or garden bed",
+      "Continue watering and provide support as plant grows"
+    ]
+  },
+  {
+    "name": "Basil",
+    "description": "A fragrant herb used in cooking that thrives indoors or outdoors. Easy to grow and adds fresh flavor to your kitchen.",
+    "sunlight": "Bright indirect light (4–6 hours)",
+    "watering": "Keep soil moist, not waterlogged",
+    "soil": "Well-drained potting soil",
+    "temperature": "18-25°C",
+    "difficulty": "Easy",
+    "category": "Both",
+    "growthTime": "7–10 days germination, 3–4 weeks to harvest",
+    "growthSteps": [
+      "Choose fresh basil seeds or buy seedlings",
+      "Fill small pot with moist potting soil",
+      "Sprinkle seeds on soil surface and press gently",
+      "Cover pot loosely with plastic wrap for humidity",
+      "Place in warm spot with indirect sunlight",
+      "Remove covering once seedlings appear",
+      "Water when top soil feels dry to touch",
+      "Harvest leaves regularly to encourage bushier growth"
+    ]
+  },
+  {
+    "name": "Pothos (Devil's Ivy)",
+    "description": "A low-maintenance indoor plant with trailing vines and heart-shaped leaves. Perfect for beginners and works well in low light.",
+    "sunlight": "Bright indirect light, tolerates low light",
+    "watering": "Water when soil is dry",
+    "soil": "Well-drained potting soil",
+    "temperature": "15-30°C",
+    "difficulty": "Easy",
+    "category": "Indoor",
+    "growthTime": "No germination needed, grows from cuttings in 2–3 weeks",
+    "growthSteps": [
+      "Obtain healthy pothos cuttings from an existing plant",
+      "Cut stems 4–6 inches below a leaf node",
+      "Remove lower leaves to expose the nodes",
+      "Place cuttings in water jar or pot with moist soil",
+      "Keep in warm location with indirect light",
+      "Change water every 2–3 days if propagating in water",
+      "Wait for roots to develop over 2–3 weeks",
+      "Transfer rooted cuttings to soil and maintain steady moisture"
+    ]
+  },
+  {
+    "name": "Sunflower",
+    "description": "A tall, cheerful flower that produces large blooms and seeds. Great outdoor plant that attracts pollinators to your garden.",
+    "sunlight": "Full sunlight (6–8 hours)",
+    "watering": "Regular watering, let soil dry between waterings",
+    "soil": "Well-drained garden soil",
+    "temperature": "20-28°C",
+    "difficulty": "Easy",
+    "category": "Outdoor",
+    "growthTime": "7–10 days germination, 70–100 days to bloom",
+    "growthSteps": [
+      "Choose large, healthy sunflower seeds",
+      "Plant seeds directly in garden, 1.5 inches deep",
+      "Space seeds 6 inches apart in rows",
+      "Water soil gently after planting",
+      "Keep soil consistently moist until seedlings emerge",
+      "Thin seedlings to 12 inches apart once they're 4 inches tall",
+      "Water deeply once a week from seedling stage onward",
+      "Stake tall varieties for support and watch blooms appear"
+    ]
+  },
+  {
+    "name": "Mint",
+    "description": "A hardy aromatic herb with refreshing flavor, great for tea and cooking. Grows quickly and can spread, so container growing is recommended.",
+    "sunlight": "Partial shade to partial sun (4–6 hours)",
+    "watering": "Keep soil consistently moist",
+    "soil": "Well-drained potting soil",
+    "temperature": "15-25°C",
+    "difficulty": "Easy",
+    "category": "Both",
+    "growthTime": "10–14 days germination, 4–6 weeks to harvest",
+    "growthSteps": [
+      "Get mint seeds or healthy plant cuttings",
+      "Fill pot with moist potting soil",
+      "Press seeds lightly onto soil surface or insert cuttings",
+      "Cover pot with plastic wrap to retain moisture",
+      "Place in warm location with indirect light",
+      "Keep soil moist but not soggy",
+      "Remove cover once seedlings sprout",
+      "Begin harvesting leaves once plant is 4-6 inches tall"
+    ]
+  },
+  {
+    "name": "Spider Plant",
+    "description": "A popular indoor plant with long, striped leaves and small flower-like plantlets. Very hardy and produces baby plants naturally.",
+    "sunlight": "Bright indirect light",
+    "watering": "Water when top inch of soil is dry",
+    "soil": "Well-drained potting soil",
+    "temperature": "16-24°C",
+    "difficulty": "Easy",
+    "category": "Indoor",
+    "growthTime": "No germination, grows from plantlets in 1–2 weeks",
+    "growthSteps": [
+      "Obtain spider plant babies (plantlets) from a mature plant",
+      "Separate babies gently with small roots attached",
+      "Prepare small pot with moist potting soil",
+      "Plant babies at same depth as original, roots in soil",
+      "Place in bright, indirect light",
+      "Water gently to settle soil around roots",
+      "Keep soil consistently moist for first 2 weeks",
+      "Once established, maintain regular watering schedule"
+    ]
+  },
+  {
+    "name": "Lettuce",
+    "description": "A cool-season leafy vegetable that grows quickly. Perfect for container gardening and provides fresh salad leaves within weeks.",
+    "sunlight": "Partial sun (4–6 hours)",
+    "watering": "Regular light watering",
+    "soil": "Rich, well-drained soil",
+    "temperature": "10-20°C",
+    "difficulty": "Easy",
+    "category": "Outdoor",
+    "growthTime": "3–7 days germination, 4–6 weeks to harvest",
+    "growthSteps": [
+      "Choose loose-leaf or butter lettuce seeds",
+      "Prepare seed tray with moist soil",
+      "Sprinkle seeds thinly on soil surface",
+      "Press seeds gently and cover lightly with soil",
+      "Keep soil moist and place in cool, bright location",
+      "Thin seedlings to 6 inches apart once they're 2 inches tall",
+      "Transplant to larger container or garden bed",
+      "Start harvesting outer leaves when plant is 3-4 inches tall"
+    ]
+  },
+  {
+    "name": "Aloe Vera",
+    "description": "A succulent plant with medicinal gel inside leaves. Requires minimal care and water, perfect for sunny windowsills.",
+    "sunlight": "Bright light, full sun preferred",
+    "watering": "Water sparingly, let soil dry completely",
+    "soil": "Cactus or succulent soil mix",
+    "temperature": "18-27°C",
+    "difficulty": "Easy",
+    "category": "Indoor",
+    "growthTime": "No germination needed, established plants for best results",
+    "growthSteps": [
+      "Obtain aloe vera pup or cutting from mature plant",
+      "Let cutting dry for 2–3 days before planting",
+      "Prepare pot with cactus soil mix",
+      "Plant cutting 1–2 inches deep in soil",
+      "Do not water for first week to allow roots to develop",
+      "Place in bright, sunny location",
+      "Water lightly once a month during growing season",
+      "Harvest gel-filled leaves as needed for use"
+    ]
+  },
+  {
+    "name": "Chili Pepper",
+    "description": "A spicy vegetable plant that produces colorful peppers. Great for growing outdoors and provides fresh peppers for cooking.",
+    "sunlight": "Full sunlight (8+ hours)",
+    "watering": "Water when soil surface is dry",
+    "soil": "Nutrient-rich, well-drained soil",
+    "temperature": "21-30°C",
+    "difficulty": "Medium",
+    "category": "Outdoor",
+    "growthTime": "10–14 days germination, 2–3 months to first peppers",
+    "growthSteps": [
+      "Select quality chili pepper seeds suited to your climate",
+      "Start seeds indoors in seed tray with warm conditions",
+      "Plant seeds 1 cm deep in moist soil",
+      "Maintain consistent warmth and moisture for germination",
+      "Once seedlings are 3 inches tall, transplant to larger pots",
+      "Harden off seedlings by gradually exposing to outdoor conditions",
+      "Plant in garden in full sun once weather is warm",
+      "Water regularly and stake plants as they grow taller"
+    ]
+  },
+  {
+    "name": "Lavender",
+    "description": "A fragrant flowering plant with purple blooms and aromatic leaves. Attracts butterflies and bees to your garden.",
+    "sunlight": "Full sunlight (6–8 hours)",
+    "watering": "Low watering, drought tolerant once established",
+    "soil": "Well-drained, sandy soil",
+    "temperature": "15-28°C",
+    "difficulty": "Medium",
+    "category": "Outdoor",
+    "growthTime": "14–21 days germination, 2–3 months to first blooms",
+    "growthSteps": [
+      "Obtain lavender seeds or cuttings from existing plant",
+      "Fill seed tray with well-draining sandy soil mix",
+      "Place seeds on soil surface, press lightly, do not cover",
+      "Mist soil lightly and keep in warm location",
+      "Wait 2–3 weeks for seeds to germinate",
+      "Once seedlings have 2–3 leaves, transplant to larger pots",
+      "Harden off seedlings for outdoor planting",
+      "Plant in garden and water minimally once established"
+    ]
+  }
+]

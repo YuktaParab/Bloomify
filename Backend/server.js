@@ -10,6 +10,8 @@ let { spawn } = require("child_process");
 let https = require("https");
 let http = require("http");
 require('dotenv').config();  // Load environment variables
+let subscription = require("./subscription");  // Subscription management
+let ecommerce = require("./ecommerce");  // E-commerce management
 
 let app = express();
 app.use(cors());
@@ -112,6 +114,25 @@ app.post("/analyze-space", localRecep.single("image"), async (req, res) => {
       return res.status(400).json({ error: "No image uploaded" });
     }
 
+    const email = req.body.email;
+    if (!email) {
+      if (tempFilePath && fs.existsSync(tempFilePath)) fs.unlinkSync(tempFilePath);
+      return res.status(400).json({ error: "Email is required" });
+    }
+
+    // Check subscription access first
+    const accessStatus = await subscription.canUseSpaceAnalysis(email);
+    if (!accessStatus.allowed) {
+      if (tempFilePath && fs.existsSync(tempFilePath)) fs.unlinkSync(tempFilePath);
+      return res.status(403).json({ 
+        error: "Access denied",
+        message: accessStatus.reason === "trial_exhausted" 
+          ? "Free trial limit reached" 
+          : "Subscription required",
+        ...accessStatus
+      });
+    }
+
     tempFilePath = req.file.path;
     const pythonScript = path.join(__dirname, "ml_model", "analyze_space.py");
 
@@ -132,7 +153,7 @@ app.post("/analyze-space", localRecep.single("image"), async (req, res) => {
       errorOutput += data.toString();
     });
 
-    pythonProcess.on("close", (code) => {
+    pythonProcess.on("close", async (code) => {
       // Clean up temp file
       if (tempFilePath && fs.existsSync(tempFilePath)) {
         fs.unlinkSync(tempFilePath);
@@ -162,6 +183,11 @@ app.post("/analyze-space", localRecep.single("image"), async (req, res) => {
         // Check for other errors
         if (analysisResult.error) {
           return res.status(500).json(analysisResult);
+        }
+
+        // Deduct trial use for Beginner tier
+        if (accessStatus.tier === "Beginner") {
+          await subscription.deductSpaceAnalysisUse(email);
         }
         
         res.status(200).json(analysisResult);
@@ -451,6 +477,377 @@ app.delete("/reminders/:id", async (req, res) => {
     res.status(500).json({ error: "Error deleting reminder" });
   } finally {
     await client.close();
+  }
+});
+
+// ========== SUBSCRIPTION ENDPOINTS ==========
+
+// Get user subscription status
+app.get("/subscription/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    if (!email) {
+      return res.status(400).json({ error: "Email parameter is required" });
+    }
+    console.log(`Fetching subscription for email: ${email}`);
+    const userSubscription = await subscription.getUserSubscription(email);
+    console.log(`✓ Subscription fetched successfully for ${email}`);
+    res.status(200).json(userSubscription);
+  } catch (error) {
+    console.error("❌ Get subscription error:", error.message);
+    res.status(500).json({ 
+      error: "Error fetching subscription",
+      details: error.message 
+    });
+  }
+});
+
+// Check if user can use space analysis
+app.get("/check-space-analysis-access/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const accessStatus = await subscription.canUseSpaceAnalysis(email);
+    res.status(200).json(accessStatus);
+  } catch (error) {
+    console.error("Check space analysis access error:", error);
+    res.status(500).json({ error: "Error checking access" });
+  }
+});
+
+// Record space analysis use (call after successful analysis)
+app.post("/record-space-analysis-use/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    
+    // First check if user can use it
+    const accessStatus = await subscription.canUseSpaceAnalysis(email);
+    if (!accessStatus.allowed) {
+      return res.status(403).json({ error: "Access denied", ...accessStatus });
+    }
+
+    // If Beginner tier, deduct a use
+    if (accessStatus.tier === "Beginner") {
+      await subscription.deductSpaceAnalysisUse(email);
+    }
+
+    res.status(200).json({ message: "Space analysis use recorded", ...accessStatus });
+  } catch (error) {
+    console.error("Record space analysis use error:", error);
+    res.status(500).json({ error: "Error recording use" });
+  }
+});
+
+// Create Stripe payment session (upgrade to Advanced)
+app.post("/create-checkout-session", async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: "Email required" });
+
+    // TODO: Implement Stripe checkout session creation
+    // For now, simulate successful payment
+    await subscription.upgradeToAdvanced(email, "stripe_cus_" + Date.now(), 1);
+    
+    res.status(200).json({ 
+      message: "Subscription upgraded",
+      checkoutUrl: "/success" // In production, return Stripe checkout URL
+    });
+  } catch (error) {
+    console.error("Checkout session error:", error);
+    res.status(500).json({ error: "Error creating checkout session" });
+  }
+});
+
+// ========== E-COMMERCE ENDPOINTS ==========
+
+// Initialize products on first load
+ecommerce.initializeProducts().catch(err => console.error("Product initialization error:", err));
+
+// GET all pre-made products with filters
+app.get("/products", async (req, res) => {
+  try {
+    const filters = {
+      category: req.query.category,
+      search: req.query.search,
+      minPrice: req.query.minPrice ? parseFloat(req.query.minPrice) : undefined,
+      maxPrice: req.query.maxPrice ? parseFloat(req.query.maxPrice) : undefined
+    };
+    
+    const products = await ecommerce.getProducts(filters);
+    res.status(200).json(products);
+  } catch (error) {
+    console.error("Get products error:", error);
+    res.status(500).json({ error: "Error fetching products" });
+  }
+});
+
+// GET single product details
+app.get("/products/:id", async (req, res) => {
+  try {
+    const product = await ecommerce.getProductById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    res.status(200).json(product);
+  } catch (error) {
+    console.error("Get product error:", error);
+    res.status(500).json({ error: "Error fetching product" });
+  }
+});
+
+// GET all marketplace listings
+app.get("/marketplace", async (req, res) => {
+  try {
+    const filters = {
+      category: req.query.category,
+      search: req.query.search,
+      minPrice: req.query.minPrice ? parseFloat(req.query.minPrice) : undefined,
+      maxPrice: req.query.maxPrice ? parseFloat(req.query.maxPrice) : undefined
+    };
+    
+    const listings = await ecommerce.getMarketplaceListings(filters);
+    res.status(200).json(listings);
+  } catch (error) {
+    console.error("Get marketplace listings error:", error);
+    res.status(500).json({ error: "Error fetching marketplace listings" });
+  }
+});
+
+// POST create marketplace listing (seller)
+app.post("/marketplace", async (req, res) => {
+  try {
+    const { email } = req.query;
+    if (!email) {
+      return res.status(400).json({ error: "Email is required" });
+    }
+    
+    const { name, description, category, price, quantity, image } = req.body;
+    if (!name || !category || !price || !quantity) {
+      return res.status(400).json({ error: "Missing required fields: name, category, price, quantity" });
+    }
+    
+    const result = await ecommerce.createMarketplaceListing(email, {
+      name, description, category, price, quantity, image
+    });
+    
+    res.status(201).json({ success: true, listingId: result.insertedId });
+  } catch (error) {
+    console.error("Create marketplace listing error:", error);
+    res.status(500).json({ error: "Error creating marketplace listing" });
+  }
+});
+
+// GET seller's listings
+app.get("/seller-listings/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const listings = await ecommerce.getSellerListings(email);
+    res.status(200).json(listings);
+  } catch (error) {
+    console.error("Get seller listings error:", error);
+    res.status(500).json({ error: "Error fetching seller listings" });
+  }
+});
+
+// GET user's shopping cart
+app.get("/cart/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const cart = await ecommerce.getCart(email);
+    res.status(200).json(cart);
+  } catch (error) {
+    console.error("Get cart error:", error);
+    res.status(500).json({ error: "Error fetching cart" });
+  }
+});
+
+// POST add item to cart
+app.post("/cart/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const { productId, quantity, source } = req.body;
+    
+    if (!productId || !quantity) {
+      return res.status(400).json({ error: "productId and quantity are required" });
+    }
+    
+    const result = await ecommerce.addToCart(email, productId, quantity, source || "pre-made");
+    res.status(200).json(result);
+  } catch (error) {
+    console.error("Add to cart error:", error);
+    res.status(500).json({ error: "Error adding item to cart" });
+  }
+});
+
+// DELETE remove item from cart
+app.delete("/cart/:email/:productId", async (req, res) => {
+  try {
+    const { email, productId } = req.params;
+    const result = await ecommerce.removeFromCart(email, productId);
+    res.status(200).json(result);
+  } catch (error) {
+    console.error("Remove from cart error:", error);
+    res.status(500).json({ error: "Error removing item from cart" });
+  }
+});
+
+// PUT update cart item quantity
+app.put("/cart/:email/:productId", async (req, res) => {
+  try {
+    const { email, productId } = req.params;
+    const { quantity } = req.body;
+    
+    if (!quantity) {
+      return res.status(400).json({ error: "quantity is required" });
+    }
+    
+    const result = await ecommerce.updateCartQuantity(email, productId, quantity);
+    res.status(200).json(result);
+  } catch (error) {
+    console.error("Update cart quantity error:", error);
+    res.status(500).json({ error: "Error updating cart quantity" });
+  }
+});
+
+// DELETE clear entire cart
+app.delete("/cart/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const result = await ecommerce.clearCart(email);
+    res.status(200).json(result);
+  } catch (error) {
+    console.error("Clear cart error:", error);
+    res.status(500).json({ error: "Error clearing cart" });
+  }
+});
+
+// POST create order (checkout)
+app.post("/orders", async (req, res) => {
+  try {
+    const { userEmail, items, totalAmount, discountAmount, shippingAddress, paymentMethod } = req.body;
+    
+    if (!userEmail || !items || !totalAmount || !shippingAddress) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+    
+    // Check if user is premium member for discount
+    let discount = discountAmount || 0;
+    try {
+      const subStatus = await subscription.getUserSubscription(userEmail);
+      if (subStatus.tier === "Advanced") {
+        // 10% discount for Advanced members
+        discount = Math.round(totalAmount * 0.1 * 100) / 100;
+      }
+    } catch (subError) {
+      console.log("Subscription check skipped for order");
+    }
+    
+    const finalAmount = totalAmount - discount;
+    
+    const orderData = {
+      userEmail,
+      items,
+      totalAmount,
+      discountAmount: discount,
+      finalAmount,
+      shippingAddress,
+      paymentMethod: paymentMethod || "credit_card"
+    };
+    
+    const order = await ecommerce.createOrder(orderData);
+    
+    // Clear user's cart after successful order
+    await ecommerce.clearCart(userEmail);
+    
+    res.status(201).json(order);
+  } catch (error) {
+    console.error("Create order error:", error);
+    res.status(500).json({ error: "Error creating order" });
+  }
+});
+
+// GET user's orders
+app.get("/orders/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const orders = await ecommerce.getUserOrders(email);
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error("Get orders error:", error);
+    res.status(500).json({ error: "Error fetching orders" });
+  }
+});
+
+// GET order details
+app.get("/order/:orderId", async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const order = await ecommerce.getOrderById(orderId);
+    if (!order) {
+      return res.status(404).json({ error: "Order not found" });
+    }
+    res.status(200).json(order);
+  } catch (error) {
+    console.error("Get order error:", error);
+    res.status(500).json({ error: "Error fetching order" });
+  }
+});
+
+// PATCH update order status (admin/seller)
+app.patch("/order/:orderId", async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const { status } = req.body;
+    
+    if (!status) {
+      return res.status(400).json({ error: "status is required" });
+    }
+    
+    const result = await ecommerce.updateOrderStatus(orderId, status);
+    res.status(200).json(result);
+  } catch (error) {
+    console.error("Update order status error:", error);
+    res.status(500).json({ error: "Error updating order status" });
+  }
+});
+
+// POST create seller profile
+app.post("/sellers", async (req, res) => {
+  try {
+    const { email } = req.query;
+    if (!email) {
+      return res.status(400).json({ error: "Email is required" });
+    }
+    
+    const { storeName, description, phone, address } = req.body;
+    if (!storeName) {
+      return res.status(400).json({ error: "Store name is required" });
+    }
+    
+    const result = await ecommerce.createSellerProfile(email, {
+      storeName, description, phone, address
+    });
+    
+    res.status(201).json(result);
+  } catch (error) {
+    console.error("Create seller profile error:", error);
+    res.status(500).json({ error: "Error creating seller profile" });
+  }
+});
+
+// GET seller profile
+app.get("/sellers/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const seller = await ecommerce.getSellerProfile(email);
+    
+    if (!seller) {
+      return res.status(404).json({ error: "Seller profile not found" });
+    }
+    
+    res.status(200).json(seller);
+  } catch (error) {
+    console.error("Get seller profile error:", error);
+    res.status(500).json({ error: "Error fetching seller profile" });
   }
 });
 

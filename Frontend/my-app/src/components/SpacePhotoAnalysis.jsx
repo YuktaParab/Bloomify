@@ -1,9 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { loadPlantData, getPlantsBySunlight } from "../utils/loadPlantData";
 import { motion, AnimatePresence } from "framer-motion";
-import { Camera, Upload, PenTool, Leaf, AlertTriangle, CheckCircle2, RotateCcw, X, Sprout, Sun, Droplets, BarChart3 } from "lucide-react";
+import { Camera, Upload, PenTool, Leaf, AlertTriangle, CheckCircle2, RotateCcw, X, Sprout, Sun, Droplets, BarChart3, Lock } from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import AnimatedButton from "./ui/AnimatedButton";
+import UpgradeModal from "./UpgradeModal";
+import { auth } from "./Firebase";
+
 const SpacePhotoAnalysis = () => {
   const [image, setImage] = useState(null);
   const [imageFile, setImageFile] = useState(null);
@@ -20,9 +23,63 @@ const SpacePhotoAnalysis = () => {
   const [cameraActive, setCameraActive] = useState(false);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
   const [plantData, setPlantData] = useState([]);
+  const [user, setUser] = useState(null);
+  const [subscription, setSubscription] = useState(null);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [subscriptionLoading, setSubscriptionLoading] = useState(true);
   const videoRef = useRef(null);
   const streamRef = useRef(null);
   const dropRef = useRef(null);
+
+  // Get user and subscription data
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
+
+  const fetchSubscriptionStatus = useCallback(async () => {
+    try {
+      if (!user?.email) {
+        console.log("No user email available yet");
+        return;
+      }
+      
+      const url = `http://localhost:3000/subscription/${user.email}`;
+      console.log("Fetching subscription from:", url);
+      
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (!response.ok) {
+        console.error("❌ Backend error:", data);
+        throw new Error(data.details || data.error || "Failed to fetch subscription");
+      }
+      
+      console.log("✓ Subscription data received:", data);
+      setSubscription(data);
+      setSubscriptionLoading(false);
+    } catch (error) {
+      console.error("❌ Error fetching subscription:", error.message);
+      // Set a default subscription to prevent blank state
+      setSubscription({
+        email: user?.email,
+        tier: "Beginner",
+        subscriptionStatus: "trial",
+        trialUsesRemaining: 10,
+        canAccessSpaceAnalysis: true,
+        daysUntilReset: 30
+      });
+      setSubscriptionLoading(false);
+    }
+  }, [user?.email]);
+
+  useEffect(() => {
+    if (user?.email) {
+      fetchSubscriptionStatus();
+    }
+  }, [user, fetchSubscriptionStatus]);
 
   useEffect(() => {
     loadPlantData().then(setPlantData).catch(console.error);
@@ -154,6 +211,25 @@ const SpacePhotoAnalysis = () => {
   };
 
   const analyzeImage = async () => {
+    // Wait for subscription to load first
+    if (subscriptionLoading) {
+      alert("Loading subscription information... Please wait.");
+      return;
+    }
+
+    if (!subscription) {
+      alert("⚠️ Unable to connect to server. Make sure the backend is running on http://localhost:3000");
+      return;
+    }
+
+    // Check subscription access for photo modes
+    if (inputMode !== "manual") {
+      if (!subscription?.canAccessSpaceAnalysis) {
+        setShowUpgradeModal(true);
+        return;
+      }
+    }
+
     if (inputMode === "manual") {
       // Manual input mode - validate form
       if (!manualInputs.spaceSize || !manualInputs.sunlight || !manualInputs.location) {
@@ -176,6 +252,7 @@ const SpacePhotoAnalysis = () => {
       // Send image to backend for analysis
       const formData = new FormData();
       formData.append("image", imageFile);
+      formData.append("email", user.email);
       
       console.log("📤 Sending request to backend:", "http://localhost:3000/analyze-space");
       
@@ -190,6 +267,16 @@ const SpacePhotoAnalysis = () => {
       console.log("📊 Response data:", result);
       
       if (!response.ok) {
+        // Check if access was denied
+        if (response.status === 403) {
+          if (result.reason === "trial_exhausted") {
+            setShowUpgradeModal(true);
+            setAnalyzing(false);
+            return;
+          }
+          throw new Error(result.message || "Access denied");
+        }
+
         // Handle person detection or other errors
         if (result.error === "person_detected") {
           setTimeout(() => {
@@ -244,6 +331,9 @@ const SpacePhotoAnalysis = () => {
             console.log(`🌿 Space Green Score: ${result.space_score}/100`);
             console.log(`📊 ${result.analysis_summary}`);
           }
+          
+          // Refresh subscription status to show updated trial uses
+          fetchSubscriptionStatus();
         }, 700);
         return; // Exit successfully
       }
@@ -285,6 +375,41 @@ const SpacePhotoAnalysis = () => {
   return (
     <PageContainer>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Subscription Status Alert */}
+        {subscription && !subscriptionLoading && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`mb-6 p-4 rounded-lg border flex items-center justify-between text-sm ${
+              subscription.tier === "Advanced" && subscription.subscriptionStatus === "active"
+                ? "bg-green-50 border-green-200"
+                : "bg-blue-50 border-blue-200"
+            }`}
+          >
+            <div className="flex items-center gap-3">
+              <Lock size={18} className={subscription.tier === "Advanced" ? "text-green-600" : "text-blue-600"} />
+              <div>
+                {subscription.tier === "Advanced" && subscription.subscriptionStatus === "active" ? (
+                  <p className="font-semibold text-green-900">✓ Premium Subscriber - Unlimited Space Analysis</p>
+                ) : (
+                  <p className="font-semibold text-blue-900">
+                    Free Trial - <span className="text-lg">{subscription.trialUsesRemaining}/10</span> Space Analysis uses remaining
+                  </p>
+                )}
+              </div>
+            </div>
+            {subscription.tier === "Beginner" && (
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                onClick={() => window.location.href = "/pricing"}
+                className="px-4 py-2 bg-linear-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-lg whitespace-nowrap"
+              >
+                Upgrade
+              </motion.button>
+            )}
+          </motion.div>
+        )}
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -459,8 +584,12 @@ const SpacePhotoAnalysis = () => {
           transition={{ delay: 0.2 }}
           className="text-center mb-8"
         >
-          <AnimatedButton size="lg" onClick={analyzeImage} disabled={analyzing}>
-            {analyzing ? (
+          <AnimatedButton size="lg" onClick={analyzeImage} disabled={analyzing || subscriptionLoading}>
+            {subscriptionLoading ? (
+              <span className="flex items-center gap-2">
+                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Loading subscription...
+              </span>
+            ) : analyzing ? (
               <span className="flex items-center gap-2">
                 <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Analyzing...
               </span>
@@ -549,6 +678,14 @@ const SpacePhotoAnalysis = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Upgrade Modal */}
+      <UpgradeModal
+        isOpen={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        usesRemaining={subscription?.trialUsesRemaining}
+        resetDate={subscription?.trialResetDate}
+      />
     </PageContainer>
   );
 };

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Leaf, BookOpen, Sprout, Star,
-  ArrowRight, Sparkles, TreePine, Sun, Droplets, Play
+  ArrowRight, Sparkles, TreePine, Sun, Droplets, Play, ShoppingCart, Store
 } from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import GlassCard from "./ui/GlassCard";
@@ -69,6 +69,7 @@ export default function Home() {
       desc: "AI-powered recommendations to help you grow healthier plants with eco-friendly practices.",
       gradient: "from-emerald-500 to-green-600",
       glow: "rgba(16, 185, 129, 0.15)",
+      path: "/plant-guide",
     },
     {
       icon: <Sun className="w-6 h-6 text-white" />,
@@ -77,6 +78,7 @@ export default function Home() {
       desc: "Upload photos of your space and get personalized plant suggestions based on light and climate.",
       gradient: "from-green-500 to-teal-500",
       glow: "rgba(34, 197, 94, 0.15)",
+      path: "/space-analysis",
     },
     {
       icon: <Droplets className="w-6 h-6 text-white" />,
@@ -85,6 +87,7 @@ export default function Home() {
       desc: "Never forget to water your plants with intelligent care schedules and seasonal guidance.",
       gradient: "from-teal-500 to-cyan-500",
       glow: "rgba(20, 184, 166, 0.15)",
+      path: "/care-guide",
     },
     {
       icon: <TreePine className="w-6 h-6 text-white" />,
@@ -93,6 +96,7 @@ export default function Home() {
       desc: "Browse 100+ plants with detailed care instructions, growth tips, and companion planting info.",
       gradient: "from-cyan-500 to-emerald-500",
       glow: "rgba(6, 182, 212, 0.15)",
+      path: "/plant-catalog",
     },
     {
       icon: <Leaf className="w-6 h-6 text-white" />,
@@ -101,6 +105,7 @@ export default function Home() {
       desc: "Track your plant collection, monitor growth progress, and manage your personal garden.",
       gradient: "from-emerald-400 to-green-500",
       glow: "rgba(52, 211, 153, 0.15)",
+      path: "/my-plants",
     },
     {
       icon: <Sparkles className="w-6 h-6 text-white" />,
@@ -109,6 +114,25 @@ export default function Home() {
       desc: "Curated beginner-friendly plant kits to kickstart your gardening journey with confidence.",
       gradient: "from-green-400 to-teal-500",
       glow: "rgba(74, 222, 128, 0.15)",
+      path: "/starter-kits",
+    },
+    {
+      icon: <ShoppingCart className="w-6 h-6 text-white" />,
+      illustration: "🛒",
+      title: "Plant Shop",
+      desc: "Browse and buy quality plants, seeds, soil, tools, and gardening supplies. Free shipping available!",
+      gradient: "from-amber-500 to-orange-500",
+      glow: "rgba(245, 158, 11, 0.15)",
+      path: "/products-shop",
+    },
+    {
+      icon: <Store className="w-6 h-6 text-white" />,
+      illustration: "🏪",
+      title: "Sell Your Plants",
+      desc: "Start your own plant marketplace store and sell cuttings, seeds, or surplus plants to fellow gardeners.",
+      gradient: "from-rose-500 to-pink-500",
+      glow: "rgba(244, 63, 94, 0.15)",
+      path: "/seller-dashboard",
     },
   ];
 
@@ -259,7 +283,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.07 }}
                 whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
-                className="group"
+                className="group cursor-pointer"
+                onClick={() => item.path && navigate(item.path)}
               >
                 <div
                   className="relative h-full min-h-[220px] rounded-2xl border border-(--border) bg-(--card) backdrop-blur-sm overflow-hidden transition-all duration-300 group-hover:border-(--primary)/30 group-hover:shadow-2xl"

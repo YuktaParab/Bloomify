@@ -1,22 +1,91 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { loadPlantData } from "../utils/loadPlantData";
+import { trackActivity } from "../utils/activityTracker";
 import { auth } from "./Firebase";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Sun, Moon, Cloud, Filter, Plus, X, Droplets, Thermometer, BarChart3, Home, Sprout, Leaf } from "lucide-react";
+import { Search, Sun, Moon, Cloud, Filter, Plus, X, Droplets, Thermometer, BarChart3, Home, Sprout, Leaf, Volume2, Square } from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import AnimatedButton from "./ui/AnimatedButton";
 
 const PlantDetails = () => {
-  const navigate = useNavigate();
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [search, setSearch] = useState("");
   const [sunFilter, setSunFilter] = useState("");
   const [diffFilter, setDiffFilter] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
+  const [sortBy, setSortBy] = useState("default");
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [toast, setToast] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("en-US");
+  const [speakingStep, setSpeakingStep] = useState(null);
+
+  const languages = [
+    { code: "en-US", name: "English (US)" },
+    { code: "en-GB", name: "English (UK)" },
+    { code: "es-ES", name: "Spanish" },
+    { code: "fr-FR", name: "French" },
+    { code: "de-DE", name: "German" },
+    { code: "it-IT", name: "Italian" },
+    { code: "pt-BR", name: "Portuguese" },
+    { code: "ja-JP", name: "Japanese" },
+    { code: "zh-CN", name: "Chinese (Simplified)" },
+    { code: "ru-RU", name: "Russian" },
+    { code: "hi-IN", name: "Hindi" },
+  ];
+
+  const handleSpeak = (text, stepIndex) => {
+    if (speakingStep === stepIndex) {
+      window.speechSynthesis.cancel();
+      setSpeakingStep(null);
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = selectedLanguage;
+    utterance.rate = 0.95;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    utterance.onstart = () => setSpeakingStep(stepIndex);
+    utterance.onend = () => setSpeakingStep(null);
+    utterance.onerror = () => setSpeakingStep(null);
+
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // Generate growth steps dynamically based on plant characteristics
+  const generateGrowthSteps = (plant) => {
+    const steps = [];
+    const difficulty = plant.difficulty?.toLowerCase() || "easy";
+    const sunlight = plant.sunlight?.toLowerCase() || "medium";
+    const watering = plant.watering?.toLowerCase() || "weekly";
+
+    steps.push(`Start with high-quality seeds or healthy cuttings of ${plant.plant_name}.`);
+
+    if (difficulty === "easy") {
+      steps.push("Fill a pot with well-draining potting soil mixed with compost.");
+    } else if (difficulty === "medium") {
+      steps.push("Prepare soil mix specific to plant type for better growth.");
+    } else {
+      steps.push("Use specialized soil blend with peat, perlite, and nutrients for optimal results.");
+    }
+
+    steps.push(`Plant seeds at appropriate depth based on size, typically half an inch.`);
+    steps.push(`Keep soil consistently moist but not waterlogged for germination.`);
+    steps.push(`Place in a location with ${sunlight} sunlight (${plant.light_hours || 6}+ hours).`);
+    steps.push(`Wait for seedlings to emerge, usually within 1-3 weeks.`);
+    steps.push(`Once sprouted, thin seedlings to prevent overcrowding and competition.`);
+    steps.push(
+      `Water ${watering} and maintain ${plant.humidity || "moderate"} humidity. Monitor for pests and diseases.`
+    );
+    steps.push(
+      `After 4-8 weeks, transfer to larger pots or garden bed. Ideal temperature: ${plant.temperature_min_c}°C - ${plant.temperature_max_c}°C.`
+    );
+
+    return steps;
+  };
 
   useEffect(() => {
     loadPlantData().then((data) => {
@@ -27,16 +96,38 @@ const PlantDetails = () => {
 
   useEffect(() => {
     let result = plants;
+    
+    // Apply filters
     if (search) {
       result = result.filter((p) =>
         p.plant_name.toLowerCase().includes(search.toLowerCase())
       );
+      // Track search activity
+      trackActivity("search", { searchTerm: search });
     }
     if (sunFilter) result = result.filter((p) => p.sunlight === sunFilter);
     if (diffFilter) result = result.filter((p) => p.difficulty === diffFilter);
     if (typeFilter) result = result.filter((p) => p.indoor_outdoor === typeFilter);
+
+    // Apply sorting
+    if (sortBy === "alphabetical") {
+      result = result.sort((a, b) =>
+        a.plant_name.localeCompare(b.plant_name)
+      );
+    } else if (sortBy === "difficulty-easy") {
+      const diffOrder = { "Easy": 1, "Medium": 2, "Hard": 3 };
+      result = result.sort(
+        (a, b) => (diffOrder[a.difficulty] || 0) - (diffOrder[b.difficulty] || 0)
+      );
+    } else if (sortBy === "difficulty-hard") {
+      const diffOrder = { "Easy": 1, "Medium": 2, "Hard": 3 };
+      result = result.sort(
+        (a, b) => (diffOrder[b.difficulty] || 0) - (diffOrder[a.difficulty] || 0)
+      );
+    }
+
     setFilteredPlants(result);
-  }, [search, sunFilter, diffFilter, typeFilter, plants]);
+  }, [search, sunFilter, diffFilter, typeFilter, sortBy, plants]);
 
   const addToMyPlants = async (plant) => {
     const user = auth.currentUser;
@@ -45,6 +136,12 @@ const PlantDetails = () => {
       setTimeout(() => setToast(""), 3000);
       return;
     }
+
+    // Track selection activity
+    trackActivity("select", {
+      plantName: plant.plant_name,
+      category: plant.type || "general",
+    });
 
     try {
       const res = await fetch("http://localhost:3000/my-plants", {
@@ -116,7 +213,7 @@ const PlantDetails = () => {
           transition={{ delay: 0.1 }}
           className="bg-(--card) border border-(--border) rounded-2xl p-5 mb-8 shadow-sm"
         >
-          <div className="flex flex-wrap gap-3 items-center">
+          <div className="flex flex-wrap gap-3 items-center mb-3">
             <div className="relative flex-1 min-w-50">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-(--text-muted)" />
               <input
@@ -146,6 +243,18 @@ const PlantDetails = () => {
               <option value="Both">Both</option>
             </select>
           </div>
+          
+          {/* Sorting Section */}
+          <div className="flex flex-wrap gap-3 items-center">
+            <label className="text-sm font-medium text-(--text-secondary)">Sort by:</label>
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className={selectStyle}>
+              <option value="default">Default</option>
+              <option value="alphabetical">Alphabetically A-Z</option>
+              <option value="difficulty-easy">Easiest First</option>
+              <option value="difficulty-hard">Most Challenging</option>
+            </select>
+          </div>
+          
           <p className="text-xs text-(--text-muted) mt-3">Showing {filteredPlants.length} of {plants.length} plants</p>
         </motion.div>
 
@@ -158,7 +267,14 @@ const PlantDetails = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(idx * 0.03, 0.5) }}
               whileHover={{ y: -6, boxShadow: "0 12px 40px rgba(76,175,80,0.15)" }}
-              onClick={() => setSelectedPlant(plant)}
+              onClick={() => {
+                setSelectedPlant(plant);
+                // Track view activity
+                trackActivity("view", {
+                  plantName: plant.plant_name,
+                  category: plant.type || "general",
+                });
+              }}
               className="bg-(--card) border border-(--border) rounded-2xl p-5 cursor-pointer transition-all group relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-linear-to-br from-(--primary)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -251,6 +367,63 @@ const PlantDetails = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Growth Guide with Voice Instructions */}
+              {selectedPlant && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 rounded-2xl border border-(--border) bg-(--bg-alt)"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-base font-bold text-(--text) flex items-center gap-2">
+                      <Sprout className="w-5 h-5" /> How to Grow {selectedPlant.plant_name}
+                    </h3>
+                    <select
+                      value={selectedLanguage}
+                      onChange={(e) => setSelectedLanguage(e.target.value)}
+                      className="text-xs px-2 py-1 rounded-lg bg-(--card) border border-(--border) text-(--text) cursor-pointer"
+                    >
+                      {languages.map((lang) => (
+                        <option key={lang.code} value={lang.code}>
+                          {lang.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
+                    {generateGrowthSteps(selectedPlant).map((step, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-start gap-3 p-3 rounded-lg bg-(--card) border border-(--border) hover:border-(--primary)/50 transition-colors group"
+                      >
+                        <div className="shrink-0 w-6 h-6 rounded-full bg-(--primary)/20 text-(--primary) flex items-center justify-center text-xs font-bold">
+                          {idx + 1}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs text-(--text) leading-relaxed">{step}</p>
+                        </div>
+                        <button
+                          onClick={() => handleSpeak(step, idx)}
+                          className={`shrink-0 p-2 rounded-lg transition-all ${
+                            speakingStep === idx
+                              ? "bg-red-500 text-white"
+                              : "bg-(--bg-alt) text-(--text-muted) hover:text-(--primary) hover:bg-(--card)"
+                          }`}
+                          title={speakingStep === idx ? "Stop" : "Listen"}
+                        >
+                          {speakingStep === idx ? (
+                            <Square className="w-4 h-4" />
+                          ) : (
+                            <Volume2 className="w-4 h-4" />
+                          )}
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
               <div className="flex gap-3">
                 <AnimatedButton size="md" className="flex-1" onClick={() => addToMyPlants(selectedPlant)}>
