@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Sun, Moon, Menu, X, User, LogOut, Activity, ShoppingCart, Store } from "lucide-react";
+import { Leaf, Sun, Moon, Menu, X, User, LogOut, Activity, ShoppingCart, Store, ChevronRight, Users } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 import { auth } from "../Firebase";
 import { signOut } from "firebase/auth";
@@ -12,7 +12,16 @@ const navItems = [
   { path: "/plant-catalog", label: "Plant Catalog" },
   { path: "/my-plants", label: "My Plants" },
   { path: "/care-guide", label: "Care Guide" },
-  { path: "/products-shop", label: "Shop", icon: ShoppingCart },
+  { path: "/community", label: "Community", icon: Users },
+  { 
+    label: "Shop", 
+    icon: ShoppingCart,
+    path: "/products-shop",
+    dropdown: [
+      { path: "/products-shop", label: "Featured Products", state: { tab: "pre-made" } },
+      { path: "/products-shop", label: "Marketplace", state: { tab: "marketplace" } }
+    ]
+  },
   { path: "/seller-dashboard", label: "Sell", icon: Store },
 ];
 
@@ -78,7 +87,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-xl bg-(--glass-bg) shadow-lg border-b border-(--glass-border)"
+          ? "glass-panel shadow-premium border-b border-(--border-light)"
           : "bg-transparent"
       }`}
       style={{ height: "var(--nav-height)" }}
@@ -103,6 +112,49 @@ export default function Navbar() {
         <div className="hidden md:flex flex-1 items-center justify-center gap-8 lg:gap-12">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path || (item.path === "/" && location.pathname === "/home");
+            
+            if (item.dropdown) {
+              return (
+                <div key={item.label} className="relative group">
+                  <motion.button
+                    onClick={() => navigate(item.path, { state: item.dropdown[0].state })}
+                    className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-colors duration-200 flex items-center gap-2 ${
+                      isActive
+                        ? "text-(--primary)"
+                        : "text-(--text-secondary) hover:text-(--text)"
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.icon && <item.icon className="w-4 h-4" />}
+                    {item.label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-underline"
+                        className="absolute bottom-0 left-2 right-2 h-0.5 bg-(--primary) rounded-full"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </motion.button>
+                  {/* Dropdown menu */}
+                  <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 rounded-2xl border border-(--border) glass-panel shadow-premium overflow-hidden z-50">
+                    <div className="p-2 flex flex-col gap-1">
+                      {item.dropdown.map((subItem) => (
+                        <button
+                          key={subItem.label}
+                          onClick={() => navigate(subItem.path, { state: subItem.state })}
+                          className="w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-(--text-secondary) hover:text-(--primary) hover:bg-(--bg-alt) transition-all flex items-center justify-between group/item"
+                        >
+                          {subItem.label}
+                          <ChevronRight className="w-4 h-4 opacity-0 group-hover/item:opacity-100 transform translate-x-[-4px] group-hover/item:translate-x-0 transition-all" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <motion.button
                 key={item.path}
@@ -128,9 +180,9 @@ export default function Navbar() {
             );
           })}
         </div>
-
+ 
         {/* Actions — extreme right */}
-        <div className="flex items-center gap-3 ml-auto flex-shrink-0">
+        <div className="flex items-center gap-4 ml-auto flex-shrink-0">
           {/* Shopping Cart Icon */}
           <motion.button
             onClick={() => navigate("/shopping-cart")}
@@ -183,7 +235,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    className="absolute right-0 mt-2 w-48 rounded-xl border border-(--border) backdrop-blur-xl bg-(--glass-bg) shadow-lg overflow-hidden z-50"
+                    className="absolute right-0 mt-2 w-56 rounded-2xl border border-(--border) glass-panel shadow-premium overflow-hidden z-50"
                   >
                     <div className="p-3">
                       {/* View Profile */}
@@ -270,6 +322,50 @@ export default function Navbar() {
             <div className="px-10 py-4 flex flex-col gap-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
+                
+                if (item.dropdown) {
+                  return (
+                    <div key={item.label} className="flex flex-col mb-1 group">
+                      <motion.button
+                        onClick={() => {
+                          navigate(item.path, { state: item.dropdown[0].state });
+                          setMobileOpen(false);
+                        }}
+                        whileTap={{ scale: 0.97 }}
+                        className={`text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between gap-3 ${
+                          isActive
+                            ? "bg-(--primary) text-white"
+                            : "text-(--text-secondary) hover:bg-(--bg-alt)"
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          {item.icon && <item.icon className="w-4 h-4" />}
+                          {item.label}
+                        </div>
+                      </motion.button>
+                      <div className="flex flex-col pl-4 mt-1 border-l border-(--border) ml-6 gap-1">
+                        {item.dropdown.map((subItem) => (
+                          <motion.button
+                            key={subItem.label}
+                            onClick={() => {
+                              navigate(subItem.path, { state: subItem.state });
+                              setMobileOpen(false);
+                            }}
+                            whileTap={{ scale: 0.97 }}
+                            className={`text-left px-4 py-2 rounded-lg text-sm transition-colors ${
+                              isActive && location.state?.tab === subItem.state.tab
+                                ? "text-(--primary) font-semibold"
+                                : "text-(--text-secondary) hover:text-(--text) hover:bg-(--bg-alt)"
+                            }`}
+                          >
+                            {subItem.label}
+                          </motion.button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <motion.button
                     key={item.path}

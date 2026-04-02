@@ -139,7 +139,7 @@ app.post("/analyze-space", localRecep.single("image"), async (req, res) => {
     console.log("📸 Analyzing image:", tempFilePath);
 
     // Call Python script for analysis - use system Python with cv2 installed
-    const pythonPath = process.env.PYTHON_PATH || "C:\\Users\\yukta\\AppData\\Local\\Programs\\Python\\Python313\\python.exe";
+    const pythonPath = process.env.PYTHON_PATH || "python";
     const pythonProcess = spawn(pythonPath, [pythonScript, tempFilePath]);
 
     let result = "";
@@ -851,6 +851,6 @@ app.get("/sellers/:email", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-    console.log("express is readyy");
-});
+app.listen(3001, () => {
+    console.log("Bloomify backend running on port 3001");
+});

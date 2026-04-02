@@ -34,7 +34,7 @@ export default function UserActivity() {
   const loadUserActivity = async (userId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/activity/${userId}`,
+        `http://localhost:3001/api/activity/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${await auth.currentUser.getIdToken()}`,

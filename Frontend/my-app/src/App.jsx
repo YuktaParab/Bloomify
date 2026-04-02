@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "./context/ThemeContext";
+import { CartProvider } from "./context/CartContext";
 
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -24,6 +25,7 @@ import Checkout from "./components/Checkout";
 import OrderHistory from "./components/OrderHistory";
 import SellerDashboard from "./components/SellerDashboard";
 import CreateListing from "./components/CreateListing";
+import Community from "./components/Community";
 
 function AppRoutes() {
   const location = useLocation();
@@ -78,6 +80,9 @@ function AppRoutes() {
       <Route path="/seller-dashboard" element={<SellerDashboard />} />
       <Route path="/create-listing" element={<CreateListing />} />
 
+      {/* Community */}
+      <Route path="/community" element={<Community />} />
+
       {/* Redirect Unknown Routes */}
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
@@ -88,7 +93,9 @@ function AppRoutes() {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppRoutes />
+      <CartProvider>
+        <AppRoutes />
+      </CartProvider>
     </ThemeProvider>
   );
 }

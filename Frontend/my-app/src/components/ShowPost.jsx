@@ -16,7 +16,7 @@ function ShowPost(props) {
 
   const fetchFiles = () => {
     axios
-      .get("http://localhost:3000/files")
+      .get("http://localhost:3001/files")
       .then((response) => {
         setFiles(response.data);
       })
@@ -27,7 +27,7 @@ function ShowPost(props) {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/delete/${id}`)
+      .delete(`http://localhost:3001/delete/${id}`)
       .then(() => {
         fetchFiles();
       })

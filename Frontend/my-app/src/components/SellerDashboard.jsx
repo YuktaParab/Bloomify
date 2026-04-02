@@ -29,7 +29,7 @@ export default function SellerDashboard() {
 
   const checkSellerStatus = async (email) => {
     try {
-      const response = await fetch(`http://localhost:3000/sellers/${email}`);
+      const response = await fetch(`http://localhost:3001/sellers/${email}`);
       if (response.ok) {
         const seller = await response.json();
         setIsSeller(true);
@@ -45,7 +45,7 @@ export default function SellerDashboard() {
 
   const fetchListings = async (email) => {
     try {
-      const response = await fetch(`http://localhost:3000/seller-listings/${email}`);
+      const response = await fetch(`http://localhost:3001/seller-listings/${email}`);
       if (response.ok) {
         const data = await response.json();
         setListings(data || []);
@@ -60,7 +60,7 @@ export default function SellerDashboard() {
     if (!user || !storeName) return;
 
     try {
-      const response = await fetch(`http://localhost:3000/sellers?email=${user.email}`, {
+      const response = await fetch(`http://localhost:3001/sellers?email=${user.email}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -88,7 +88,7 @@ export default function SellerDashboard() {
     try {
       // Note: We need a delete endpoint - for now showing UI
       alert("Delete functionality coming soon");
-      // await fetch(`http://localhost:3000/marketplace/${listingId}`, { method: "DELETE" });
+      // await fetch(`http://localhost:3001/marketplace/${listingId}`, { method: "DELETE" });
       // await fetchListings(user.email);
     } catch (error) {
       console.error("Error deleting listing:", error);

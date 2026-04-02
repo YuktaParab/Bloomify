@@ -14,7 +14,7 @@ function SearchUser(){
     if (!username.trim()) return;
 
     axios
-      .get(`http://localhost:3000/files?username=${username}`)
+      .get(`http://localhost:3001/files?username=${username}`)
       .then((response) => {
         setSearchResults(response.data);
         setError("");

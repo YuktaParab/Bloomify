@@ -63,7 +63,7 @@ export default function CreateListing() {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:3000/marketplace?email=${user.email}`,
+        `http://localhost:3001/marketplace?email=${user.email}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

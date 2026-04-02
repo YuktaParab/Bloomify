@@ -1,19 +1,24 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { loadPlantData, getPlantsBySunlight } from "../utils/loadPlantData";
 import { motion, AnimatePresence } from "framer-motion";
-import { Camera, Upload, PenTool, Leaf, AlertTriangle, CheckCircle2, RotateCcw, X, Sprout, Sun, Droplets, BarChart3, Lock } from "lucide-react";
+import { 
+  Camera, Upload, PenTool, Leaf, AlertTriangle, CheckCircle2, RotateCcw, 
+  X, Sprout, Sun, Droplets, BarChart3, Lock, Sparkles, Wand2, ArrowRight 
+} from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import AnimatedButton from "./ui/AnimatedButton";
 import UpgradeModal from "./UpgradeModal";
 import { auth } from "./Firebase";
+import { useNavigate } from "react-router-dom";
 
 const SpacePhotoAnalysis = () => {
+  const navigate = useNavigate();
   const [image, setImage] = useState(null);
   const [imageFile, setImageFile] = useState(null);
   const [dragOver, setDragOver] = useState(false);
   const [recommendations, setRecommendations] = useState([]);
   const [analyzing, setAnalyzing] = useState(false);
-  const [inputMode, setInputMode] = useState("capture"); // "capture", "upload", or "manual"
+  const [inputMode, setInputMode] = useState("capture"); 
   const [manualInputs, setManualInputs] = useState({
     spaceSize: "",
     sunlight: "",
@@ -29,9 +34,7 @@ const SpacePhotoAnalysis = () => {
   const [subscriptionLoading, setSubscriptionLoading] = useState(true);
   const videoRef = useRef(null);
   const streamRef = useRef(null);
-  const dropRef = useRef(null);
 
-  // Get user and subscription data
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
@@ -41,93 +44,49 @@ const SpacePhotoAnalysis = () => {
 
   const fetchSubscriptionStatus = useCallback(async () => {
     try {
-      if (!user?.email) {
-        console.log("No user email available yet");
-        return;
-      }
-      
-      const url = `http://localhost:3000/subscription/${user.email}`;
-      console.log("Fetching subscription from:", url);
-      
+      if (!user?.email) return;
+      const url = `http://localhost:3001/subscription/${user.email}`;
       const response = await fetch(url);
       const data = await response.json();
-      
-      if (!response.ok) {
-        console.error("❌ Backend error:", data);
-        throw new Error(data.details || data.error || "Failed to fetch subscription");
+      if (response.ok) {
+        setSubscription(data);
       }
-      
-      console.log("✓ Subscription data received:", data);
-      setSubscription(data);
       setSubscriptionLoading(false);
     } catch (error) {
-      console.error("❌ Error fetching subscription:", error.message);
-      // Set a default subscription to prevent blank state
       setSubscription({
         email: user?.email,
         tier: "Beginner",
         subscriptionStatus: "trial",
         trialUsesRemaining: 10,
-        canAccessSpaceAnalysis: true,
-        daysUntilReset: 30
+        canAccessSpaceAnalysis: true
       });
       setSubscriptionLoading(false);
     }
   }, [user?.email]);
 
   useEffect(() => {
-    if (user?.email) {
-      fetchSubscriptionStatus();
-    }
+    if (user?.email) fetchSubscriptionStatus();
   }, [user, fetchSubscriptionStatus]);
 
   useEffect(() => {
     loadPlantData().then(setPlantData).catch(console.error);
   }, []);
 
-  useEffect(() => {
-    return () => {
-      if (image) URL.revokeObjectURL(image);
-      stopCamera();
-    };
-  }, [image]);
-
   const startCamera = async () => {
     try {
-      console.log("🎥 Requesting camera access...");
       const stream = await navigator.mediaDevices.getUserMedia({ 
-        video: { 
-          facingMode: "environment", // Use back camera on mobile
-          width: { ideal: 1280 },
-          height: { ideal: 720 }
-        } 
+        video: { facingMode: "environment", width: { ideal: 1280 }, height: { ideal: 720 } } 
       });
-      
-      console.log("✅ Camera stream obtained:", stream);
       streamRef.current = stream;
       setCameraActive(true);
-      
-      // Wait for next render cycle to ensure video element exists
       setTimeout(() => {
         if (videoRef.current) {
-          console.log("📹 Setting video source...");
           videoRef.current.srcObject = stream;
-          
-          // Ensure video plays
-          videoRef.current.onloadedmetadata = () => {
-            console.log("🎬 Video metadata loaded, starting playback...");
-            videoRef.current.play()
-              .then(() => console.log("▶️ Video playing successfully"))
-              .catch(err => console.error("❌ Video play error:", err));
-          };
-        } else {
-          console.error("❌ Video element not found after state update");
+          videoRef.current.onloadedmetadata = () => videoRef.current.play();
         }
       }, 100);
-      
     } catch (err) {
-      console.error("❌ Camera access denied:", err);
-      alert("Unable to access camera. Please check permissions or use Upload Image instead.");
+      alert("Unable to access camera. Please check permissions or use Upload instead.");
     }
   };
 
@@ -140,55 +99,18 @@ const SpacePhotoAnalysis = () => {
   };
 
   const captureImage = () => {
-    console.log("📸 Capture button clicked!");
-    
-    if (!videoRef.current) {
-      console.error("Video reference not found");
-      alert("Video not ready. Please try again.");
-      return;
-    }
-    
-    const video = videoRef.current;
-    console.log("Video dimensions:", video.videoWidth, "x", video.videoHeight);
-    console.log("Video ready state:", video.readyState);
-    
-    if (video.videoWidth === 0 || video.videoHeight === 0) {
-      alert("Camera is loading. Please wait a moment and try again.");
-      return;
-    }
-    
-    try {
-      const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(video, 0, 0);
-      
-      const imageData = canvas.toDataURL("image/png");
-      setCapturedPhoto(imageData);
-      
-      // Convert to File object
-      canvas.toBlob((blob) => {
-        const file = new File([blob], "captured-space.png", { type: "image/png" });
-        setImageFile(file);
-        setImage(imageData);
-        console.log("✅ Image captured successfully");
-      });
-      
-      stopCamera();
-    } catch (error) {
-      console.error("Error capturing image:", error);
-      alert("Failed to capture image. Please try again.");
-    }
-  };
-
-  const retakePhoto = () => {
-    setCapturedPhoto(null);
-    setImage(null);
-    setImageFile(null);
-    setRecommendations([]);
-    startCamera();
+    if (!videoRef.current) return;
+    const canvas = document.createElement("canvas");
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+    canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+    const imageData = canvas.toDataURL("image/png");
+    setCapturedPhoto(imageData);
+    canvas.toBlob((blob) => {
+      setImageFile(new File([blob], "captured-space.png", { type: "image/png" }));
+      setImage(imageData);
+    });
+    stopCamera();
   };
 
   const handleFileChange = (e) => {
@@ -196,495 +118,293 @@ const SpacePhotoAnalysis = () => {
     if (!file) return;
     setImageFile(file);
     setImage(URL.createObjectURL(file));
-    setRecommendations([]);
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setDragOver(false);
-    const file = e.dataTransfer.files?.[0];
-    if (file) {
-      setImageFile(file);
-      setImage(URL.createObjectURL(file));
-      setRecommendations([]);
-    }
   };
 
   const analyzeImage = async () => {
-    // Wait for subscription to load first
-    if (subscriptionLoading) {
-      alert("Loading subscription information... Please wait.");
+    if (!subscription || !user) return;
+    if (inputMode !== "manual" && !subscription?.canAccessSpaceAnalysis) {
+      setShowUpgradeModal(true);
       return;
     }
-
-    if (!subscription) {
-      alert("⚠️ Unable to connect to server. Make sure the backend is running on http://localhost:3000");
-      return;
-    }
-
-    // Check subscription access for photo modes
-    if (inputMode !== "manual") {
-      if (!subscription?.canAccessSpaceAnalysis) {
-        setShowUpgradeModal(true);
-        return;
-      }
-    }
-
     if (inputMode === "manual") {
-      // Manual input mode - validate form
-      if (!manualInputs.spaceSize || !manualInputs.sunlight || !manualInputs.location) {
-        alert("Please fill in all required fields.");
-        return;
-      }
-      analyzeManualInputs();
+      if (!manualInputs.spaceSize || !manualInputs.sunlight || !manualInputs.location) return;
+      setAnalyzing(true);
+      setTimeout(() => {
+        const selected = getPlantsBySunlight(plantData, manualInputs.sunlight);
+        setRecommendations(selected);
+        setAnalyzing(false);
+      }, 1000);
       return;
     }
-
-    // Photo mode (capture or upload)
-    if (!imageFile) {
-      alert("Please capture or upload a photo first, or switch to manual input.");
-      return;
-    }
-    
+    if (!imageFile) return;
     setAnalyzing(true);
-    
     try {
-      // Send image to backend for analysis
       const formData = new FormData();
       formData.append("image", imageFile);
       formData.append("email", user.email);
-      
-      console.log("📤 Sending request to backend:", "http://localhost:3000/analyze-space");
-      
-      const response = await fetch("http://localhost:3000/analyze-space", {
+      const response = await fetch("http://localhost:3001/analyze-space", {
         method: "POST",
         body: formData,
       });
-      
-      console.log("📥 Response status:", response.status, response.statusText);
-      
       const result = await response.json();
-      console.log("📊 Response data:", result);
-      
-      if (!response.ok) {
-        // Check if access was denied
-        if (response.status === 403) {
-          if (result.reason === "trial_exhausted") {
-            setShowUpgradeModal(true);
-            setAnalyzing(false);
-            return;
-          }
-          throw new Error(result.message || "Access denied");
-        }
-
-        // Handle person detection or other errors
-        if (result.error === "person_detected") {
-          setTimeout(() => {
-            setRecommendations([
-              { 
-                name: "Invalid Image - Person Detected", 
-                desc: result.message || "⚠️ Person/body detected in image. Please upload a photo of the space only.",
-                error: true
-              }
-            ]);
-            setAnalyzing(false);
-          }, 700);
-          return;
-        }
-
-        // Handle invalid scene (not a space image - car, landscape, etc.)
-        if (result.error === "invalid_scene") {
-          setTimeout(() => {
-            setRecommendations([
-              { 
-                name: "Invalid Image - Not a Space Photo", 
-                desc: result.message || "❌ This doesn't appear to be a space photo. Please upload an indoor/outdoor living space.",
-                error: true
-              }
-            ]);
-            setAnalyzing(false);
-          }, 700);
-          return;
-        }
-        
-        throw new Error(result.error || "Analysis failed");
-      }
-      
-      // Process successful result
-      if (result.success) {
-        const plants = result.recommended_plants.map(plant => ({
-          name: plant.name,
-          desc: plant.desc,
-          difficulty: plant.difficulty,
-          watering: plant.watering,
-          lightNeed: plant.light_tolerance,
+      if (response.ok && result.success) {
+        setRecommendations(result.recommended_plants.map(p => ({
+          ...p,
           spaceScore: result.space_score,
           lighting: result.lighting.description
-        }));
-        
-        setTimeout(() => {
-          setRecommendations(plants);
-          setAnalyzing(false);
-          
-          // Show space score and summary
-          if (result.space_score) {
-            console.log(`🌿 Space Green Score: ${result.space_score}/100`);
-            console.log(`📊 ${result.analysis_summary}`);
-          }
-          
-          // Refresh subscription status to show updated trial uses
-          fetchSubscriptionStatus();
-        }, 700);
-        return; // Exit successfully
+        })));
+        fetchSubscriptionStatus();
+      } else {
+        setRecommendations([{ name: "Analysis Failed", desc: result.message || "Failed to analyze image", error: true }]);
       }
-      
-    } catch (error) {
-      console.error("Analysis error:", error);
-      setAnalyzing(false);
-      
-      // Show error instead of silently falling back to client-side analysis
-      // Client-side analysis cannot validate image type and would recommend plants for any image
-      setRecommendations([
-        {
-          name: "Analysis Failed",
-          desc: "❌ Could not analyze the image. Please make sure the server is running and try again, or use 'Manual Input' to describe your environment instead.",
-          error: true
-        }
-      ]);
+    } catch (e) {
+      setRecommendations([{ name: "Server Error", desc: "Backend not available", error: true }]);
     }
-  };
-  
-  const analyzeManualInputs = () => {
-    setAnalyzing(true);
-    setTimeout(() => {
-      generateRecommendations(manualInputs.sunlight);
-    }, 700);
-  };
-
-  const generateRecommendations = (sunlight) => {
-    const selectedPlants = getPlantsBySunlight(plantData, sunlight);
-
-    setTimeout(() => {
-      setRecommendations(selectedPlants.length > 0 ? selectedPlants : [
-        { name: "No plants found", desc: "Could not find matching plants. Try a different sunlight level.", error: true }
-      ]);
-      setAnalyzing(false);
-    }, 700);
+    setAnalyzing(false);
   };
 
   return (
     <PageContainer>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Subscription Status Alert */}
-        {subscription && !subscriptionLoading && (
+      <section className="section-container pt-32 pb-24 min-h-screen">
+        
+        <div className="max-w-3xl mx-auto text-center mb-16 px-4">
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`mb-6 p-4 rounded-lg border flex items-center justify-between text-sm ${
-              subscription.tier === "Advanced" && subscription.subscriptionStatus === "active"
-                ? "bg-green-50 border-green-200"
-                : "bg-blue-50 border-blue-200"
-            }`}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--primary)/10 text-(--primary) text-xs font-black uppercase tracking-widest mb-6"
           >
-            <div className="flex items-center gap-3">
-              <Lock size={18} className={subscription.tier === "Advanced" ? "text-green-600" : "text-blue-600"} />
-              <div>
-                {subscription.tier === "Advanced" && subscription.subscriptionStatus === "active" ? (
-                  <p className="font-semibold text-green-900">✓ Premium Subscriber - Unlimited Space Analysis</p>
-                ) : (
-                  <p className="font-semibold text-blue-900">
-                    Free Trial - <span className="text-lg">{subscription.trialUsesRemaining}/10</span> Space Analysis uses remaining
-                  </p>
-                )}
-              </div>
-            </div>
-            {subscription.tier === "Beginner" && (
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                onClick={() => window.location.href = "/pricing"}
-                className="px-4 py-2 bg-linear-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-lg whitespace-nowrap"
-              >
-                Upgrade
-              </motion.button>
-            )}
+            <Sparkles size={14} /> AI-Powered Vision
           </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-black text-(--text) mb-6 tracking-tighter"
+          >
+            Smart Space Analysis
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-lg text-(--text-secondary) leading-relaxed"
+          >
+            Transform your living environment. Our AI analyzes lighting, dimensions, and climate to match you with the perfect botanical companions.
+          </motion.p>
+        </div>
+
+        {subscription && (
+          <div className="max-w-4xl mx-auto mb-10 px-4">
+            <div className="glass-panel rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4 border border-(--primary)/20">
+              <div className="flex items-center gap-4">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${subscription.tier === "Advanced" ? "bg-amber-100 text-amber-600" : "bg-blue-100 text-blue-600"}`}>
+                  <Lock size={18} />
+                </div>
+                <div>
+                  <div className="text-sm font-black text-(--text)">
+                    {subscription.tier === "Advanced" ? "Premium Access Pool" : "Standard Trial Pool"}
+                  </div>
+                  <div className="text-xs text-(--text-muted) font-bold">
+                    {subscription.trialUsesRemaining} of 10 insights remaining
+                  </div>
+                </div>
+              </div>
+              {subscription.tier !== "Advanced" && (
+                <button onClick={() => navigate("/pricing")} className="px-4 py-2 bg-(--text) text-white text-xs font-black rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                  Upgrade Now
+                </button>
+              )}
+            </div>
+          </div>
         )}
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-10"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--primary)/10 text-(--primary) text-sm font-medium mb-4">
-            <Camera className="w-4 h-4" /> Space Analysis
-          </div>
-          <h1 className="text-3xl md:text-4xl font-black text-(--text) mb-3">
-            Analyze Your Space
-          </h1>
-          <p className="text-(--text-muted)">Capture a photo, upload an image, or describe your space manually</p>
-        </motion.div>
-
-        {/* Mode Toggle */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="flex flex-wrap gap-2 justify-center mb-8"
-        >
-          {[
-            { key: "capture", icon: <Camera className="w-4 h-4" />, label: "Capture Photo" },
-            { key: "upload", icon: <Upload className="w-4 h-4" />, label: "Upload Image" },
-            { key: "manual", icon: <PenTool className="w-4 h-4" />, label: "Manual Input" },
-          ].map((mode) => (
-            <button
-              key={mode.key}
-              onClick={() => { setInputMode(mode.key); setRecommendations([]); stopCamera(); }}
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                inputMode === mode.key
-                  ? "bg-(--primary) text-white shadow-lg shadow-(--primary)/25"
-                  : "bg-(--card) border border-(--border) text-(--text-secondary) hover:border-(--primary)/50"
-              }`}
-            >
-              {mode.icon} {mode.label}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Camera Capture Mode */}
-        <AnimatePresence mode="wait">
-          {inputMode === "capture" && (
-            <motion.div
-              key="capture"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="bg-(--card) border border-(--border) rounded-2xl p-6 mb-6"
-            >
-              {!cameraActive && !capturedPhoto && (
-                <div className="text-center py-12">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-3xl bg-(--primary)/10 flex items-center justify-center">
-                    <Camera className="w-10 h-10 text-(--primary)" />
-                  </div>
-                  <p className="text-(--text-muted) mb-4">Take a live photo of your space</p>
-                  <AnimatedButton onClick={startCamera}>Open Camera</AnimatedButton>
-                </div>
-              )}
-
-              {cameraActive && (
-                <div className="relative">
-                  <video ref={videoRef} autoPlay playsInline muted className="w-full rounded-xl" />
-                  <div className="flex justify-center gap-3 mt-4">
-                    <AnimatedButton onClick={(e) => { e.preventDefault(); e.stopPropagation(); captureImage(); }}>
-                      <Camera className="w-4 h-4" /> Capture
-                    </AnimatedButton>
-                    <AnimatedButton variant="ghost" onClick={(e) => { e.preventDefault(); e.stopPropagation(); stopCamera(); }}>
-                      Cancel
-                    </AnimatedButton>
-                  </div>
-                </div>
-              )}
-
-              {capturedPhoto && (
-                <div>
-                  <img src={capturedPhoto} alt="Captured Space" className="w-full rounded-xl" />
-                  <div className="flex justify-center gap-3 mt-4">
-                    <AnimatedButton variant="outline" onClick={retakePhoto}>
-                      <RotateCcw className="w-4 h-4" /> Retake
-                    </AnimatedButton>
-                    <AnimatedButton onClick={() => {}}>
-                      <CheckCircle2 className="w-4 h-4" /> Use This Photo
-                    </AnimatedButton>
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          )}
-
-          {/* Upload Mode */}
-          {inputMode === "upload" && (
-            <motion.div
-              key="upload"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mb-6"
-            >
-              <div
-                ref={dropRef}
-                onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-                onDragLeave={() => setDragOver(false)}
-                onDrop={handleDrop}
-                onClick={() => document.getElementById("space-file-input").click()}
-                role="button"
-                className={`bg-(--card) border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all ${
-                  dragOver ? "border-(--primary) bg-(--primary)/5" : "border-(--border) hover:border-(--primary)/50"
-                }`}
-              >
-                {!image ? (
-                  <div>
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-(--primary)/10 flex items-center justify-center">
-                      <Upload className="w-8 h-8 text-(--primary)" />
-                    </div>
-                    <p className="text-(--text) font-medium mb-1">Click or drag & drop a photo here</p>
-                    <p className="text-xs text-(--text-muted)">Good photos: clear view of space, natural lighting, avoid documents.</p>
-                  </div>
-                ) : (
-                  <div className="relative">
-                    <img src={image} alt="Uploaded Space" className="max-h-80 mx-auto rounded-xl" />
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setImage(null); setImageFile(null); setRecommendations([]); }}
-                      className="absolute top-2 right-2 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
-                )}
-                <input id="space-file-input" type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
-              </div>
-            </motion.div>
-          )}
-
-          {/* Manual Input Mode */}
-          {inputMode === "manual" && (
-            <motion.div
-              key="manual"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="bg-(--card) border border-(--border) rounded-2xl p-6 mb-6"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { label: "Space Size *", key: "spaceSize", options: [{ v: "", l: "Select space size" }, { v: "small", l: "Small (Desk/Window sill)" }, { v: "medium", l: "Medium (Balcony/Corner)" }, { v: "large", l: "Large (Garden/Room)" }] },
-                  { label: "Sunlight Level *", key: "sunlight", options: [{ v: "", l: "Select sunlight level" }, { v: "high", l: "High (6+ hours direct sun)" }, { v: "medium", l: "Medium (Bright indirect)" }, { v: "low", l: "Low (Shade/Minimal)" }] },
-                  { label: "Location *", key: "location", options: [{ v: "", l: "Select location" }, { v: "indoor", l: "Indoor" }, { v: "outdoor", l: "Outdoor" }, { v: "balcony", l: "Balcony/Semi-outdoor" }] },
-                  { label: "Ventilation", key: "ventilation", options: [{ v: "", l: "Select ventilation (optional)" }, { v: "good", l: "Good" }, { v: "moderate", l: "Moderate" }, { v: "poor", l: "Poor" }] },
-                ].map((field) => (
-                  <div key={field.key}>
-                    <label className="block text-sm font-medium text-(--text-secondary) mb-1.5">{field.label}</label>
-                    <select
-                      value={manualInputs[field.key]}
-                      onChange={(e) => setManualInputs({ ...manualInputs, [field.key]: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-(--bg-alt) border border-(--border) text-(--text) text-sm focus:outline-none focus:border-(--primary) focus:ring-2 focus:ring-(--primary)/20 transition-all"
-                    >
-                      {field.options.map((o) => <option key={o.v} value={o.v}>{o.l}</option>)}
-                    </select>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Analyze Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-center mb-8"
-        >
-          <AnimatedButton size="lg" onClick={analyzeImage} disabled={analyzing || subscriptionLoading}>
-            {subscriptionLoading ? (
-              <span className="flex items-center gap-2">
-                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Loading subscription...
-              </span>
-            ) : analyzing ? (
-              <span className="flex items-center gap-2">
-                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Analyzing...
-              </span>
-            ) : (
-              <span className="flex items-center gap-2"><Sprout className="w-4 h-4" /> Analyze Space</span>
-            )}
-          </AnimatedButton>
-        </motion.div>
-
-        {/* Results */}
-        <AnimatePresence>
-          {recommendations.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-            >
-              <h3 className="text-xl font-bold text-(--text) mb-4 flex items-center gap-2">
-                {recommendations[0]?.error ? <AlertTriangle className="w-5 h-5 text-amber-500" /> : <CheckCircle2 className="w-5 h-5 text-emerald-500" />}
-                {recommendations[0]?.error ? "Analysis Result" : "Recommended Plants"}
-              </h3>
-
-              {/* Space Score */}
-              {!recommendations[0]?.error && recommendations[0]?.spaceScore && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-linear-to-r from-(--primary)/10 to-(--accent)/10 border border-(--primary)/20 rounded-2xl p-6 mb-6 flex items-center gap-6"
-                >
-                  <div className="relative w-20 h-20 shrink-0">
-                    <svg className="w-20 h-20 -rotate-90" viewBox="0 0 40 40">
-                      <circle cx="20" cy="20" r="16" fill="none" stroke="var(--border)" strokeWidth="3" />
-                      <circle cx="20" cy="20" r="16" fill="none" stroke="var(--primary)" strokeWidth="3" strokeDasharray={`${(recommendations[0].spaceScore / 100) * 100.5} 100.5`} strokeLinecap="round" />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-lg font-black text-(--primary)">{recommendations[0].spaceScore}</span>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-(--text) flex items-center gap-2">
-                      <Leaf className="w-4 h-4 text-(--primary)" /> Space Green Score
-                    </h4>
-                    <p className="text-sm text-(--text-muted) mt-1">{recommendations[0].lighting || "Your space has been analyzed"}</p>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Plant Cards */}
-              <div className="grid gap-4">
-                {recommendations.map((p, idx) => (
-                  <motion.div
-                    key={p.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    className={`flex items-start gap-4 p-4 rounded-2xl border transition-all ${
-                      p.error
-                        ? "bg-red-500/5 border-red-500/20"
-                        : "bg-(--card) border-(--border) hover:shadow-lg hover:shadow-(--primary)/5"
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1400px] mx-auto px-4">
+          
+          <div className="lg:col-span-12 xl:col-span-7">
+            <div className="premium-card p-1 items-stretch">
+              <div className="flex p-1.5 bg-(--bg-alt) rounded-[20px] mb-8">
+                {["capture", "upload", "manual"].map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => { setInputMode(mode); setRecommendations([]); stopCamera(); }}
+                    className={`flex-1 py-3.5 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${
+                      inputMode === mode 
+                        ? "bg-white text-(--primary) shadow-sm border border-(--primary)/10" 
+                        : "text-(--text-muted) hover:text-(--text)"
                     }`}
                   >
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${p.error ? "bg-red-500/10" : "bg-(--primary)/10"}`}>
-                      {p.error ? <AlertTriangle className="w-5 h-5 text-red-500" /> : <Leaf className="w-5 h-5 text-(--primary)" />}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-bold text-(--text)">{p.name}</h4>
-                      <p className="text-xs text-(--text-muted) mt-1">{p.desc}</p>
-                      {!p.error && (
-                        <div className="flex items-center gap-2 flex-wrap mt-2">
-                          <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600">
-                            <BarChart3 className="w-3 h-3" /> {p.difficulty}
-                          </span>
-                          <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600">
-                            <Droplets className="w-3 h-3" /> {p.watering}
-                          </span>
-                          <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600">
-                            <Sun className="w-3 h-3" /> {p.lightNeed}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </motion.div>
+                    {mode}
+                  </button>
                 ))}
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
 
-      {/* Upgrade Modal */}
-      <UpgradeModal
-        isOpen={showUpgradeModal}
-        onClose={() => setShowUpgradeModal(false)}
-        usesRemaining={subscription?.trialUsesRemaining}
-        resetDate={subscription?.trialResetDate}
+              <div className="px-6 pb-8">
+                <AnimatePresence mode="wait">
+                  {inputMode === "capture" && (
+                    <motion.div key="cap" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center min-h-[400px] flex flex-col justify-center">
+                      {!cameraActive && !capturedPhoto ? (
+                        <div className="py-12">
+                          <Camera size={64} className="mx-auto text-(--text-muted) mb-8 opacity-20" />
+                          <AnimatedButton size="lg" onClick={startCamera}>Activate AI Lens</AnimatedButton>
+                        </div>
+                      ) : cameraActive ? (
+                        <div className="relative rounded-3xl overflow-hidden bg-black aspect-video max-w-2xl mx-auto shadow-2xl">
+                          <video ref={videoRef} autoPlay playsInline muted className="w-full h-full object-cover" />
+                          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-4">
+                            <button onClick={captureImage} className="w-16 h-16 rounded-full bg-white border-8 border-white/30 flex items-center justify-center hover:scale-110 transition-transform">
+                              <div className="w-10 h-10 rounded-full bg-(--primary)" />
+                            </button>
+                            <button onClick={stopCamera} className="px-6 py-2 bg-black/50 backdrop-blur-md rounded-xl text-white font-bold text-sm">Cancel</button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="max-w-2xl mx-auto">
+                          <img src={capturedPhoto} className="w-full rounded-3xl shadow-premium border border-(--border-light)" alt="Capture" />
+                          <div className="mt-8 flex justify-center gap-4">
+                            <AnimatedButton variant="secondary" onClick={() => setCapturedPhoto(null)}>Retake</AnimatedButton>
+                            <AnimatedButton onClick={analyzeImage} disabled={analyzing}>
+                              {analyzing ? "Analyzing Space..." : "Confirm & Analyze"}
+                            </AnimatedButton>
+                          </div>
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+
+                  {inputMode === "upload" && (
+                    <motion.div key="up" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center min-h-[400px] flex flex-col justify-center">
+                      <div 
+                        onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                        onDragLeave={() => setDragOver(false)}
+                        onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFileChange({ target: { files: e.dataTransfer.files } }); }}
+                        onClick={() => document.getElementById("space-file").click()}
+                        className={`border-[2.5px] border-dashed rounded-[32px] p-16 transition-all cursor-pointer ${dragOver ? "border-(--primary) bg-(--primary)/5" : "border-(--border) hover:border-(--primary)/40"}`}
+                      >
+                         {!image ? (
+                           <>
+                             <Upload size={48} className="mx-auto text-(--primary) mb-6 opacity-40" />
+                             <h4 className="text-xl font-bold mb-2">Select Space Image</h4>
+                             <p className="text-xs text-(--text-muted) font-bold uppercase tracking-wider">Drag-and-drop or Browse</p>
+                           </>
+                         ) : (
+                           <div className="relative">
+                             <img src={image} className="max-h-[400px] mx-auto rounded-2xl" alt="Upload" />
+                             <button onClick={(e) => {e.stopPropagation(); setImage(null);}} className="absolute top-4 right-4 p-2 bg-black/60 text-white rounded-full"><X size={20}/></button>
+                           </div>
+                         )}
+                         <input id="space-file" type="file" className="hidden" onChange={handleFileChange} />
+                      </div>
+                      {image && (
+                         <div className="mt-8">
+                           <AnimatedButton size="lg" onClick={analyzeImage} disabled={analyzing}>
+                             {analyzing ? "Reading Space Data..." : "Run AI Analysis"}
+                           </AnimatedButton>
+                         </div>
+                      )}
+                    </motion.div>
+                  )}
+
+                  {inputMode === "manual" && (
+                     <motion.div key="man" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-[400px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+                           {[
+                             { label: "Environment Size", key: "spaceSize", options: ["Small", "Medium", "Large"] },
+                             { label: "Exposure Level", key: "sunlight", options: ["high", "medium", "low"] },
+                             { label: "Specific Location", key: "location", options: ["indoor", "outdoor", "balcony"] }
+                           ].map(f => (
+                              <div key={f.key}>
+                                 <label className="block text-xs font-black uppercase tracking-widest text-(--text-muted) mb-3">{f.label}</label>
+                                 <select 
+                                   className="w-full p-4 rounded-xl bg-(--bg-alt) border border-(--border-light) font-bold text-sm focus:border-(--primary) outline-none"
+                                   onChange={e => setManualInputs({...manualInputs, [f.key]: e.target.value})}
+                                 >
+                                    <option value="">Choose Option</option>
+                                    {f.options.map(o => <option key={o} value={o}>{o.charAt(0).toUpperCase() + o.slice(1)}</option>)}
+                                 </select>
+                              </div>
+                           ))}
+                        </div>
+                        <div className="mt-12 text-center">
+                           <AnimatedButton size="lg" onClick={analyzeImage} disabled={analyzing}>
+                              {analyzing ? "Processing Inputs..." : "Predict Species"}
+                           </AnimatedButton>
+                        </div>
+                     </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-12 xl:col-span-5">
+             <div className="space-y-6 sticky top-24">
+                <AnimatePresence mode="wait">
+                  {recommendations.length > 0 ? (
+                    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
+                       {!recommendations[0].error && recommendations[0].spaceScore && (
+                          <div className="premium-card bg-linear-to-br from-(--text) to-black text-white border-0 pt-10">
+                              <div className="flex items-center gap-6 mb-8">
+                                 <div className="w-24 h-24 rounded-full border-[6px] border-(--primary) flex items-center justify-center text-3xl font-black shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+                                    {recommendations[0].spaceScore}
+                                 </div>
+                                 <div className="flex-1">
+                                    <h4 className="text-xl font-black mb-1">Growth Score</h4>
+                                    <p className="text-white/60 text-xs font-bold uppercase tracking-widest">Optimized for Green Life</p>
+                                 </div>
+                              </div>
+                              <p className="text-sm text-white/70 leading-relaxed font-medium pb-4">
+                                 {recommendations[0].lighting}
+                              </p>
+                          </div>
+                       )}
+
+                       <div className="space-y-4">
+                          {recommendations.filter(p => !p.error).map((p, i) => (
+                             <motion.div 
+                               key={i} 
+                               initial={{ opacity: 0, y: 10 }}
+                               animate={{ opacity: 1, y: 0 }}
+                               transition={{ delay: i * 0.1 }}
+                               className="glass-panel p-5 rounded-2xl flex items-center gap-5 group hover:border-(--primary)/50 transition-colors"
+                             >
+                                <div className="w-12 h-12 rounded-xl bg-(--primary)/10 flex items-center justify-center text-(--primary) group-hover:bg-(--primary) group-hover:text-white transition-all">
+                                   <Leaf size={20} />
+                                </div>
+                                <div className="flex-1">
+                                   <div className="font-black text-(--text)">{p.name || p.common_name}</div>
+                                   <div className="text-xs text-(--text-muted) font-bold uppercase tracking-tight">{p.watering || "Moderate"} Water • {p.difficulty || "Beginner"}</div>
+                                </div>
+                                <button onClick={() => navigate("/products-shop")} className="p-2 rounded-lg bg-(--bg-alt) hover:bg-(--primary)/10 transition-colors">
+                                   <ArrowRight size={18} />
+                                </button>
+                             </motion.div>
+                          ))}
+
+                          {recommendations[0].error && (
+                             <div className="premium-card border-red-500/20 bg-red-500/5 p-10 text-center">
+                                <AlertTriangle size={48} className="mx-auto text-red-500 mb-4" />
+                                <h4 className="text-lg font-black text-red-900 mb-2">{recommendations[0].name}</h4>
+                                <p className="text-sm text-red-700 font-medium">{recommendations[0].desc}</p>
+                             </div>
+                          )}
+                       </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="premium-card p-16 text-center border-dashed opacity-50 flex flex-col items-center justify-center min-h-[400px]">
+                        <Wand2 size={48} className="text-(--text-muted) mb-6" />
+                        <h4 className="text-lg font-black text-(--text-muted)">Waiting for Analysis</h4>
+                        <p className="text-sm text-(--text-muted) max-w-[200px] mx-auto mt-2 font-medium">Use the AI Tool to generate space insights</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+             </div>
+          </div>
+        </div>
+
+      </section>
+
+      <UpgradeModal 
+         isOpen={showUpgradeModal} 
+         onClose={() => setShowUpgradeModal(false)}
+         usesRemaining={subscription?.trialUsesRemaining}
       />
     </PageContainer>
   );

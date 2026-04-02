@@ -34,7 +34,7 @@ const MyPlants = () => {
 
   const fetchMyPlants = async (email) => {
     try {
-      const res = await fetch(`http://localhost:3000/my-plants?email=${encodeURIComponent(email)}`);
+      const res = await fetch(`http://localhost:3001/my-plants?email=${encodeURIComponent(email)}`);
       const data = await res.json();
       setMyPlants(data);
     } catch {
@@ -45,7 +45,7 @@ const MyPlants = () => {
 
   const fetchReminders = async (email) => {
     try {
-      const res = await fetch(`http://localhost:3000/reminders?email=${encodeURIComponent(email)}`);
+      const res = await fetch(`http://localhost:3001/reminders?email=${encodeURIComponent(email)}`);
       const data = await res.json();
       setReminders(data);
     } catch {
@@ -55,7 +55,7 @@ const MyPlants = () => {
 
   const removePlant = async (id, name) => {
     try {
-      await fetch(`http://localhost:3000/my-plants/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:3001/my-plants/${id}`, { method: "DELETE" });
       setMyPlants((prev) => prev.filter((p) => p._id !== id));
       showToast(`${name} removed from collection`);
     } catch {
@@ -65,7 +65,7 @@ const MyPlants = () => {
 
   const saveNotes = async (id) => {
     try {
-      await fetch(`http://localhost:3000/my-plants/${id}`, {
+      await fetch(`http://localhost:3001/my-plants/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ notes: notesText }),
@@ -83,7 +83,7 @@ const MyPlants = () => {
   const addReminder = async () => {
     if (!reminderForm.date) { showToast("Please select a date"); return; }
     try {
-      const res = await fetch("http://localhost:3000/reminders", {
+      const res = await fetch("http://localhost:3001/reminders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -106,7 +106,7 @@ const MyPlants = () => {
 
   const toggleReminder = async (id, current) => {
     try {
-      await fetch(`http://localhost:3000/reminders/${id}`, {
+      await fetch(`http://localhost:3001/reminders/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ completed: !current }),
@@ -121,7 +121,7 @@ const MyPlants = () => {
 
   const deleteReminder = async (id) => {
     try {
-      await fetch(`http://localhost:3000/reminders/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:3001/reminders/${id}`, { method: "DELETE" });
       setReminders((prev) => prev.filter((r) => r._id !== id));
       showToast("Reminder deleted");
     } catch {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Droplets, Sun, Sprout, Home, CalendarDays, Leaf, BookOpen, Camera, ChevronRight } from "lucide-react";
+import { Droplets, Sun, Sprout, Home, CalendarDays, Leaf, BookOpen, Camera, ChevronRight, CheckCircle2 } from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import AnimatedButton from "./ui/AnimatedButton";
 
@@ -13,179 +13,125 @@ const CareGuide = () => {
     watering: {
       title: "Watering Guide",
       icon: <Droplets className="w-5 h-5" />,
+      color: "from-blue-500 to-cyan-500",
+      description: "Master the art of hydration. Explore watering techniques, soil moisture levels, and plant-specific needs.",
       sections: [
         {
-          heading: "How to Know When to Water",
-          content: "Stick your finger 1-2 inches into the soil. If it feels dry, it's time to water. If moist, wait a day or two. Overwatering is the #1 cause of houseplant death."
+          heading: "Moisture Detection",
+          content: "The finger test is your best tool. Insert your finger 2 inches deep; if dry, it's time to hydrate. Overwatering causes 90% of plant issues."
         },
         {
-          heading: "Watering Frequency by Plant Type",
+          heading: "Frequency by Species",
           items: [
-            { label: "Succulents & Cacti", detail: "Every 2-3 weeks. Let soil dry completely between watering." },
-            { label: "Tropical Plants", detail: "2x per week. Keep soil consistently moist, never soggy." },
-            { label: "Herbs", detail: "Daily or every other day. They prefer consistently moist soil." },
-            { label: "Ferns", detail: "2-3x per week. They love humidity and moist soil." }
+            { label: "Succulents & Cacti", detail: "Every 14-21 days. Desert-dry soil required." },
+            { label: "Tropical Foliage", detail: "Every 4-7 days. High humidity and moist soil." },
+            { label: "Culinary Herbs", detail: "Every 2-3 days. They prefer consistent moisture." }
           ]
         },
         {
-          heading: "Golden Rules",
+          heading: "Professional Tips",
           tips: [
-            "Water in the morning for best absorption",
-            "Use room temperature water, not cold",
-            "Water the soil, not the leaves",
-            "Ensure pots have drainage holes",
-            "Reduce watering in winter months"
+            "Morning watering allows absorption before evaporation",
+            "Drainage holes are non-negotiable for root health",
+            "Filtered water is best for sensitive tropicals",
+            "Reduce frequency significantly during dormancy"
           ]
         }
       ]
     },
     sunlight: {
-      title: "Sunlight Guide",
+      title: "Luminous Needs",
       icon: <Sun className="w-5 h-5" />,
+      color: "from-amber-400 to-orange-500",
+      description: "Harness the power of light. Understand exposure types and how to read your plant's light signals.",
       sections: [
         {
-          heading: "Understanding Light Levels",
+          heading: "Exposure Levels",
           items: [
-            { label: "Direct Sunlight (6+ hours)", detail: "South-facing windows. Good for cacti, succulents, tomatoes, herbs." },
-            { label: "Bright Indirect (4-6 hours)", detail: "East/west windows with sheer curtains. Ideal for most houseplants." },
-            { label: "Low Light (2-3 hours)", detail: "North-facing windows or interior rooms. Good for snake plant, ZZ plant, pothos." }
+            { label: "Direct (South)", detail: "Cacti, herbs, and flowering plants crave this intense light." },
+            { label: "Indirect (East/West)", detail: "The 'Sweet Spot' for Monstera, Pothos, and Orchids." },
+            { label: "Low (North)", detail: "Perfect for Snake Plants, ZZ Plants, and Ferns." }
           ]
         },
         {
-          heading: "Signs of Light Problems",
+          heading: "Critical Indicators",
           tips: [
-            "Leggy/stretched growth → too little light",
-            "Pale or yellow leaves → too much direct sun",
-            "Brown leaf edges → sunburn, move to indirect light",
-            "Slow or no growth → needs more light",
-            "Variegation fading → needs brighter light"
-          ]
-        },
-        {
-          heading: "Pro Tips",
-          tips: [
-            "Rotate plants weekly for even growth",
-            "Clean leaves monthly for better light absorption",
-            "Use grow lights if you lack natural light",
-            "Acclimate plants gradually to new light conditions"
+            "Yellowing leaves often signal sun scorch",
+            "Stretching stems (leggy) mean it's searching for light",
+            "Small new leaves suggest insufficient light energy",
+            "Rotate 90 degrees weekly for balanced growth"
           ]
         }
       ]
     },
     beginners: {
-      title: "Beginner-Friendly Plants",
+      title: "Starter Favorites",
       icon: <Sprout className="w-5 h-5" />,
+      color: "from-emerald-400 to-green-600",
+      description: "New to gardening? These resilient species are forgiving and rewarding to grow.",
       sections: [
         {
-          heading: "Top 5 Unkillable Plants",
+          heading: "The 'Invincibles'",
           items: [
-            { label: "Snake Plant", detail: "Tolerates low light, infrequent watering. Air-purifying. Perfect first plant." },
-            { label: "Pothos (Money Plant)", detail: "Grows in water or soil. Trails beautifully. Nearly impossible to kill." },
-            { label: "ZZ Plant", detail: "Survives in near darkness. Water monthly. Glossy leaves look great." },
-            { label: "Spider Plant", detail: "Produces baby plants. Adapts to any condition. Great for hanging." },
-            { label: "Aloe Vera", detail: "Medicinal, low maintenance. Water every 2 weeks. Loves bright light." }
+            { label: "Snake Plant", detail: "Thrives on neglect and low light. Great air purifier." },
+            { label: "Pothos", detail: "Fast-growing vine that tells you when it needs water." },
+            { label: "ZZ Plant", detail: "Low-light champion with architectural glossy leaves." }
           ]
         },
         {
-          heading: "Beginner Mistakes to Avoid",
+          heading: "Kickstart Checklist",
           tips: [
-            "Overwatering — most common killer of houseplants",
-            "Using pots without drainage holes",
-            "Placing plants in completely dark corners",
-            "Repotting immediately after buying",
-            "Ignoring pest signs (sticky leaves, white dots)"
-          ]
-        },
-        {
-          heading: "Getting Started Checklist",
-          tips: [
-            "Start with 1-2 easy plants, not 10",
-            "Buy pots with drainage + saucers",
-            "Use well-draining potting mix",
-            "Set a weekly plant check routine",
-            "Learn your home's light conditions first"
+            "Choose species that match your natural room light",
+            "Don't repot immediately; let them acclimate first",
+            "Invest in high-quality organic potting mix",
+            "Observe daily: notice changes early"
           ]
         }
       ]
     },
     indoor_outdoor: {
-      title: "Indoor vs Outdoor",
+      title: "Environment Hub",
       icon: <Home className="w-5 h-5" />,
+      color: "from-teal-500 to-emerald-700",
+      description: "Optimizing the perfect setting for your green friends. Seasonal transitions and air quality.",
       sections: [
         {
-          heading: "Best Indoor Plants",
+          heading: "Indoor Comfort",
           items: [
-            { label: "Snake Plant", detail: "Air purifier, low light, easy care" },
-            { label: "Peace Lily", detail: "Blooms in shade, high humidity lover" },
-            { label: "Monstera", detail: "Iconic split leaves, medium light" },
-            { label: "Rubber Plant", detail: "Bold glossy leaves, grows tall" },
-            { label: "Philodendron", detail: "Fast trailing vine, very forgiving" }
+            { label: "Humidity Control", detail: "Tropicals love 60%+ humidity. Use pebble trays." },
+            { label: "Air Circulation", detail: "Avoid stagnant air; it invites fungal issues." }
           ]
         },
         {
-          heading: "Best Outdoor Plants",
-          items: [
-            { label: "Tomato", detail: "Full sun, daily water, rewarding harvest" },
-            { label: "Marigold", detail: "Pest repellent, blooms all season" },
-            { label: "Bougainvillea", detail: "Drought tolerant, dazzling colors" },
-            { label: "Jasmine", detail: "Fragrant flowers, moderate care" },
-            { label: "Tulsi (Holy Basil)", detail: "Aromatic, medicinal, easy to grow" }
-          ]
-        },
-        {
-          heading: "Moving Plants Indoor ↔ Outdoor",
+          heading: "Outdoor Transition",
           tips: [
-            "Acclimate gradually over 7-10 days",
-            "Check for pests before bringing indoors",
-            "Outdoor → Indoor: do it before temps drop below 10°C",
-            "Indoor → Outdoor: start in shade, then increase sun exposure",
-            "Some plants (e.g., Aloe, Jade) thrive in both settings"
+            "Acclimatize plants over 7 days when moving outside",
+            "Shield from wind to prevent mechanical leaf damage",
+            "Monitor outdoor pests weekly"
           ]
         }
       ]
     },
     seasonal: {
-      title: "Seasonal Care",
+      title: "Growth Cycles",
       icon: <CalendarDays className="w-5 h-5" />,
+      color: "from-indigo-400 to-purple-600",
+      description: "Plants change with the seasons. Adjust your care routine for winter dormancy and spring blooms.",
       sections: [
         {
-          heading: "Spring (Mar-May)",
+          heading: "Active Season (Spring/Summer)",
           tips: [
-            "Increase watering as growth resumes",
-            "Start fertilizing every 2-4 weeks",
-            "Repot root-bound plants",
-            "Prune dead or leggy growth",
-            "Best time to propagate"
+            "Fertilize every 2 weeks with organic liquid plant food",
+            "Prune leggy stems to encourage bushier growth",
+            "Monitor soil daily during heatwaves"
           ]
         },
         {
-          heading: "Summer (Jun-Aug)",
+          heading: "Dormancy (Autumn/Winter)",
           tips: [
-            "Water more frequently, check soil daily",
-            "Protect from intense afternoon sun",
-            "Mist tropical plants for humidity",
-            "Watch for pests (aphids, spider mites)",
-            "Continue regular fertilizing"
-          ]
-        },
-        {
-          heading: "Autumn (Sep-Nov)",
-          tips: [
-            "Reduce watering gradually",
-            "Stop fertilizing by October",
-            "Bring outdoor plants inside before frost",
-            "Clean leaves to maximize light absorption",
-            "Reduce repotting — let plants rest"
-          ]
-        },
-        {
-          heading: "Winter (Dec-Feb)",
-          tips: [
-            "Water sparingly — most plants are dormant",
-            "No fertilizer needed",
-            "Keep away from cold drafts and heaters",
-            "Provide extra light if days are short",
-            "Humidity drops — use pebble trays or humidifiers"
+            "Halt all fertilization; the plant is 'sleeping'",
+            "Drastically reduce watering frequency",
+            "Move plants closer to windows for winter sun"
           ]
         }
       ]
@@ -193,134 +139,172 @@ const CareGuide = () => {
   };
 
   const tabs = [
-    { key: "watering", icon: <Droplets className="w-4 h-4" />, label: "Watering" },
-    { key: "sunlight", icon: <Sun className="w-4 h-4" />, label: "Sunlight" },
-    { key: "beginners", icon: <Sprout className="w-4 h-4" />, label: "Beginners" },
-    { key: "indoor_outdoor", icon: <Home className="w-4 h-4" />, label: "Indoor/Outdoor" },
-    { key: "seasonal", icon: <CalendarDays className="w-4 h-4" />, label: "Seasonal" }
+    { key: "watering", label: "Watering" },
+    { key: "sunlight", label: "Sunlight" },
+    { key: "beginners", label: "Beginners" },
+    { key: "indoor_outdoor", label: "Environment" },
+    { key: "seasonal", label: "Seasonal" }
   ];
 
   const activeGuide = guides[activeTab];
 
   return (
     <PageContainer>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="section-container pt-32 pb-24">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-10"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--primary)/10 text-(--primary) text-sm font-medium mb-4">
-            <BookOpen className="w-4 h-4" /> Care Guide
-          </div>
-          <h1 className="text-3xl md:text-4xl font-black text-(--text) mb-3">Plant Care Guide</h1>
-          <p className="text-(--text-muted)">Everything you need to keep your plants healthy and thriving</p>
-        </motion.div>
+        <div className="max-w-3xl mx-auto text-center mb-16 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--primary)/10 text-(--primary) text-xs font-black uppercase tracking-widest mb-6"
+          >
+            <BookOpen size={14} /> Knowledge Hub
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-black text-(--text) mb-6 tracking-tight"
+          >
+            Professional Plant Care
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-(--text-secondary) leading-relaxed"
+          >
+            Expertly curated guides to help you master indoor gardening and keep your botanical collection flourishing year-round.
+          </motion.p>
+        </div>
 
-        {/* Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="flex flex-wrap gap-2 justify-center mb-8"
-        >
-          {tabs.map((tab) => (
-            <button
+        {/* Dynamic Navigation */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto px-4">
+          {tabs.map((tab, idx) => (
+            <motion.button
               key={tab.key}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.05 }}
               onClick={() => setActiveTab(tab.key)}
-              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+              className={`px-6 py-3.5 rounded-2xl text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === tab.key
-                  ? "bg-(--primary) text-white shadow-lg shadow-(--primary)/25"
-                  : "bg-(--card) border border-(--border) text-(--text-secondary) hover:border-(--primary)/50"
+                  ? "bg-(--text) text-white shadow-xl scale-105"
+                  : "bg-white border border-(--border-light) text-(--text-secondary) hover:border-(--primary) hover:bg-(--bg-alt)"
               }`}
             >
-              {tab.icon} {tab.label}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-(--primary)/10 flex items-center justify-center text-(--primary)">
-                {activeGuide.icon}
+              <div className={activeTab === tab.key ? "text-(--primary)" : "text-(--text-muted)"}>
+                {guides[tab.key].icon}
               </div>
-              <h2 className="text-xl font-bold text-(--text)">{activeGuide.title}</h2>
-            </div>
+              {tab.label}
+            </motion.button>
+          ))}
+        </div>
 
-            <div className="space-y-6">
-              {activeGuide.sections.map((section, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-(--card) border border-(--border) rounded-2xl p-5"
-                >
-                  <h3 className="text-base font-bold text-(--text) mb-3">{section.heading}</h3>
-
-                  {section.content && (
-                    <p className="text-sm text-(--text-secondary) leading-relaxed">{section.content}</p>
-                  )}
-
-                  {section.items && (
-                    <div className="space-y-3">
-                      {section.items.map((item, i) => (
-                        <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-(--bg-alt)">
-                          <Leaf className="w-4 h-4 text-(--primary) mt-0.5 shrink-0" />
-                          <div>
-                            <p className="text-sm font-semibold text-(--text)">{item.label}</p>
-                            <p className="text-xs text-(--text-muted) mt-0.5">{item.detail}</p>
-                          </div>
-                        </div>
-                      ))}
+        {/* Content Area */}
+        <div className="max-w-5xl mx-auto px-4">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-10"
+            >
+              {/* Feature Sidebar */}
+              <div className="lg:col-span-4">
+                <div className={`p-8 rounded-[32px] bg-linear-to-br ${activeGuide.color} text-white shadow-premium relative overflow-hidden h-full min-h-[300px]`}>
+                  <div className="absolute top-[-20%] right-[-20%] scale-[2] opacity-10 pointer-events-none">
+                    {activeGuide.icon}
+                  </div>
+                  <div className="relative z-10">
+                    <div className="bg-white/20 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-10">
+                      {activeGuide.icon}
                     </div>
-                  )}
+                    <h2 className="text-3xl font-black mb-6 leading-tight">{activeGuide.title}</h2>
+                    <p className="text-white/80 font-medium leading-relaxed mb-10">
+                      {activeGuide.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest bg-black/10 p-4 rounded-xl border border-white/10">
+                      <CheckCircle2 size={14} /> Certified Specialist Guide
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                  {section.tips && (
-                    <ul className="space-y-2">
-                      {section.tips.map((tip, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-(--text-secondary)">
-                          <ChevronRight className="w-4 h-4 text-(--primary) mt-0.5 shrink-0" />
-                          {tip}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </motion.div>
-              ))}
+              {/* Detailed Sections */}
+              <div className="lg:col-span-8 space-y-8">
+                {activeGuide.sections.map((section, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="premium-card"
+                  >
+                    <h3 className="text-xl font-black text-(--text) mb-6 flex items-center gap-3">
+                      <span className="w-2 h-8 bg-(--primary) rounded-full block" />
+                      {section.heading}
+                    </h3>
+
+                    {section.content && (
+                      <p className="text-(--text-secondary) leading-relaxed mb-2 font-medium">{section.content}</p>
+                    )}
+
+                    {section.items && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {section.items.map((item, i) => (
+                          <div key={i} className="p-5 rounded-2xl bg-(--bg-alt) border border-(--border-light) hover:border-(--primary)/30 transition-colors">
+                            <h4 className="font-black text-sm text-(--text) mb-2 flex items-center gap-2">
+                              <Leaf size={14} className="text-(--primary)" /> {item.label}
+                            </h4>
+                            <p className="text-xs text-(--text-secondary) leading-relaxed pl-5 font-medium">
+                              {item.detail}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {section.tips && (
+                      <div className="grid grid-cols-1 gap-3">
+                        {section.tips.map((tip, i) => (
+                          <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-(--primary)/5 text-sm text-(--text-secondary) font-bold">
+                            <ChevronRight size={16} className="text-(--primary) mt-1 shrink-0" />
+                            {tip}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Global CTA */}
+        <div className="max-w-4xl mx-auto mt-24 px-4">
+          <div className="p-12 rounded-[40px] bg-(--text) text-white text-center relative overflow-hidden shadow-premium group">
+            <div className="absolute top-0 right-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1473970670511-7301c68e477a?auto=format&fit=crop&q=80')] bg-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none" />
+            <div className="relative z-10">
+              <h2 className="text-3xl font-black mb-6">Need a personal home analysis?</h2>
+              <p className="text-white/60 mb-10 max-w-lg mx-auto font-medium">
+                Our AI can analyze your space from a single photo to recommend the perfect species for your unique environment.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <AnimatedButton size="lg" onClick={() => navigate("/space-analysis")} className="bg-white text-(--text) hover:bg-white/90 px-8 font-black">
+                  <Camera className="mr-2" size={18} /> Analyze My Room
+                </AnimatedButton>
+              </div>
             </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-12 bg-linear-to-r from-(--primary)/10 to-(--accent)/10 border border-(--primary)/20 rounded-2xl p-8"
-        >
-          <p className="text-lg font-semibold text-(--text) mb-4">Ready to start your plant journey?</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <AnimatedButton onClick={() => navigate("/space-analysis")}>
-              <Camera className="w-4 h-4" /> Analyze Your Space
-            </AnimatedButton>
-            <AnimatedButton variant="outline" onClick={() => navigate("/plant-catalog")}>
-              <Sprout className="w-4 h-4" /> Browse Plants
-            </AnimatedButton>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
     </PageContainer>
   );
 };
 
 export default CareGuide;
+

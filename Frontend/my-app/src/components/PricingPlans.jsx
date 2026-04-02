@@ -25,7 +25,7 @@ const PricingPlans = () => {
         return;
       }
       
-      const url = `http://localhost:3000/subscription/${user.email}`;
+      const url = `http://localhost:3001/subscription/${user.email}`;
       console.log("Fetching subscription from:", url);
       
       const response = await fetch(url);
@@ -68,7 +68,7 @@ const PricingPlans = () => {
 
     setUpgrading(true);
     try {
-      const response = await fetch("http://localhost:3000/create-checkout-session", {
+      const response = await fetch("http://localhost:3001/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: user.email })

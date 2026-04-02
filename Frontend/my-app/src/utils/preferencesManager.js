@@ -1,6 +1,6 @@
 import { auth } from "../components/Firebase";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3001";
 
 /**
  * Save user preferences

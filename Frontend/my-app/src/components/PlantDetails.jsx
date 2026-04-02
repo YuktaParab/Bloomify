@@ -144,7 +144,7 @@ const PlantDetails = () => {
     });
 
     try {
-      const res = await fetch("http://localhost:3000/my-plants", {
+      const res = await fetch("http://localhost:3001/my-plants", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
