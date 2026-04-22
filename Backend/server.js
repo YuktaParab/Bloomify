@@ -12,6 +12,7 @@ let http = require("http");
 require('dotenv').config();  // Load environment variables
 let subscription = require("./subscription");  // Subscription management
 let ecommerce = require("./ecommerce");  // E-commerce management
+let recommendRouter = require("./routes/recommend");  // Plant recommendation routes
 
 let app = express();
 app.use(cors());
@@ -26,14 +27,13 @@ app.use((req, res, next) => {
 
 // const url = "mongodb://0.0.0.0:27017";
 
-const url = 'mongodb://0.0.0.0:27017';
+const url = process.env.MONGODB_URL || 'mongodb://0.0.0.0:27017';
 
-
- 
+// Cloudinary configuration from environment variables
 cloudinary.config({
-  cloud_name: "dqy8fpb6n",
-  api_key: "736992766167645",
-  api_secret: "taCs9fQZm3B9GflslZPoZnnQiHI"  
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
 let storage = new CloudinaryStorage({cloudinary})
 let recep = multer({storage});
@@ -851,6 +851,10 @@ app.get("/sellers/:email", async (req, res) => {
   }
 });
 
+// ========== PLANT RECOMMENDATION ENDPOINTS ==========
+// Register recommendation routes
+app.use("/api", recommendRouter);
+
 app.listen(3001, () => {
     console.log("Bloomify backend running on port 3001");
-});
+});

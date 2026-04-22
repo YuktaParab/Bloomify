@@ -3,11 +3,12 @@ import { loadPlantData, getPlantsBySunlight } from "../utils/loadPlantData";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Camera, Upload, PenTool, Leaf, AlertTriangle, CheckCircle2, RotateCcw, 
-  X, Sprout, Sun, Droplets, BarChart3, Lock, Sparkles, Wand2, ArrowRight 
+  X, Sprout, Sun, Droplets, BarChart3, Lock, Sparkles, Wand2, ArrowRight, ChevronRight
 } from "lucide-react";
 import PageContainer from "./layout/PageContainer";
 import AnimatedButton from "./ui/AnimatedButton";
 import UpgradeModal from "./UpgradeModal";
+import PlantRecommendationFlow from "./PlantRecommendationFlow";
 import { auth } from "./Firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -32,6 +33,11 @@ const SpacePhotoAnalysis = () => {
   const [subscription, setSubscription] = useState(null);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [subscriptionLoading, setSubscriptionLoading] = useState(true);
+  
+  // NEW STATE: Space analysis data for recommendation flow
+  const [spaceAnalysisData, setSpaceAnalysisData] = useState(null);
+  const [showRecommendationFlow, setShowRecommendationFlow] = useState(false);
+  
   const videoRef = useRef(null);
   const streamRef = useRef(null);
 
@@ -132,6 +138,15 @@ const SpacePhotoAnalysis = () => {
       setTimeout(() => {
         const selected = getPlantsBySunlight(plantData, manualInputs.sunlight);
         setRecommendations(selected);
+        
+        // Capture space analysis data for recommendation flow
+        setSpaceAnalysisData({
+          spaceType: manualInputs.location || "indoor",
+          sunlightLevel: manualInputs.sunlight,
+          spaceSize: manualInputs.spaceSize
+        });
+        setShowRecommendationFlow(true);
+        
         setAnalyzing(false);
       }, 1000);
       return;
@@ -148,6 +163,17 @@ const SpacePhotoAnalysis = () => {
       });
       const result = await response.json();
       if (response.ok && result.success) {
+        // Extract space analysis data from result
+        const analysisData = {
+          spaceType: result.spaceType || "indoor",
+          sunlightLevel: result.sunlightLevel || "medium",
+          spaceSize: result.spaceSize || "medium"
+        };
+        
+        setSpaceAnalysisData(analysisData);
+        setShowRecommendationFlow(true);
+        
+        // Also display the initial recommendations
         setRecommendations(result.recommended_plants.map(p => ({
           ...p,
           spaceScore: result.space_score,
@@ -337,7 +363,42 @@ const SpacePhotoAnalysis = () => {
           <div className="lg:col-span-12 xl:col-span-5">
              <div className="space-y-6 sticky top-24">
                 <AnimatePresence mode="wait">
-                  {recommendations.length > 0 ? (
+                  
+                  {/* Show Recommendation Flow if space analysis was successful */}
+                  {showRecommendationFlow && spaceAnalysisData && (
+                    <motion.div
+                      key="recommendation-flow"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="premium-card p-8 rounded-2xl border-2 border-(--primary)/30"
+                    >
+                      <div className="mb-6 pb-4 border-b border-(--border)">
+                        <div className="flex items-center gap-2 mb-2">
+                          <CheckCircle2 className="w-5 h-5 text-(--primary)" />
+                          <h3 className="text-lg font-black text-(--text)">
+                            Space Analysis Complete ✓
+                          </h3>
+                        </div>
+                        <p className="text-sm text-(--text-secondary)">
+                          Now discovering perfect plants for your {spaceAnalysisData.spaceType}...
+                        </p>
+                      </div>
+                      
+                      <PlantRecommendationFlow
+                        spaceAnalysisData={spaceAnalysisData}
+                        userEmail={user?.email}
+                        onRecommendationsReceived={(data) => {
+                          console.log("✓ Plant recommendations received:", data);
+                        }}
+                        onError={(error) => {
+                          console.error("❌ Recommendation error:", error);
+                        }}
+                      />
+                    </motion.div>
+                  )}
+
+                  {/* Original Space Analysis Recommendations */}
+                  {!showRecommendationFlow && recommendations.length > 0 ? (
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
                        {!recommendations[0].error && recommendations[0].spaceScore && (
                           <div className="premium-card bg-linear-to-br from-(--text) to-black text-white border-0 pt-10">
@@ -387,13 +448,13 @@ const SpacePhotoAnalysis = () => {
                           )}
                        </div>
                     </motion.div>
-                  ) : (
+                  ) : !showRecommendationFlow ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="premium-card p-16 text-center border-dashed opacity-50 flex flex-col items-center justify-center min-h-[400px]">
                         <Wand2 size={48} className="text-(--text-muted) mb-6" />
                         <h4 className="text-lg font-black text-(--text-muted)">Waiting for Analysis</h4>
                         <p className="text-sm text-(--text-muted) max-w-[200px] mx-auto mt-2 font-medium">Use the AI Tool to generate space insights</p>
                     </motion.div>
-                  )}
+                  ) : null}
                 </AnimatePresence>
              </div>
           </div>

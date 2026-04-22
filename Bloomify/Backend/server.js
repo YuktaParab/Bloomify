@@ -6,6 +6,7 @@ let path = require("path");
 let fs = require("fs");
 let cloudinary = require("cloudinary").v2;
 let {CloudinaryStorage}= require("multer-storage-cloudinary");
+require('dotenv').config();
 
 let app = express();
 app.use(cors());
@@ -13,14 +14,14 @@ app.use(express.json());
 app.use('/upload', express.static('upload'));
 // const url = "mongodb://0.0.0.0:27017";
 
-const url = 'mongodb://0.0.0.0:27017';
+const url = process.env.MONGODB_URL || 'mongodb://0.0.0.0:27017';
 
 
  
 cloudinary.config({
-  cloud_name: "dqy8fpb6n",
-  api_key: "736992766167645",
-  api_secret: "taCs9fQZm3B9GflslZPoZnnQiHI"  
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
 let storage = new CloudinaryStorage({cloudinary})
 let recep = multer({storage});
